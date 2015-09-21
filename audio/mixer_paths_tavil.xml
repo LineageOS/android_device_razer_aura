@@ -2507,6 +2507,10 @@
         <path name="speaker-mono" />
     </path>
 
+    <path name="speaker-reverse">
+        <path name="speaker" />
+    </path>
+
    <path name="sidetone-iir">
         <ctl name="IIR0 Enable Band1" value="1" />
         <ctl name="IIR0 Enable Band2" value="1" />
