@@ -129,7 +129,6 @@ persist.dbg.wfc_avail_ovr=1
 audio.offload.video=true
 debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 # Netflix BSP
 ro.netflix.bsp_rev=Q845-05000-1
