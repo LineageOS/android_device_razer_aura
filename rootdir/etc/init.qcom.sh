@@ -68,14 +68,14 @@ else
     pre_fihver=""
 fi
 
-cur_fihver=`cat /firmware/verinfo/ver_info.txt`
-if [ ! -f /firmware/verinfo/ver_info.txt -o "$pre_fihver" != "$cur_fihver" ]; then
+cur_fihver=`cat /vendor/firmware_mnt/verinfo/ver_info.txt`
+if [ ! -f /vendor/firmware_mnt/verinfo/ver_info.txt -o "$pre_fihver" != "$cur_fihver" ]; then
     # add W for group recursively before delete
     chmod g+w -R /data/misc/fih_atl/modem_config/*
     rm -rf /data/misc/fih_atl/modem_config/*
     # preserve the read only mode for all subdir and files
-    cp --preserve=m -dr /firmware/image/modem_pr/mcfg/configs/* /data/misc/fih_atl/modem_config
-    cp --preserve=m -d /firmware/verinfo/ver_info.txt /data/misc/fih_mcfg/
+    cp --preserve=m -dr /vendor/firmware_mnt/image/modem_pr/mcfg/configs/* /data/misc/fih_atl/modem_config
+    cp --preserve=m -d /vendor/firmware_mnt/verinfo/ver_info.txt /data/misc/fih_mcfg/
     # the group must be root, otherwise this script could not add "W" for group recursively
     chown -hR radio.root /data/misc/fih_atl/modem_config/*
 fi
