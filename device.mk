@@ -162,7 +162,7 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.sdm845 \
     libcutils \
-    libgptutils \
+    libgptutils.aura.recovery \
     libz
 
 # Camera
