@@ -371,7 +371,6 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # GNSS
-vendor/bin/hw/vendor.qti.gnss@2.0-service
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
 vendor/bin/slim_daemon
@@ -379,7 +378,6 @@ vendor/bin/tloc_daemon
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
-vendor/etc/init/vendor.qti.gnss@2.0-service.rc
 vendor/etc/apdr.conf
 vendor/etc/cacert_location.pem
 vendor/etc/flp.conf
@@ -390,7 +388,6 @@ vendor/etc/sap.conf
 vendor/etc/xtra_root_cert.pem
 vendor/etc/xtwifi.conf
 vendor/lib64/hw/android.hardware.gnss@1.0-impl-qti.so
-vendor/lib64/hw/vendor.qti.gnss@2.0-impl.so
 vendor/lib64/libDRPlugin.so
 vendor/lib64/lib_drplugin_server.so
 vendor/lib64/libalarmservice_jni.so
@@ -413,8 +410,6 @@ vendor/lib64/libloc_ds_api.so
 vendor/lib64/libloc_externalDr.so
 vendor/lib64/libloc_externalDrcore.so
 vendor/lib64/liblocation_api.so
-vendor/lib64/liblocationservice.so
-vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
 vendor/lib64/libquipc_os_api.so
@@ -422,11 +417,6 @@ vendor/lib64/libslimclient.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
-vendor/lib64/vendor.qti.gnss@1.0.so
-vendor/lib64/vendor.qti.gnss@1.1.so
-vendor/lib64/vendor.qti.gnss@1.2.so
-vendor/lib64/vendor.qti.gnss@2.0.so
-vendor/lib64/vendor.qti.gnss@2.1.so
 
 # Graphics (Adreno)
 vendor/lib/egl/eglSubDriverAndroid.so
