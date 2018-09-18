@@ -1,2 +1,13 @@
 # Allow vendor_init to write to sysfs_ssr_toggle
 allow vendor_init sysfs_ssr_toggle:file w_file_perms;
+
+typeattribute vendor_init data_between_core_and_vendor_violators;
+
+allow vendor_init {
+    data_rfs_shared_hlos_file
+    system_data_file
+}:dir create_dir_perms;
+
+allow vendor_init {
+    data_rfs_shared_hlos_file
+}:file create_file_perms;
