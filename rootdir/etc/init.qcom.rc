@@ -664,7 +664,7 @@ service vendor.tlocd /vendor/bin/tloc_daemon
     user system
     group drmrpc gps net_raw
 
-service power_off_alarm /vendor/bin/power_off_alarm
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
     group system
     disabled
