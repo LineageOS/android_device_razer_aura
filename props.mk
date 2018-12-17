@@ -111,6 +111,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.cabl=0 \
     vendor.display.disable_fbid_cache=1
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.vsync_event_phase_offset_ns=1000000 \
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=1000000
+
 # HWUI
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.drop_shadow_cache_size=6 \
