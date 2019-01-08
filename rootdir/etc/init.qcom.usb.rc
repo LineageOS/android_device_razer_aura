@@ -40,6 +40,7 @@ on charger
     write /config/usb_gadget/g1/configs/b.1/MaxPower 900
     symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qcom.usb.sh
+    start vendor.power_off_alarm
     setprop sys.usb.config mass_storage
     setprop sys.usb.configfs 1
 
