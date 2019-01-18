@@ -115,10 +115,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.dev_name=rmnet_usb0 \
     persist.vendor.data.mode=concurrent
 
-# Display density
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=480
-
 # Display post-processing
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.cabl=0 \
