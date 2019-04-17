@@ -31,9 +31,6 @@ on boot
     chown system system /proc/AllHWList/tp_double_tap
     chmod 664 /proc/AllHWList/tp_double_tap
 
-    chown system system /sys/devices/platform/soc/soc:fpc1020/irq
-    chown system system /sys/devices/platform/soc/soc:fpc1020/wakeup_enable
-
 on post-fs-data
     # Mounting of securefs is moved to 'on emmc-fs' and 'on fs' sections
     # We chown/chmod /vendor/securefs again so because mount is run as root + defaults
