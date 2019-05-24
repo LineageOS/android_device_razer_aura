@@ -1,0 +1,6 @@
+# RFS
+type_transition qti_init_shell system_data_file:dir rfs_shared_hlos_file "fih_atl";
+type_transition qti_init_shell system_data_file:dir rfs_shared_hlos_file "fih_mcfg";
+
+allow qti_init_shell rfs_shared_hlos_file:dir create_dir_perms;
+allow qti_init_shell rfs_shared_hlos_file:file create_file_perms;
