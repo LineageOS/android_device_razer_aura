@@ -1,0 +1,4 @@
+typeattribute rfs_access data_between_core_and_vendor_violators;
+
+allow rfs_access data_rfs_shared_hlos_file:dir create_dir_perms;
+allow rfs_access data_rfs_shared_hlos_file:file create_file_perms;

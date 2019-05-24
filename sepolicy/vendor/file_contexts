@@ -13,8 +13,8 @@
 /mnt/vendor/securefs/data(/.*)?                                                                         u:object_r:persist_drm_file:s0
 
 # RFS
-/data/misc/fih_atl(/.*)?                                                                                u:object_r:rfs_shared_hlos_file:s0
-/data/misc/fih_mcfg(/.*)?                                                                               u:object_r:rfs_shared_hlos_file:s0
+/data/misc/fih_atl(/.*)?                                                                                u:object_r:data_rfs_shared_hlos_file:s0
+/data/misc/fih_mcfg(/.*)?                                                                               u:object_r:data_rfs_shared_hlos_file:s0
 
 # Services
 /vendor/bin/wireless_init                                                                               u:object_r:wireless_init_exec:s0
