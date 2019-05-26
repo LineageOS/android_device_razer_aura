@@ -38,8 +38,8 @@ on post-fs-data
     chmod 0771 /mnt/vendor/securefs
     restorecon_recursive /mnt/vendor/securefs
 
-    mkdir /data/misc/fih_atl 2770 system oem_2951
-    mkdir /data/misc/fih_mcfg 0775 system oem_2951
+    mkdir /data/misc/fih_atl 2770 radio root
+    mkdir /data/misc/fih_mcfg 0775 radio root
 
 on property:gsm.sim.operator.numeric=50502
     setprop ro.com.google.clientidbase.am android-optus-au-revc
@@ -48,6 +48,14 @@ on property:gsm.sim.operator.numeric=50502
 on property:gsm.sim.operator.numeric=50590
     setprop ro.com.google.clientidbase.am android-optus-au-revc
     setprop ro.com.google.clientidbase.ms android-optus-au-revc
+
+on property:ro.vendor.ril.fih_mbn_copy_completed=1
+    write /data/vendor/radio/atl_complete 0
+    write /data/misc/fih_mcfg/rfs_complete 0
+    write /data/misc/fih_mcfg/atl_log.txt ""
+
+on property:ro.vendor.ril.fih_mcfg_lock=1
+    write /data/misc/fih_mcfg/fih_mcfg.lock ""
 
 service e2p-sh /vendor/bin/init.sensor.e2pwrite.sh
     class late_start

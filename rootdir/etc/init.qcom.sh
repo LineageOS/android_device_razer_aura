@@ -62,13 +62,6 @@ fi
 chmod g-w /data/vendor/modem_config
 setprop ro.vendor.ril.mbn_copy_completed 1
 
-cur_fihmodel=`getprop ro.product.model.num`
-if [ ! -f /data/misc/fih_mcfg/fih_model.txt ]; then
-    echo $cur_fihmodel > /data/misc/fih_mcfg/fih_model.txt
-    chmod 664 /data/misc/fih_mcfg/fih_model.txt
-    chown system.oem_2951 /data/misc/fih_mcfg/fih_model.txt
-fi
-
 if [ -f /data/misc/fih_mcfg/ver_info.txt ]; then
     pre_fihver=`cat /data/misc/fih_mcfg/ver_info.txt`
 else
@@ -77,34 +70,20 @@ fi
 
 cur_fihver=`cat /firmware/verinfo/ver_info.txt`
 if [ ! -f /firmware/verinfo/ver_info.txt -o "$pre_fihver" != "$cur_fihver" ]; then
-    rm -rf /data/misc/fih_atl/modem_config
-    mkdir /data/misc/fih_atl/modem_config
-    cp -r /firmware/image/modem_pr/mcfg/configs/* /data/misc/fih_atl/modem_config
-    chmod -R 770 /data/misc/fih_atl/modem_config
-    chown -hR system.oem_2951 /data/misc/fih_atl/modem_config
-    cp /firmware/verinfo/ver_info.txt /data/misc/fih_mcfg/ver_info.txt
-    chown radio.oem_2951 /data/misc/fih_mcfg/ver_info.txt
+    # add W for group recursively before delete
+    chmod g+w -R /data/misc/fih_atl/modem_config/*
+    rm -rf /data/misc/fih_atl/modem_config/*
+    # preserve the read only mode for all subdir and files
+    cp --preserve=m -dr /firmware/image/modem_pr/mcfg/configs/* /data/misc/fih_atl/modem_config
+    cp --preserve=m -d /firmware/verinfo/ver_info.txt /data/misc/fih_mcfg/
+    # the group must be root, otherwise this script could not add "W" for group recursively
+    chown -hR radio.root /data/misc/fih_atl/modem_config/*
 fi
-echo 0 > /data/vendor/radio/atl_complete
-chmod 660 /data/vendor/radio/atl_complete
-chown system.radio /data/vendor/radio/atl_complete
-echo 0 > /data/misc/fih_mcfg/rfs_complete
-chmod 666 /data/misc/fih_mcfg/rfs_complete
-chown system.oem_2951 /data/misc/fih_mcfg/rfs_complete
-echo -n > /data/misc/fih_mcfg/atl_log.txt
-chmod 666 /data/misc/fih_mcfg/atl_log.txt
-chown system.oem_2951 /data/misc/fih_mcfg/atl_log.txt
-echo -n > /data/misc/fih_mcfg/mbn_0
-chmod 664 /data/misc/fih_mcfg/mbn_0
-chown system.oem_2951 /data/misc/fih_mcfg/mbn_0
-echo -n > /data/misc/fih_mcfg/mbn_1
-chmod 664 /data/misc/fih_mcfg/mbn_1
-chown system.oem_2951 /data/misc/fih_mcfg/mbn_1
+chmod g-w /data/misc/fih_atl/modem_config
+setprop ro.vendor.ril.fih_mbn_copy_completed 1
 
 if [ "$pre_fihver" != "$cur_fihver" ]; then
-    echo -n > /data/misc/fih_mcfg/fih_mcfg.lock
-    chmod 444 /data/misc/fih_mcfg/fih_mcfg.lock
-    chown system.oem_2951 /data/misc/fih_mcfg/fih_mcfg.lock
+    setprop ro.vendor.ril.fih_mcfg_lock 1
 fi
 
 # Check build variant for printk logging
