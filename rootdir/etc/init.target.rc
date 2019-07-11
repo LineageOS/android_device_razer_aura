@@ -28,11 +28,6 @@
 #
 
 on boot
-    # Default Sub System Restart (SSR) Level
-    #   SYSTEM: Do host reboot when ssr
-    #  RELATED: No host reboot when ssr
-    write /sys/bus/msm_subsys/devices/subsys7/restart_level RELATED
-
     chown system system /proc/AllHWList/tp_double_tap
     chmod 664 /proc/AllHWList/tp_double_tap
 

@@ -1183,10 +1183,6 @@ vendor/lib/libscveScan3D.so
 vendor/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib/vendor.qti.hardware.scve.panorama@1.0.so
 
-# SSR
-vendor/bin/ssr_setup
-vendor/bin/subsystem_ramdump
-
 # Thermal engine
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
