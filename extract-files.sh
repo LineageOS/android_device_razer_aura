@@ -71,6 +71,9 @@ function blob_fixup() {
         system_ext/etc/permissions/telephonyservice.xml)
             sed -i 's|/system/framework/|/system_ext/framework/|g' "${2}"
             ;;
+        system_ext/lib64/lib-imsvideocodec.so)
+            patchelf --add-needed "libui_shim.so" "${2}"
+            ;;
         system_ext/lib64/libdpmframework.so)
             sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
             ;;
