@@ -287,49 +287,49 @@ vendor/lib/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib/vendor.qti.latency@2.0.so
 
-# Display (HDR)
-vendor/lib64/libhdr_tm.so
-vendor/lib/libhdr_tm.so
+# Display (HDR) - from polaris V11.0.5.0.QDGMIXM
+vendor/lib/libhdr_tm.so|eab66540cffc6b81449cfe620e715de7318e17a3
+vendor/lib64/libhdr_tm.so|5e3fe8e2310dfed221da6694723daef715658e98
 
-# Display (SDM)
-vendor/lib64/libqseed3.so
-vendor/lib64/libsdedrm.so
-vendor/lib64/libsdm-color.so
-vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/libsdmextension.so
-vendor/lib64/libtinyxml2_1.so
-vendor/lib/libqseed3.so
-vendor/lib/libsdedrm.so
-vendor/lib/libsdm-color.so
-vendor/lib/libsdm-diag.so
-vendor/lib/libsdm-disp-vndapis.so
-vendor/lib/libsdmextension.so
-vendor/lib/libtinyxml2_1.so
+# Display (SDM) - from polaris V11.0.5.0.QDGMIXM
+vendor/lib/libqseed3.so|2aec751ff023c1c3a0150dc0ae952ca79d8689e1
+vendor/lib/libsdedrm.so|ac6a187f05bf8d78ae38cf5e337c7f0959ebc09c
+vendor/lib/libsdm-color.so|9bd0551211b2be2cdb1df0c8bf23e126933aa2c8
+vendor/lib/libsdm-diag.so|eac1b321d43c1b3c569cef589bf2cc38b51ff6b4
+vendor/lib/libsdm-disp-vndapis.so|33511878184e3786f99e81eca10ef89732c055a1
+vendor/lib/libsdmextension.so|d50c4720587f513287700f41209a8e35735c5207
+vendor/lib/libtinyxml2_1.so|c79f7ef09a7fc93152fdf5252199891fc31f346c
+vendor/lib64/libqseed3.so|e465ec47468012202edab549619ae3b33f29dfa4
+vendor/lib64/libsdedrm.so|36eddd34e776fbf7512dbd0afc764fcffc745a39
+vendor/lib64/libsdm-color.so|7f46bd9fc0177212036cd6ca6400f1dc8dff5d52
+vendor/lib64/libsdm-diag.so|9dcada14f81cc46eb11f2f222591237194d9a6b7
+vendor/lib64/libsdm-disp-vndapis.so|ced43c72112f9b3c8066785ebe771839e7c6a20f
+vendor/lib64/libsdmextension.so|8e5aed95720054b24e113681444e25ec2431b5dd
+vendor/lib64/libtinyxml2_1.so|d87dfed7c044e24c90fe4ae9fcd9b3812f432ff4
 
-# Display postrocessing
-vendor/bin/hw/vendor.display.color@1.0-service
-vendor/bin/mm-pp-dpps
-vendor/bin/ppd
-vendor/etc/init/vendor.display.color@1.0-service.rc
-vendor/lib64/libdisp-aba.so
-vendor/lib64/libdisplayqos.so
-vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.color@1.2.so
-vendor/lib64/vendor.display.postproc@1.0.so
-vendor/lib/libdisp-aba.so
-vendor/lib/libdisplayqos.so
-vendor/lib/vendor.display.color@1.0.so
-vendor/lib/vendor.display.color@1.1.so
-vendor/lib/vendor.display.color@1.2.so
-vendor/lib/vendor.display.postproc@1.0.so
+# Display postprocessing - from polaris V11.0.5.0.QDGMIXM
+vendor/bin/hw/vendor.display.color@1.0-service|ae804149eab8e9933ef04c5bad07abd99af60379
+vendor/bin/mm-pp-dpps|7854460007cbea87832cee6d2af48b3c0ed769a2
+vendor/bin/ppd|a61d3d8847f743e061f25d1b623e5311cddbab8c
+vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
+vendor/lib/libdisp-aba.so|3d6aff1f90a6ed16b97014b261b8f3eb18e25fdb
+vendor/lib/libdisplayqos.so|4489934c5c4ded1098bbaf43bc50e3bbb1e4b2d3
+vendor/lib/vendor.display.color@1.0.so|bd9454aa8ad3839b6e269345f9b8bc6ffb02072a
+vendor/lib/vendor.display.color@1.1.so|29c267207f98174ee4d88ec2216acbcb48deb188
+vendor/lib/vendor.display.color@1.2.so|a7c653ecea0456167c658ad55f7b2a5a817db5f3
+vendor/lib/vendor.display.postproc@1.0.so|8b54d80061413abed087df88f84ddaa6e3defbc3
+vendor/lib64/libdisp-aba.so|2c9be5015ceeda186a323cb904593be9950cf5f9
+vendor/lib64/libdisplayqos.so|1507382b7007c5519c0f446f3fb51638049c8cd5
+vendor/lib64/vendor.display.color@1.0.so|09c0db4755ec4d85ab163de908c55104f7d4771d
+vendor/lib64/vendor.display.color@1.1.so|66531520f99cc4b113c8b1fad55dcd9284bf9124
+vendor/lib64/vendor.display.color@1.2.so|b65aea5c3b642db0446f579e6226f7f16c158471
+vendor/lib64/vendor.display.postproc@1.0.so|94a066d92a21a16cf6aa701e0e1528de94a1a161
 
-# Display utils
-vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
-vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+# Display utils - from polaris V11.0.5.0.QDGMIXM
+vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|c504834326ca83fe18fc35619a0b23b4ec123ca7
+vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc|69d9cbc54f8ac0a0fb010f92bfa7de5981d643cf
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|a729a0bf0f9157e49fe0f2cf759c89f0126d4964
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|0f47d6cf21bea16c61587f706f3c9d774064b79a
 
 # DPM
 bin/dpmd
@@ -538,45 +538,45 @@ vendor/lib/vendor.qti.gnss@1.2.so
 vendor/lib/vendor.qti.gnss@2.0.so
 vendor/lib/vendor.qti.gnss@2.1.so
 
-# Graphics (Adreno)
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so
-vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/egl/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libbccQTI.so
-vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libC2D2.so
-vendor/lib64/libCB.so
-vendor/lib64/libgsl.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/librs_adreno.so
-vendor/lib64/librs_adreno_sha1.so
-vendor/lib64/libRSDriver_adreno.so
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libQTapGLES.so
-vendor/lib/egl/libq3dtools_adreno.so
-vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/libadreno_utils.so
-vendor/lib/libbccQTI.so
-vendor/lib/libc2d30_bltlib.so
-vendor/lib/libC2D2.so
-vendor/lib/libCB.so
-vendor/lib/libgsl.so
-vendor/lib/libllvm-glnext.so
-vendor/lib/libllvm-qcom.so
-vendor/lib/libOpenCL.so
-vendor/lib/librs_adreno.so
-vendor/lib/librs_adreno_sha1.so
-vendor/lib/libRSDriver_adreno.so
+# Graphics (Adreno) - from polaris V11.0.5.0.QDGMIXM
+vendor/lib/egl/eglSubDriverAndroid.so|84b73e5fc2d6b58f766480af7134744a4d3329f4
+vendor/lib/egl/libEGL_adreno.so|330ab7ae2727fea0cd84407896896d29477f0d61
+vendor/lib/egl/libGLESv1_CM_adreno.so|3cb0773b5d02fcea3e48206515d4cfe1c2ed1a76
+vendor/lib/egl/libGLESv2_adreno.so|729305bc11ee661cddcbbcf418a517ae1865721a
+vendor/lib/egl/libQTapGLES.so|565a834bc03adae9527a5f4553e38d42e9153e60
+vendor/lib/egl/libq3dtools_adreno.so|95a0f05537f0762e3b8e89d120dfe33661975d12
+vendor/lib/egl/libq3dtools_esx.so|a218f91f364de66954723b0be350c27940f6589a
+vendor/lib/libC2D2.so|77a2de847d67d61ab6ae8c31349659a8054dccd1
+vendor/lib/libCB.so|0fe6f633f64828a19bb034c885d1757cee4ccc39
+vendor/lib/libOpenCL.so|33f4e543e9308b9f031c63ca0e22faea5bd89ecd
+vendor/lib/libRSDriver_adreno.so|b830885d8f5c50e0ad9022fad56289b8cee2c849
+vendor/lib/libadreno_utils.so|ef07dc746ef694dda01344b1decef4f5efc53300
+vendor/lib/libbccQTI.so|967e0756ce0a3a6f1249ceca5ba88bb54cd0e380
+vendor/lib/libc2d30_bltlib.so|48df7dce187f57a00bdd4c9f3a7cb0f3aa69afcc
+vendor/lib/libgsl.so|aed6ec16496fcc7f371767600f8bfaf85eba9040
+vendor/lib/libllvm-glnext.so|68cd7b017c7c93715d087a953639f0b98e35b93c
+vendor/lib/libllvm-qcom.so|c78ac7f2e827076b6150af8b153f82a10e70f456
+vendor/lib/librs_adreno.so|c3f303f361ee9e1055ba3a4514e9c1e4e00a1445
+vendor/lib/librs_adreno_sha1.so|735856d2ea173a4c8b5e2e7f5dcf01269e282693
+vendor/lib64/egl/eglSubDriverAndroid.so|ca30ccf7aea7fcc032b5ec6e8ab92ba4cfb5af76
+vendor/lib64/egl/libEGL_adreno.so|f6421b5c8cfbd496d51feee321d93cfcaa395298
+vendor/lib64/egl/libGLESv1_CM_adreno.so|d8de942d91e7e1a87ee3388911c2e8eaf13c76ef
+vendor/lib64/egl/libGLESv2_adreno.so|07f5b52076cc3cc4d48f43a305f26f4703bcfa4a
+vendor/lib64/egl/libQTapGLES.so|e060cdc619053569470859626aa2a41b61da9227
+vendor/lib64/egl/libq3dtools_adreno.so|1d02e38fa7ca54d41b35b9f65b7b823ccc749336
+vendor/lib64/egl/libq3dtools_esx.so|e77ffc3f035e9f91890acd222dc96754a771afd0
+vendor/lib64/libC2D2.so|63b0a96005bb60bc273fb6d1cdd99bf60dfe1af4
+vendor/lib64/libCB.so|19d238a44f15f183b757193a495ae84612733c7a
+vendor/lib64/libOpenCL.so|b7fc263c86db38668e54570616fcadcfacbbd33d
+vendor/lib64/libRSDriver_adreno.so|0b06bc637acd5c046ca5ea864316b282dde5a169
+vendor/lib64/libadreno_utils.so|a06c33ca9f010e3ca3b2af08fc3a854f6402ea89
+vendor/lib64/libbccQTI.so|2105f35a46f936940e124ddba3d4bcf3c7162404
+vendor/lib64/libc2d30_bltlib.so|257612866c2c6fa45847dac0252f2d50c1a74f3b
+vendor/lib64/libgsl.so|4ec508ca6eaf0220b5c1edf554890f6f9412a167
+vendor/lib64/libllvm-glnext.so|318e21cc1c2a3e3ba61b865fb0dd3e143b95b830
+vendor/lib64/libllvm-qcom.so|d0c2ed707020a8ed993dd9db2c61ccb069ceb1eb
+vendor/lib64/librs_adreno.so|9341b9138bfa9b363221da1dadd8ab99beea51e0
+vendor/lib64/librs_adreno_sha1.so|04e639d5e909935c5e91b37d157fca07f8dcbff8
 
 # Graphics (Adreno firmware)
 vendor/firmware/a630_gmu.bin
@@ -587,9 +587,9 @@ vendor/firmware/a630_zap.b02
 vendor/firmware/a630_zap.elf
 vendor/firmware/a630_zap.mdt
 
-# Graphics (Vulkan)
-vendor/lib64/hw/vulkan.sdm845.so
-vendor/lib/hw/vulkan.sdm845.so
+# Graphics (Vulkan) - from polaris V11.0.5.0.QDGMIXM
+vendor/lib/hw/vulkan.sdm845.so|51ca71fa33d2b97862aa59fd1eec4ba9d93383be
+vendor/lib64/hw/vulkan.sdm845.so|cc3b53ac1dcff2fa3133ec4ea7a27e19b1452cb4
 
 # IMS
 -app/uceShimService/uceShimService.apk
@@ -758,76 +758,81 @@ vendor/lib/liblistenjni.so
 vendor/lib/liblistensoundmodel2.so
 vendor/lib/libmulawdec.so
 
-# Media
-lib64/extractors/libmmparser.so
-lib64/libFileMux.so
-lib64/libmmparser_lite.so
-lib64/libmmosal.so
-lib/extractors/libmmparser.so
-lib/libFileMux.so
-lib/libmmparser_lite.so
-lib/libmmosal.so
-lib/libOmxMux.so
-vendor/bin/vppservice
-vendor/lib64/libI420colorconvert.so
-vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libmmosal_proprietary.so
-vendor/lib64/libOmxVpp.so
-vendor/lib64/libswvdec.so
-vendor/lib64/libvppclient.so
-vendor/lib64/libvpphcp.so
-vendor/lib64/libvpphvx.so
-vendor/lib64/libvpplibrary.so
-vendor/lib64/vendor.qti.hardware.vpp@1.1.so
-vendor/lib/libdsd2pcm.so
-vendor/lib/libI420colorconvert.so
-vendor/lib/libmm-color-convertor.so
-vendor/lib/libmmosal_proprietary.so
-vendor/lib/libOmxDsdDec.so
-vendor/lib/libOmxVideoDSMode.so
-vendor/lib/libOmxVpp.so
-vendor/lib/libswvdec.so
-vendor/lib/libvppclient.so
-vendor/lib/libvpphcp.so
-vendor/lib/libvpphvx.so
-vendor/lib/libvpplibrary.so
-vendor/lib/vendor.qti.hardware.vpp@1.1.so
+# Media - from polaris V11.0.5.0.QDGMIXM
+lib/libFileMux.so|e83aada073ee4ed9b27626b2ee4e051aa4f368df
+lib/libOmxMux.so|77de76c5047821dfdb1aaaef2cca2a10c5c4f067
+lib/libmmosal.so|082b3ab2d37ef5ddf2c0933b646e8fe6c58573c0
+lib/libmmparser_lite.so|f4f165c4e5983448d4094d1c21f6ef9f18d91e13
+lib64/libFileMux.so|fdd7753aa2c9fcda93d6b19e20c8e8827e96e887
+lib64/libmmosal.so|0950e626ba5a245914bf7e2d62b53669e08458a0
+lib64/libmmparser_lite.so|1589c6b8359901df6a48617c8c4ea6329c4f5349
+vendor/bin/vppservice|925b17a535efd5ae6be9891b298d8ed57bc9e3f2
+vendor/etc/init/vppservice.rc|9b7facad700305cc87a6afba598f582a4b2da5bd
+vendor/lib/libFileMux_proprietary.so|84829b028567d636692a2b0b09cb90ca3d36da18
+vendor/lib/libI420colorconvert.so|c25b528ae1428c7b795f8ecac8ddfa5321d75958
+vendor/lib/libOmxDsdDec.so|5a6d6fe60ea070b975fe1c28d58ca82d1cd71f7d
+vendor/lib/libOmxMux_proprietary.so|e02d75f9c78576f508bae5e249a4362e7462c00f
+vendor/lib/libOmxVideoDSMode.so|b9a3aab32379e0efece146e5992f8a295a33dc62
+vendor/lib/libOmxVpp.so|434e4c633f8e9fc3fabc23c29cc505b3197020e0
+vendor/lib/libdsd2pcm.so|012ce863a937a00d4fba1b57ff49c0a37afdb8b9
+vendor/lib/libmm-color-convertor.so|fbd9ae38b13b1ee3578899b0cf665f79489b1052
+vendor/lib/libmmosal_proprietary.so|cc5409d1abc554eb2ec047bcbab07d3a5c96d2bb
+vendor/lib/libmmparser_lite_proprietary.so|7932e37c8943dacd2c921283a4a4a18457efbbc0
+vendor/lib/libswvdec.so|8af2bad910164802e3fd0a5881dc5df25db7ad87
+vendor/lib/libvppclient.so|50a6d0c4bf90efa2170031e7f7e40b981d9d774e
+vendor/lib/libvpphcp.so|1f4d8b4fa06d4dee4af7d576bc1f59da10837f17
+vendor/lib/libvpphvx.so|17f274c2abbdf3bf7929aedd1d0451935779cce1
+vendor/lib/libvpplibrary.so|9cf3a02125e86bd560a418251cd02f5c0232f93c
+vendor/lib/vendor.qti.hardware.vpp@1.1.so|f4af1cf42d71a49fffcb7b787fd07bf0d6998f9f
+vendor/lib/vendor.qti.hardware.vpp@1.2.so|e5b76ac1eaf9a32ff8de1a12ca01896f0a7f615f
+vendor/lib64/libI420colorconvert.so|838fe3902488eab9fefefa2ae7bf1b5c191282b4
+vendor/lib64/libOmxVpp.so|74df12f06aa02937e2759334439608a7752a97a2
+vendor/lib64/libmm-color-convertor.so|d5130028e31acee044ea958b56052fe3064b0a6d
+vendor/lib64/libmmosal_proprietary.so|ee6afaf01632c64ee6f0debc6ec073276ca5125d
+vendor/lib64/libmmparser_lite_proprietary.so|7c9a5a9dc6e9bb0e1b7f36961ef70da5e1de282c
+vendor/lib64/libswvdec.so|16aa7eb2e43780aeaee934b40de30b73669eb1fe
+vendor/lib64/libvppclient.so|b04cfa085dfb0f6322d7b9f81af3249251258f4c
+vendor/lib64/libvpphcp.so|860a4c6c8d25bcc07d31b94b35d7caf63d5fcd81
+vendor/lib64/libvpphvx.so|9ae5376d9951823a95f95d11debfd89fff4970c8
+vendor/lib64/libvpplibrary.so|c53a8423abe062797cf7df08b2192fce9a20938b
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so|c387b980e5c524b4d78c725ed043e6c1333ef2c0
+vendor/lib64/vendor.qti.hardware.vpp@1.2.so|171b951d8b110fc2649306741db28434b4549a1c
 
-# Media codecs
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libFlacSwDec.so
-vendor/lib64/libMpeg4SwEncoder.so
-vendor/lib64/libOmxAacDec.so
-vendor/lib64/libOmxAlacDec.so
-vendor/lib64/libOmxAlacDecSw.so
-vendor/lib64/libOmxAmrDec.so
-vendor/lib64/libOmxAmrwbplusDec.so
-vendor/lib64/libOmxApeDec.so
-vendor/lib64/libOmxApeDecSw.so
-vendor/lib64/libOmxEvrcDec.so
-vendor/lib64/libOmxG711Dec.so
-vendor/lib64/libOmxQcelp13Dec.so
-vendor/lib64/libOmxSwVdec.so
-vendor/lib64/libOmxSwVencMpeg4.so
-vendor/lib64/libOmxWmaDec.so
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
-vendor/lib/libFlacSwDec.so
-vendor/lib/libMpeg4SwEncoder.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAlacDecSw.so
-vendor/lib/libOmxAmrDec.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxApeDecSw.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxG711Dec.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxSwVdec.so
-vendor/lib/libOmxSwVencMpeg4.so
-vendor/lib/libOmxWmaDec.so
+# Media codecs - from polaris V11.0.5.0.QDGMIXM
+vendor/lib/libAlacSwDec.so|0f24e0bf1dabb8b6ec15833ea9dbce7516ddfb62
+vendor/lib/libApeSwDec.so|51bc6c9b41039735c8fd212759cac4f97b42925e
+vendor/lib/libFlacSwDec.so|10cf675ad7f5c13d52c87099f54e027bab430efb
+vendor/lib/libMpeg4SwEncoder.so|652b7fafc55f0900612a64425c6ddc33a0e53617
+vendor/lib/libOmxAacDec.so|c4a4b3e95a8ee0c60c67fceb4e3d80519f736d36
+vendor/lib/libOmxAlacDec.so|219e539d826e1574420a4c615842df3894e8a767
+vendor/lib/libOmxAlacDecSw.so|124f57f374cccb2ba8c0392d8689356c7b34d0d8
+vendor/lib/libOmxAmrDec.so|a349bb020a38c22c6ea42b8fb0fe8ab6dc03d712
+vendor/lib/libOmxAmrwbplusDec.so|acc0583d3f3507f5b251a342bf89d1818a8ea3d2
+vendor/lib/libOmxApeDec.so|ab5915181b4938d1a5c135a6d708208dc2a278e7
+vendor/lib/libOmxApeDecSw.so|c208ed8051ed0512dcd4326d530a432b487e00ba
+vendor/lib/libOmxEvrcDec.so|6e13530c84fcd2e0551946171a0ffe610fc1ac45
+vendor/lib/libOmxG711Dec.so|060ab186617f4032176599dc64c10767dbe4abdd
+vendor/lib/libOmxQcelp13Dec.so|efc5246d31b1c27b0f4e88a9380f90bb4b46f16b
+vendor/lib/libOmxSwVdec.so|84af20eaa31ce1d26f604bf55ddbf9e9a3556829
+vendor/lib/libOmxSwVencMpeg4.so|57d46fabfb7ccd98123fa00c50a4fed502f5b027
+vendor/lib/libOmxWmaDec.so|e2a515dec57a52fd9488cd9ed4c9614067912811
+vendor/lib64/libAlacSwDec.so|75f64f40c611ed5c90ddb3546be06c8297b64556
+vendor/lib64/libApeSwDec.so|0fc21a02eb69f00404e04b1374b8a459b16000ae
+vendor/lib64/libFlacSwDec.so|4c6921ca8b103723415c97f52023ce1df71f57fb
+vendor/lib64/libMpeg4SwEncoder.so|c8e416d4acc1d7a9d6f180cb14404d9c7028738f
+vendor/lib64/libOmxAacDec.so|e39aaa8dd0ae72f834e94bd374f4ef9dec614f28
+vendor/lib64/libOmxAlacDec.so|2020c6a53b612cf97e4519de8dfa686840bd2e96
+vendor/lib64/libOmxAlacDecSw.so|f5103874cb9502643a547523a2bab2440d1e78af
+vendor/lib64/libOmxAmrDec.so|eb2d85801d0615f3f0545ee6ddbaca8179007dfb
+vendor/lib64/libOmxAmrwbplusDec.so|bf531e7265f6f535f4da50d13c4a26e7257e2487
+vendor/lib64/libOmxApeDec.so|1e6bd126b42e865a06762eae1dca8c55b8ad12cf
+vendor/lib64/libOmxApeDecSw.so|d6a1cee473ba844e3c4ca7818f978d805dcfddbf
+vendor/lib64/libOmxEvrcDec.so|cc00ca9cec8de68a85ced47b64698c2f6d2579eb
+vendor/lib64/libOmxG711Dec.so|5e2450a088b8f857f8eb6b819916a0bbdee5e54b
+vendor/lib64/libOmxQcelp13Dec.so|8c44fe0e9d4e10223099ac55d7eb66d8c2157bd9
+vendor/lib64/libOmxSwVdec.so|5523553103f9e30eee0e16f003e0b7d1e793a133
+vendor/lib64/libOmxSwVencMpeg4.so|09c045037a72fecbf7c30baf70bebce8731ad381
+vendor/lib64/libOmxWmaDec.so|05c8b864d04a9e7db3a62daef1ddb2e052c800da
 
 # Neural networks
 vendor/etc/init/android.hardware.neuralnetworks@1.1-service-qti.rc
