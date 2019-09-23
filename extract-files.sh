@@ -23,6 +23,23 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
+function blob_fixup() {
+    case "${1}" in
+    vendor/lib/hw/audio.primary.sdm845.so)
+        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+        ;;
+    vendor/lib64/hw/audio.primary.sdm845.so)
+        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+        ;;
+    vendor/lib/libgps.utils.so)
+        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+        ;;
+    vendor/lib64/libgps.utils.so)
+        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+        ;;
+    esac
+}
+
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
