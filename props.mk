@@ -240,6 +240,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=22,22 \
     ro.vendor.at_library=libqti-at.so
 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true
+
 # Stagefright
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
