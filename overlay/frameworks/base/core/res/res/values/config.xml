@@ -156,19 +156,6 @@
     -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
-    <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
-    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
-
-    <!-- Boolean indicating whether the wifi chipset has background scan support -->
-    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
-
-    <!-- Wifi driver supports batched scan -->
-    <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
-
-    <!-- Configure wifi tcp buffersizes in the form:
-         rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
-    <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,5505024,262144,524288,5505024</string>
-
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
@@ -954,18 +941,8 @@
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
 
-    <!-- Wifi driver supports Automatic channel selection (ACS) for softap -->
-    <bool name="config_wifi_softap_acs_supported">true</bool>
-
-    <!-- Wifi driver supports IEEE80211AC for softap -->
-    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
-
     <!-- Flag specifying whether VT is available on device -->
     <bool name="config_device_vt_available">true</bool>
-
-    <!-- Integer threshold, do not connect to APs with RSSI lower than the entry threshold -->
-    <integer name="config_wifi_framework_wifi_score_entry_rssi_threshold_5GHz">-79</integer>
-    <integer name="config_wifi_framework_wifi_score_entry_rssi_threshold_24GHz">-82</integer>
 
     <!-- Minimum color temperature, in Kelvin, supported by Night display. -->
     <integer name="config_nightDisplayColorTemperatureMin">1500</integer>
