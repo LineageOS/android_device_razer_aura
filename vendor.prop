@@ -111,6 +111,7 @@ persist.vendor.data.mode=concurrent
 # Display post-processing
 ro.vendor.display.cabl=0
 vendor.display.enable_default_color_mode=0
+vendor.display.qdcm.mode_combine=1
 
 # DRM
 drm.service.enabled=true
@@ -137,7 +138,8 @@ debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=0
 debug.sf.hw=0
 persist.demo.hdmirotationlock=false
-persist.sys.sf.native_mode=3
+persist.sys.sf.native_mode=2
+persist.sys.sf.color_mode=7
 ro.opengles.version=196610
 ro.qualcomm.cabl=0
 vendor.display.disable_fbid_cache=1
