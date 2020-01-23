@@ -218,6 +218,9 @@ ro.build.shutdown_timeout=6
 # Time
 persist.timed.enable=true
 
+# USB
+vendor.usb.diag.func.name=diag
+
 # Wi-Fi
 ro.boot.wificountrycode=00
 ro.wifi.power.reduction=1
