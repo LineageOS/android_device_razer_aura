@@ -233,7 +233,6 @@ on boot
     setprop vendor.usb.rmnet.inst.name "rmnet"
     setprop vendor.usb.dpl.inst.name "dpl"
     setprop vendor.usb.controller a600000.dwc3
-    setprop sys.usb.configfs 1
 
 # MSM specific files that need to be created on /data
 on post-fs-data
