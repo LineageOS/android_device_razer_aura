@@ -51,16 +51,16 @@ vendor/lib/libsurround_3mic_proc.so
 vendor/firmware/tfa98xx.cnt
 
 # Audio FX modules
-etc/permissions/audiosphere.xml
-framework/audiosphere.jar
+system/etc/permissions/audiosphere.xml
+system/framework/audiosphere.jar
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libshoebox.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libshoebox.so
 
 # Bluetooth - from polaris V11.0.5.0.QDGMIXM
-lib/libbtconfigstore.so|0ebccdeaf05a82cf5dbf54638189325f438b9e62
-lib64/libbtconfigstore.so|715e204a49e46992ff55dfa81965f3ee2cabd1e2
+system/lib/libbtconfigstore.so|0ebccdeaf05a82cf5dbf54638189325f438b9e62
+system/lib64/libbtconfigstore.so|715e204a49e46992ff55dfa81965f3ee2cabd1e2
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|74b5d2e7867e34c0e358cf8d82f3bfea58e97c28
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
 vendor/lib/btaudio_offload_if.so|622fc26c4802e179e84789c83334154fe1cd247f
@@ -85,10 +85,10 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|1b8ea7096ded35acef0bbc1a25
 vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so|9425f3b3d1b27cf1342499dd80bbac2d58a1b3f0
 
 # ANT+
-lib64/com.qualcomm.qti.ant@1.0.so
--lib64/libantradio.so
-lib/com.qualcomm.qti.ant@1.0.so
--lib/libantradio.so
+system/lib64/com.qualcomm.qti.ant@1.0.so
+-system/lib64/libantradio.so
+system/lib/com.qualcomm.qti.ant@1.0.so
+-system/lib/libantradio.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib/com.qualcomm.qti.ant@1.0.so
@@ -321,7 +321,6 @@ vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|a729a0bf0f9157e49fe0f2cf759c8
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|0f47d6cf21bea16c61587f706f3c9d774064b79a
 
 # DPM - from polaris V11.0.5.0.QDGMIXM
-framework/tcmclient.jar|a55e6981795bf74b3249c5e7297ea4e3cf1dea83
 product/bin/dpmd|7503d40ddb06e41333aafe4613d0dba6aed9b896
 product/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5
 product/etc/init/dpmd.rc|7f95195a89fddce06b93006a737701270e91f669
@@ -340,6 +339,7 @@ product/lib64/libdpmfdmgr.so|281657725b7a51115788b4947d6c90695f63f700
 product/lib64/libdpmframework.so|6560c843c638c901a0ac586806959b8336d87591
 product/lib64/libdpmtcm.so|44e741bd25a74cbc8c5873f5351cdbb06651af5b
 -product/priv-app/dpmserviceapp/dpmserviceapp.apk|9fd873c5330c03c62dfdeb6540b5984588295319
+system/framework/tcmclient.jar|a55e6981795bf74b3249c5e7297ea4e3cf1dea83
 vendor/bin/dpmQmiMgr|8ab0bc21fb426513e67e36d0bfa59c05067dda5e
 vendor/etc/init/dpmQmiMgr.rc|67569302d3a8828a9118c835e5b69c51b0c8ac68
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so|59329fcf0860811b96721dbdfbe8f2643466750f
@@ -582,8 +582,6 @@ vendor/lib/hw/vulkan.sdm845.so|51ca71fa33d2b97862aa59fd1eec4ba9d93383be
 vendor/lib64/hw/vulkan.sdm845.so|cc3b53ac1dcff2fa3133ec4ea7a27e19b1452cb4
 
 # IMS - from polaris V11.0.5.0.QDGMIXM
-lib/libdiag_system.so|84bd2cd89207fe16c18ac0913ce71c8bf1c16c9e
-lib64/libdiag_system.so|9d4f8bcfcea90cb6ed82e7581374de384133965e
 -product/app/uceShimService/uceShimService.apk|27abaa1a7c795c4a70202e7e8c8bd7a3f6e113d5
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml|aeaf8d4c7d421bd25a1aca1736980b6e4575c7ce
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml|d52cdba3a8f1c00098568965c0cbaa03502f961e
@@ -634,6 +632,8 @@ product/lib64/vendor.qti.ims.rcsconfig@1.0.so|50a6278b0195793522af3d73a22ed34733
 product/lib64/vendor.qti.imsrtpservice@2.0.so|2a5bca02128b51f8d47dd2f9cf886e0d23e7bbd9
 product/lib64/vendor.qti.imsrtpservice@2.1.so|4c9f4eb70e8697472d96522a5118964d7beb73fe
 -product/priv-app/ims/ims.apk|ade6bebb51a4affa00a8f2a877bed13dac522d13
+system/lib/libdiag_system.so|84bd2cd89207fe16c18ac0913ce71c8bf1c16c9e
+system/lib64/libdiag_system.so|9d4f8bcfcea90cb6ed82e7581374de384133965e
 vendor/bin/ims_rtp_daemon|fe69f4dabcb1ded73d4205b27fe971190b4f3000
 vendor/bin/imsdatadaemon|d95495072575a13cdbf6421ea6da619bc2bb80ae
 vendor/bin/imsqmidaemon|f472e526d4c2595f5617902491e0acd474876bf7
@@ -761,13 +761,13 @@ vendor/lib/liblistensoundmodel2.so
 vendor/lib/libmulawdec.so
 
 # Media - from polaris V11.0.5.0.QDGMIXM
-lib/libFileMux.so|e83aada073ee4ed9b27626b2ee4e051aa4f368df
-lib/libOmxMux.so|77de76c5047821dfdb1aaaef2cca2a10c5c4f067
-lib/libmmosal.so|082b3ab2d37ef5ddf2c0933b646e8fe6c58573c0
-lib/libmmparser_lite.so|f4f165c4e5983448d4094d1c21f6ef9f18d91e13
-lib64/libFileMux.so|fdd7753aa2c9fcda93d6b19e20c8e8827e96e887
-lib64/libmmosal.so|0950e626ba5a245914bf7e2d62b53669e08458a0
-lib64/libmmparser_lite.so|1589c6b8359901df6a48617c8c4ea6329c4f5349
+system/lib/libFileMux.so|e83aada073ee4ed9b27626b2ee4e051aa4f368df
+system/lib/libOmxMux.so|77de76c5047821dfdb1aaaef2cca2a10c5c4f067
+system/lib/libmmosal.so|082b3ab2d37ef5ddf2c0933b646e8fe6c58573c0
+system/lib/libmmparser_lite.so|f4f165c4e5983448d4094d1c21f6ef9f18d91e13
+system/lib64/libFileMux.so|fdd7753aa2c9fcda93d6b19e20c8e8827e96e887
+system/lib64/libmmosal.so|0950e626ba5a245914bf7e2d62b53669e08458a0
+system/lib64/libmmparser_lite.so|1589c6b8359901df6a48617c8c4ea6329c4f5349
 vendor/bin/vppservice|925b17a535efd5ae6be9891b298d8ed57bc9e3f2
 vendor/etc/init/vppservice.rc|9b7facad700305cc87a6afba598f582a4b2da5bd
 vendor/lib/libFileMux_proprietary.so|84829b028567d636692a2b0b09cb90ca3d36da18
@@ -889,8 +889,8 @@ vendor/lib/libqmi_cci.so|90e0f50ddb2a800118e0216271465bbb721198cd
 vendor/lib64/libqmi_cci.so|1df3024dd206ad2685e42573945a5965378258f3
 
 # QMI
-etc/permissions/qti_libpermissions.xml:product/etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
-etc/permissions/qti_permissions.xml:product/etc/permissions/qti_permissions.xml
+system/etc/permissions/qti_libpermissions.xml:product/etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+system/etc/permissions/qti_permissions.xml:product/etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/etc/sec_config
 vendor/lib64/libdiag.so
@@ -931,9 +931,9 @@ product/framework/qti-telephony-common.jar|91fe0ce296fc29bece6df81070b9b3b4ee41a
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|0c720bd2c3670347f4cf40eadc03701f0d7f65d1
 
 # RIL
--app/QtiTelephonyService/QtiTelephonyService.apk:product/app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/telephonyservice.xml:product/etc/permissions/telephonyservice.xml
-framework/QtiTelephonyServicelibrary.jar:product/framework/QtiTelephonyServicelibrary.jar
+-system/app/QtiTelephonyService/QtiTelephonyService.apk:product/app/QtiTelephonyService/QtiTelephonyService.apk
+system/etc/permissions/telephonyservice.xml:product/etc/permissions/telephonyservice.xml
+system/framework/QtiTelephonyServicelibrary.jar:product/framework/QtiTelephonyServicelibrary.jar
 vendor/bin/hw/qcrild
 vendor/bin/adpl
 vendor/bin/ATFWD-daemon
@@ -1227,48 +1227,48 @@ vendor/bin/cnss-daemon
 vendor/bin/wireless_init
 
 # WiFi Display - from polaris V11.0.5.0.QDGMIXM
-bin/wfdservice|65bfa86e06a2b74dd9b3e7716d6c059944449ae6
-etc/init/wfdservice.rc|117d11af28ceda7ecf6009d7dc10ffc6bda25fa5
-etc/wfdconfigsink.xml|75c1e192ccc6248a860958026950c6bc4f052ef7
--framework/WfdCommon.jar|d7bed13d2cb7690967eed4e4c238d530388d7cb3
-lib/libmmrtpdecoder.so|64f4e3c3ef85765a4d06dc7c6ded80befd55a57e
-lib/libmmrtpencoder.so|64c1cf95790a4126cf3ef773773cdcc1d8a6c28a
-lib/libwfdaac.so|387c32fdcf49b44bea0a3c92cdc8d34301697c80
-lib/libwfdavenhancements.so|8fd37088cc1d72ac7a290282bd2ce63d8e3d3158
-lib/libwfdclient.so|6e2dda88ff71b1643a15e045a6bd522c1b45275d
-lib/libwfdcommonutils.so|e2d6ad1d64ab8269af78e5eb42f3678e0987a70b
-lib/libwfdconfigutils.so|bb5ed727c05c406752e4ad65bcab99f997134c30
-lib/libwfdmminterface.so|7a5e89ac1307e53e20b432d4c87abff964ab8d3f
-lib/libwfdmmsink.so|566934097aad99e7d8276e51c84a5b00a3059438
-lib/libwfdmmsrc_system.so|f756d00fbba1365e035a1bebd915ae253979097c
-lib/libwfdrtsp.so|646d7d9f9a4523b78e75ca52c9d95afbfc698eab
-lib/libwfdservice.so|6a4657667ba58f4cab11cc58a30d24adb65f5451
-lib/libwfdsinksm.so|d56331dcec734361e28fe76167dd49acf6735702
-lib/libwfdsm.so|645ea3f78a17100ed497c0b94821e4f77f8eef7a
-lib/libwfduibcinterface.so|5c955247cf32817b1e05ac6106b55bb965680ba3
-lib/libwfduibcsink.so|1d6ae6697b4d5e449cd8b8f16aaaa9a73c675918
-lib/libwfduibcsinkinterface.so|247f286171a16570c7b06f97f41325fcc1b5eae7
-lib/libwfduibcsrc.so|9c4c5651e25f856e0f26c61793fe9fdc9270ce31
-lib/libwfduibcsrcinterface.so|59e2a7e9c3862cc43061c2e421abcfafd2e4d293
-lib64/libmmrtpdecoder.so|d23dcbd085a38fba3ab3cee984ee8a2e13e8afa2
-lib64/libmmrtpencoder.so|9a383316304a5e2b14b1fcb21e07d2033877ccf6
-lib64/libwfdclient.so|073f4e9c6d37144c4b7e16d92d591a20da22277e
-lib64/libwfdcommonutils.so|9ee0ac7cae42ea064c31ec4cb793d2b96db8fa8b
-lib64/libwfdconfigutils.so|df195ed92137ea7d13711b36b50d199d5f1f0fcb
-lib64/libwfdmminterface.so|e393a942a6fe909c271386822018d3ad439fc094
-lib64/libwfdmmsink.so|5339a1a9c51d2908d11be7f185be695ff6c0cfa5
-lib64/libwfdnative.so|a765888f8ac67057476145231bf747f71df78ce0
-lib64/libwfdrtsp.so|67c648c4821c1d8ffbdc6b372b0da412efd93f65
-lib64/libwfdsinksm.so|52ba2f17453a8ee3e9bc2cd83f7d9f9791cdc6f8
-lib64/libwfdsm.so|f960b4b586175c169b97112b8470f3b0e368ea91
-lib64/libwfduibcinterface.so|051ea3203604ec410b5a0e4addd353287528f2ad
-lib64/libwfduibcsink.so|0ac6d4cc0ab693cc372e9e5b1c5fa9537473caea
-lib64/libwfduibcsinkinterface.so|3e8caf1ba43ae09278050b79e2a34d9b008fd09a
-lib64/libwfduibcsrc.so|2bd9e6302ac1d1176926cc689baf8803dae7811e
-lib64/libwfduibcsrcinterface.so|41461182be8214617cb6ab63e9bc5d48c622fdad
--priv-app/WfdService/WfdService.apk|e2b5f733cfe72e9ba2a12ece80df66d6b31faaff
 product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so|d48e5dd8c5e1a50d64f1236ddc98817db47af368
 product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|86b173acf0fcaf716b462c879616bb623c7f541b
+system/bin/wfdservice|65bfa86e06a2b74dd9b3e7716d6c059944449ae6
+system/etc/init/wfdservice.rc|117d11af28ceda7ecf6009d7dc10ffc6bda25fa5
+system/etc/wfdconfigsink.xml|75c1e192ccc6248a860958026950c6bc4f052ef7
+-system/framework/WfdCommon.jar|d7bed13d2cb7690967eed4e4c238d530388d7cb3
+system/lib/libmmrtpdecoder.so|64f4e3c3ef85765a4d06dc7c6ded80befd55a57e
+system/lib/libmmrtpencoder.so|64c1cf95790a4126cf3ef773773cdcc1d8a6c28a
+system/lib/libwfdaac.so|387c32fdcf49b44bea0a3c92cdc8d34301697c80
+system/lib/libwfdavenhancements.so|8fd37088cc1d72ac7a290282bd2ce63d8e3d3158
+system/lib/libwfdclient.so|6e2dda88ff71b1643a15e045a6bd522c1b45275d
+system/lib/libwfdcommonutils.so|e2d6ad1d64ab8269af78e5eb42f3678e0987a70b
+system/lib/libwfdconfigutils.so|bb5ed727c05c406752e4ad65bcab99f997134c30
+system/lib/libwfdmminterface.so|7a5e89ac1307e53e20b432d4c87abff964ab8d3f
+system/lib/libwfdmmsink.so|566934097aad99e7d8276e51c84a5b00a3059438
+system/lib/libwfdmmsrc_system.so|f756d00fbba1365e035a1bebd915ae253979097c
+system/lib/libwfdrtsp.so|646d7d9f9a4523b78e75ca52c9d95afbfc698eab
+system/lib/libwfdservice.so|6a4657667ba58f4cab11cc58a30d24adb65f5451
+system/lib/libwfdsinksm.so|d56331dcec734361e28fe76167dd49acf6735702
+system/lib/libwfdsm.so|645ea3f78a17100ed497c0b94821e4f77f8eef7a
+system/lib/libwfduibcinterface.so|5c955247cf32817b1e05ac6106b55bb965680ba3
+system/lib/libwfduibcsink.so|1d6ae6697b4d5e449cd8b8f16aaaa9a73c675918
+system/lib/libwfduibcsinkinterface.so|247f286171a16570c7b06f97f41325fcc1b5eae7
+system/lib/libwfduibcsrc.so|9c4c5651e25f856e0f26c61793fe9fdc9270ce31
+system/lib/libwfduibcsrcinterface.so|59e2a7e9c3862cc43061c2e421abcfafd2e4d293
+system/lib64/libmmrtpdecoder.so|d23dcbd085a38fba3ab3cee984ee8a2e13e8afa2
+system/lib64/libmmrtpencoder.so|9a383316304a5e2b14b1fcb21e07d2033877ccf6
+system/lib64/libwfdclient.so|073f4e9c6d37144c4b7e16d92d591a20da22277e
+system/lib64/libwfdcommonutils.so|9ee0ac7cae42ea064c31ec4cb793d2b96db8fa8b
+system/lib64/libwfdconfigutils.so|df195ed92137ea7d13711b36b50d199d5f1f0fcb
+system/lib64/libwfdmminterface.so|e393a942a6fe909c271386822018d3ad439fc094
+system/lib64/libwfdmmsink.so|5339a1a9c51d2908d11be7f185be695ff6c0cfa5
+system/lib64/libwfdnative.so|a765888f8ac67057476145231bf747f71df78ce0
+system/lib64/libwfdrtsp.so|67c648c4821c1d8ffbdc6b372b0da412efd93f65
+system/lib64/libwfdsinksm.so|52ba2f17453a8ee3e9bc2cd83f7d9f9791cdc6f8
+system/lib64/libwfdsm.so|f960b4b586175c169b97112b8470f3b0e368ea91
+system/lib64/libwfduibcinterface.so|051ea3203604ec410b5a0e4addd353287528f2ad
+system/lib64/libwfduibcsink.so|0ac6d4cc0ab693cc372e9e5b1c5fa9537473caea
+system/lib64/libwfduibcsinkinterface.so|3e8caf1ba43ae09278050b79e2a34d9b008fd09a
+system/lib64/libwfduibcsrc.so|2bd9e6302ac1d1176926cc689baf8803dae7811e
+system/lib64/libwfduibcsrcinterface.so|41461182be8214617cb6ab63e9bc5d48c622fdad
+-system/priv-app/WfdService/WfdService.apk|e2b5f733cfe72e9ba2a12ece80df66d6b31faaff
 vendor/bin/wfdhdcphalservice|0b663ad61e84e95676a7e9512431c3a758c6a169
 vendor/bin/wfdvndservice|b7650315618507f3bbbb8f67e42b11c74af91940
 vendor/bin/wifidisplayhalservice|26f800b162f6142d55f523f0c1624b91e16d1d33
