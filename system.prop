@@ -1,0 +1,26 @@
+# Bluetooth
+persist.bluetooth.a2dp_offload.disabled=false
+persist.vendor.bt.a2dp.aac_whitelist=false
+ro.bluetooth.a2dp_offload.supported=true
+ro.bluetooth.library_name=libbluetooth_qti.so
+
+# Graphics
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.has_HDR_display=true
+ro.surface_flinger.has_wide_color_display=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=2
+ro.surface_flinger.max_virtual_display_dimension=4096
+ro.surface_flinger.vsync_event_phase_offset_ns=1000000
+ro.surface_flinger.vsync_sf_event_phase_offset_ns=1000000
+
+# OEM Unlock
+ro.oem_unlock_supported=1
+
+# QC framework value-adds
+ro.vendor.qti.va_aosp.support=1
+
+# RIL
+persist.sys.fflag.override.settings_network_and_internet_v2=true
+
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true

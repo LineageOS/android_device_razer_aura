@@ -78,8 +78,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # Properties
--include $(LOCAL_PATH)/props.mk
-
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # Screen density
