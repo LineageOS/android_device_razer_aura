@@ -91,6 +91,9 @@ vendor.display.qdcm.mode_combine=1
 # DRM
 drm.service.enabled=true
 
+# fastbootd
+ro.fastbootd.available=true
+
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
