@@ -29,10 +29,6 @@
 #
 #
 
-if [ -f /sys/class/android_usb/f_mass_storage/lun/nofua ]; then
-    echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
-fi
-
 # Clear vendor USB config because it is only needed for debugging
 setprop persist.vendor.usb.config ""
 
