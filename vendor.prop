@@ -220,6 +220,7 @@ persist.timed.enable=true
 
 # USB
 vendor.usb.diag.func.name=diag
+vendor.usb.use_ffs_mtp=0
 
 # Wi-Fi
 ro.boot.wificountrycode=00
