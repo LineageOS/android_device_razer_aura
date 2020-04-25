@@ -8,6 +8,9 @@ ro.bluetooth.a2dp_offload.supported=true
 # Charger
 ro.charger.enable_suspend=true
 
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
+
 # Graphics
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_HDR_display=true
