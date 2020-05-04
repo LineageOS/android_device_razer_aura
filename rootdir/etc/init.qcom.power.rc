@@ -153,9 +153,6 @@ on enable-low-power
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 1000
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 10000
 
-    # Enable oom_reaper
-    write /sys/module/lowmemorykiller/parameters/oom_reaper 1
-
     # Enable bus-dcvs
     write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
     write /sys/class/devfreq/soc:qcom,cpubw/polling_interval 50
