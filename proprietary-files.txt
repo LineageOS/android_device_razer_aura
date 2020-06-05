@@ -61,8 +61,6 @@ vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libshoebox.so
 
 # Bluetooth - from polaris V11.0.5.0.QDGMIXM
-system/lib/libbtconfigstore.so|0ebccdeaf05a82cf5dbf54638189325f438b9e62
-system/lib64/libbtconfigstore.so|715e204a49e46992ff55dfa81965f3ee2cabd1e2
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|74b5d2e7867e34c0e358cf8d82f3bfea58e97c28
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
 vendor/lib/btaudio_offload_if.so|622fc26c4802e179e84789c83334154fe1cd247f
@@ -74,7 +72,6 @@ vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|854ab4b4a51b02084bed
 vendor/lib/libbluetooth_audio_session_qti.so|8dc3b127a53015c36cb108d7f27deba7b26825b6
 vendor/lib/libbtnv.so|c20530560bc7d3b64215ef4f588c5924230efaac
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so|2785e77499639b978dec65fbbb612048a0e5388d
-vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so|0045e541952186eeff34486dadc5a8d3219af19a
 vendor/lib64/btaudio_offload_if.so|36d90d3479517b3b334538be3305dc0e0f84f7ac
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|8e4d152aacd51ced20db62faf99c67fe7478128e
 vendor/lib64/hw/audio.bluetooth_qti.default.so|e5431638939be5867c14f040eee2d2e595bc5d2b
@@ -84,7 +81,6 @@ vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|5de18d2d6621a052e1
 vendor/lib64/libbluetooth_audio_session_qti.so|cf33442de02bf2fe3a715985ae3bf8246b3e13e6
 vendor/lib64/libbtnv.so|395aad107d06bbff6dd2277c627a961a58ea728e
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|1b8ea7096ded35acef0bbc1a25840c0b1c12be04
-vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so|9425f3b3d1b27cf1342499dd80bbac2d58a1b3f0
 
 # ANT+
 system/lib64/com.qualcomm.qti.ant@1.0.so
