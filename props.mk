@@ -98,6 +98,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.bluetooth.a2dp_offload.disabled=false \
+    persist.vendor.bt.a2dp.aac_whitelist=false \
     ro.bluetooth.a2dp_offload.supported=true \
     ro.bluetooth.library_name=libbluetooth_qti.so
 
