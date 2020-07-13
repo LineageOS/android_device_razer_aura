@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-BOARD_VENDOR := xiaomi
+BOARD_VENDOR := razer
 
-DEVICE_PATH := device/xiaomi/dipper
+DEVICE_PATH := device/razer/aura
 
 # Architecture
 TARGET_ARCH := arm64
@@ -37,9 +37,9 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_ARCH := arm64
 ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_CLANG_COMPILE := true
-  TARGET_KERNEL_CONFIG := dipper_defconfig
+  TARGET_KERNEL_CONFIG := aura_defconfig
   TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-  TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm845
+  TARGET_KERNEL_SOURCE := kernel/razer/sdm845
 endif
 
 # Platform
@@ -47,7 +47,7 @@ TARGET_BOARD_PLATFORM := sdm845
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno630
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := dipper
+TARGET_OTA_ASSERT_DEVICE := aura
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -175,4 +175,4 @@ WIFI_HIDL_FEATURE_AWARE := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # Inherit from the proprietary version
--include vendor/xiaomi/dipper/BoardConfigVendor.mk
+-include vendor/razer/aura/BoardConfigVendor.mk
