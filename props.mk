@@ -14,6 +14,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=11 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
+    ro.vendor.audio.soundfx.type=mi \
     ro.vendor.audio.soundfx.usb=true \
     vendor.audio.adm.buffering.ms=6 \
     vendor.audio.dolby.ds2.enabled=false \
@@ -50,6 +51,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=true \
+    persist.camera.sat.fallback.dist=45 \
+    persist.camera.sat.fallback.dist.d=5 \
+    persist.camera.sat.fallback.luxindex=405 \
+    persist.camera.sat.fallback.lux.d=20 \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
 # CNE and DPM
@@ -66,6 +71,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
 
+# Display density
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=440
+
 # Display post-processing
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.cabl=0 \
@@ -73,15 +82,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg \
     ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg \
     ro.vendor.display.cabl=2 \
-    ro.vendor.display.sensortype=2
+    ro.vendor.display.sensortype=2 \
+    vendor.display.enable_default_color_mode=1
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+# Fingerprint
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.fp.fpc=true \
+    ro.hardware.fp.goodix=true
+
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp \
+
+# GNSS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.flp=brcm \
+    ro.hardware.gps=brcm
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -129,6 +149,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Netflix custom property
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.netflix.bsp_rev=Q845-05000-1
+
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.nfc_nci=nqx.default \
+    ro.se.type=HCE,UICC
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
