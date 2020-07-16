@@ -570,10 +570,6 @@ vendor/firmware/a630_zap.mdt
 vendor/lib64/hw/vulkan.sdm845.so
 vendor/lib/hw/vulkan.sdm845.so
 
-# Hotword enrollment
--priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk;PRESIGNED
--priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk;PRESIGNED
-
 # IMS
 -app/uceShimService/uceShimService.apk
 etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
