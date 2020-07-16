@@ -27,9 +27,9 @@
     </reference>
     <reference name="DEFAULT_SYSTEM_VOLUME_CURVE">
     <!-- Default System reference Volume Curve -->
-        <point>1,-3200</point>
-        <point>33,-2400</point>
-        <point>73,-1800</point>
+        <point>1,-2400</point>
+        <point>33,-1800</point>
+        <point>66,-1200</point>
         <point>100,-600</point>
     </reference>
     <reference name="DEFAULT_MEDIA_VOLUME_CURVE">
@@ -44,7 +44,7 @@
         <point>1,-4950</point>
         <point>33,-3350</point>
         <point>66,-1700</point>
-        <point>100,-600</point>
+        <point>100,0</point>
     </reference>
     <reference name="DEFAULT_DEVICE_CATEGORY_SPEAKER_VOLUME_CURVE">
     <!-- Default is Speaker Media Volume Curve -->
