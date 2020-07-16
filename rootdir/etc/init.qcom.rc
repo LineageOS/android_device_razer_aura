@@ -666,12 +666,6 @@ service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
 on property:sys.shutdown.requested=*
     stop vendor.cnss-daemon
 
-service vendor.nv_mac /vendor/bin/nv_mac
-    class late_start
-    user system
-    group system inet net_admin wifi net_raw
-    oneshot
-
 service mlid /vendor/bin/mlid
     class late_start
     user gps
