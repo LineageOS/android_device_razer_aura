@@ -857,15 +857,15 @@ vendor/lib/libqti-util.so
 vendor/lib/vendor.qti.hardware.perf@1.0.so
 
 # Power-off alarm
--vendor/app/PowerOffAlarm/PowerOffAlarm.apk
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
-vendor/bin/power_off_alarm
-vendor/bin/poweroffm64
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so
-vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so
-vendor/lib/vendor.qti.hardware.alarm@1.0.so
+#-vendor/app/PowerOffAlarm/PowerOffAlarm.apk
+#vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
+#vendor/bin/power_off_alarm
+#vendor/bin/poweroffm64
+#vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+#vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
+#vendor/lib64/vendor.qti.hardware.alarm@1.0.so
+#vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so
+#vendor/lib/vendor.qti.hardware.alarm@1.0.so
 
 # QDCM calibration data
 vendor/etc/qdcm_calib_data_ss_notch_fhd_cmd_dsi_panel.xml
