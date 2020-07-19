@@ -1,5 +1,6 @@
-#!/vendor/bin/sh
-# Copyright (c) 2015,2018 The Linux Foundation. All rights reserved.
+#! /vendor/bin/sh
+
+# Copyright (c) 2013-2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,20 +27,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-#
-# Function to start sensors for SSC enabled platforms
-#
-start_sensors()
-{
-    sscrpcd_status=`getprop init.svc.vendor.sensors`
-    chmod -h 664 /mnt/vendor/persist/sensors/sensors_settings
-    chown -h -R system.system /mnt/vendor/persist/sensors
-    start vendor.sensors.qti
+# Make sure both rild, qcrild are not running at same time.
+# This is possible with vanilla aosp system image.
+stop ril-daemon
+stop vendor.ril-daemon
 
-    # Only for SLPI
-    if [ -c /dev/msm_dsps -o -c /dev/sensors ] && [ -z "$sscrpcd_status" ]; then
-        start vendor.sensors
-    fi
-}
-
-start_sensors
+start vendor.qcrild

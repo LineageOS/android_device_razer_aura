@@ -1,0 +1,86 @@
+import /vendor/etc/init/hw/init.rc2.target.rc
+
+on post-fs-data && property:ro.treble.enabled=true
+    # Mounting of securefs is moved to 'on emmc-fs' and 'on fs' sections
+    # We chown/chmod /vendor/securefs again so because mount is run as root + defaults
+    chown system system /vendor/securefs
+    chmod 0771 /vendor/securefs
+    restorecon_recursive /vendor/securefs
+
+on late-fs
+    # boot time fs tune
+    write /sys/block/sda/queue/iostats 0
+    write /sys/block/sda/queue/read_ahead_kb 2048
+    write /sys/block/sda/queue/nr_requests 256
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/dm-1/queue/read_ahead_kb 2048
+
+on property:sys.boot_completed=1
+    # end boot time fs tune
+    # alex.naidis@paranoidandroid.co Use 128kb to prevent page thrashing
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/nr_requests 128
+
+service wireless-init /system/vendor/bin/wireless_init -i
+    class main
+    user system
+    group system
+    oneshot
+
+on post-fs-data
+    mkdir /data/fpc 0700 system system
+    chown system system /sys/devices/platform/soc/soc:fpc1020/irq
+    chown system system /sys/devices/platform/soc/soc:fpc1020/wakeup_enable
+
+on property:gsm.sim.operator.numeric=50502
+    setprop ro.com.google.clientidbase.am android-optus-au-revc
+    setprop ro.com.google.clientidbase.ms android-optus-au-revc
+
+on property:gsm.sim.operator.numeric=50590
+    setprop ro.com.google.clientidbase.am android-optus-au-revc
+    setprop ro.com.google.clientidbase.ms android-optus-au-revc
+
+on post-fs-data
+    # Workaround for a device mapper bug
+    write /sys/block/dm-0/queue/iosched/slice_idle 0
+    write /sys/block/dm-1/queue/iosched/slice_idle 0
+    write /sys/block/dm-2/queue/iosched/slice_idle 0
+    write /sys/block/dm-3/queue/iosched/slice_idle 0
+
+# Default Sub System Restart (SSR) Level
+#   SYSTEM: Do host reboot when ssr
+#  RELATED: No host reboot when ssr
+on boot
+    write /sys/bus/msm_subsys/devices/subsys7/restart_level RELATED
+
+service e2p-sh /vendor/bin/init.sensor.e2pwrite.sh
+    class late_start
+    user root
+    oneshot
+
+service led-init /vendor/bin/sh /vendor/bin/init.aura.led_init.sh
+    class main
+    user root
+    oneshot
+
+on boot
+    chown system system /proc/AllHWList/tp_self_test
+    chown system system /proc/AllHWList/tp_upgrade
+    chown system system /proc/AllHWList/tp_alt_rst
+    chown system system /proc/AllHWList/tp_alt_st_count
+    chown system system /proc/AllHWList/tp_alt_st_enable
+    chown system system /proc/AllHWList/tp_double_tap
+    chown system system /proc/AllHWList/tp_prox_status
+
+    chmod 644 /proc/AllHWList/tp_self_test
+    chmod 444 /proc/AllHWList/tp_fw_ver
+    chmod 644 /proc/AllHWList/tp_upgrade
+    chmod 644 /proc/AllHWList/tp_alt_rst
+    chmod 644 /proc/AllHWList/tp_alt_st_count
+    chmod 644 /proc/AllHWList/tp_alt_st_enable
+    chmod 664 /proc/AllHWList/tp_double_tap
+    chmod 644 /proc/AllHWList/tp_prox_status
+
+on post-fs-data
+    mkdir /data/misc/touch 0770 system system
+

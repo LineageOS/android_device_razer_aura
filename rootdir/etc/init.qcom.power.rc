@@ -45,8 +45,6 @@ on init
     # Disable powersaving
     write /sys/module/lpm_levels/parameters/sleep_disabled 1
 
-    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
-
     # Add a cpuset for the camera daemon
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-7
@@ -64,11 +62,13 @@ on boot
     write /dev/cpuset/foreground/boost/cpus 0-3
     write /dev/cpuset/background/cpus 0-3
     write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/little/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
+    write /dev/cpuset/little/cpus 0-7
 
 on property:init.svc.vendor.charger=running
     setprop persist.sys.usb.config mass_storage
@@ -99,8 +99,6 @@ on property:init.svc.vendor.charger=running
     mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
 
     start vendor.hvdcp_opti
-    start vendor.power_off_alarm
-    start vendor.poweroffm64
     mount tmpfs tmpfs /data
     start vendor.thermal-engine
     setprop vendor.usb.controller a600000.dwc3
@@ -111,6 +109,14 @@ on enable-low-power
     # When a CPU is isolated/hotplugged, the IRQ affinity is adjusted
     # to one of the CPU from the default IRQ affinity mask.
     write /proc/irq/default_smp_affinity "f"
+
+    # alex.naidis@paranoidandroid.co IRQ affinity tuning
+    # msm_drm
+    write /proc/irq/7/smp_affinity_list 2
+    # synaptics_dsx
+    write /proc/irq/287/smp_affinity_list 0-2
+    # kgsl-3d0
+    write /proc/irq/493/smp_affinity_list 1
 
     # Core control parameters
     write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
@@ -129,25 +135,25 @@ on enable-low-power
 
     # Configure governor settings for little cluster
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/rate_limit_us 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq 1209600
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq 1228800
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl 1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 576000
 
     # Configure governor settings for big cluster
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/rate_limit_us 0
-    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq 1574400
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq 1689600
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl 1
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 120
-
-    # Set up powerkey boost freq
-    write /sys/module/cpu_boost/parameters/powerkey_input_boost_freq "0:0 1:0 2:0 3:0 4:2323200 5:0 6:0 7:0"
-    write /sys/module/cpu_boost/parameters/powerkey_input_boost_ms 400
+    write /sys/module/cpu_boost/parameters/input_boost_ms 150
 
     # Limit the min frequency to 825MHz
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 825000
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 825600
+
+    # Apply smart frequency rate limiting
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 10000
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 10000
 
     # Enable oom_reaper
     write /sys/module/lowmemorykiller/parameters/oom_reaper 1
@@ -155,7 +161,6 @@ on enable-low-power
     # Enable bus-dcvs
     write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
     write /sys/class/devfreq/soc:qcom,cpubw/polling_interval 50
-    write /sys/class/devfreq/soc:qcom,cpubw/min_freq 1525
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/mbps_zones "2288 4577 6500 8132 9155 10681"
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/sample_ms 4
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/io_percent 50
@@ -167,7 +172,6 @@ on enable-low-power
 
     write /sys/class/devfreq/soc:qcom,llccbw/governor "bw_hwmon"
     write /sys/class/devfreq/soc:qcom,llccbw/polling_interval 50
-    write /sys/class/devfreq/soc:qcom,llccbw/min_freq 1525
     write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/mbps_zones "1720 2929 3879 5931 6881"
     write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/sample_ms 4
     write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/io_percent 80
@@ -208,9 +212,8 @@ on enable-low-power
     # Set cpuset parameters
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-2
-    write /dev/cpuset/foreground/boost/cpus 4-7
-    write /dev/cpuset/foreground/cpus 0-2,4-7
-    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/little/cpus 0-3
 
     # Turn off scheduler boost at the end
     write /proc/sys/kernel/sched_boost 0
@@ -229,16 +232,8 @@ on enable-low-power
     # Turn on sleep modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
-    # Enable UFS powersaving
-    write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkscale_enable 1
-    write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 1
-    write /sys/devices/platform/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
-
     write /proc/sys/vm/swappiness 100
     write /proc/sys/vm/watermark_scale_factor 120
-
-    # Set LMK minfree
-    write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,27648,32256,85296,120640"
 
     # Post-setup services
     setprop vendor.post_boot.parsed 1
@@ -258,14 +253,3 @@ service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
-
-service vendor.power_off_alarm /vendor/bin/power_off_alarm
-    class core
-    group system
-    disabled
-    oneshot
-
-service vendor.poweroffm64 /vendor/bin/poweroffm64
-    class late_start
-    oneshot
-    seclabel u:r:poweroffm64:s0
