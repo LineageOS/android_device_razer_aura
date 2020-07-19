@@ -162,6 +162,7 @@ PRODUCT_PACKAGES += \
 
 # Device init scripts
 PRODUCT_PACKAGES += \
+    init.aura.led_init.sh \
     init.msm.usb.configfs.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
@@ -173,6 +174,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qti.qseecomd.sh \
     init.recovery.qcom.rc \
+    init.sensor.e2pwrite.sh \
     init.target.rc \
     ueventd.qcom.rc
 
