@@ -146,7 +146,7 @@ BUILD_WITHOUT_VENDOR := true
 
 # Recovery
 TARGET_RECOVERY_DENSITY := xxhdpi
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 
 # RenderScript
