@@ -2,9 +2,6 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
-    audio.offload.min.duration.secs=20 \
-    persist.vendor.audio.button_jack.profile=volume \
-    persist.vendor.audio.button_jack.switch=0 \
     persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
@@ -12,30 +9,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.af.client_heap_size_kbyte=7168 \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=11 \
-    ro.vendor.audio.sdk.fluencetype=fluence \
+    ro.vendor.audio.sdk.fluencetype=fluencepro \
     ro.vendor.audio.sdk.ssr=false \
-    ro.vendor.audio.soundfx.type=mi \
-    ro.vendor.audio.soundfx.usb=true \
-    vendor.audio.adm.buffering.ms=6 \
+    vendor.audio.adm.buffering.ms=2 \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.enable.dp.for.voice=false \
     vendor.audio.flac.sw.decoder.24bit=true \
     vendor.audio_hal.in_period_size=144 \
-    vendor.audio.hal.output.suspend.supported=false \
+    vendor.audio.hal.output.suspend.supported=true \
     vendor.audio_hal.period_size=192 \
     vendor.audio_hal.period_multiplier=3 \
-    vendor.audio.hw.aac.encoder=false \
+    vendor.audio.hw.aac.encoder=true \
     vendor.audio.noisy.broadcast.delay=600 \
     vendor.audio.offload.buffer.size.kb=32 \
     vendor.audio.offload.gapless.enabled=true \
     vendor.audio.offload.multiaac.enable=true \
-    vendor.audio.offload.multiple.enabled=true \
+    vendor.audio.offload.multiple.enabled=false \
     vendor.audio.offload.passthrough=false \
     vendor.audio.offload.pstimeout.secs=3 \
-    vendor.audio.offload.track.enable=false \
+    vendor.audio.offload.track.enable=true \
     vendor.audio.parser.ip.buffer.size=262144 \
-    vendor.voice.path.for.pcm.voip=false \
+    vendor.voice.path.for.pcm.voip=true \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.tunnel.encode=false \
     vendor.audio.use.sw.alac.decoder=true \
@@ -43,47 +38,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.bt.enable.splita2dp=true \
-    vendor.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera.disable_zsl_mode=true \
-    persist.camera.sat.fallback.dist=45 \
-    persist.camera.sat.fallback.dist.d=5 \
-    persist.camera.sat.fallback.luxindex=405 \
-    persist.camera.sat.fallback.lux.d=20 \
+    camera.disable_zsl_mode=1 \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
-
-# CNE and DPM
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.cne.feature=1 \
-    persist.vendor.dpm.feature=1 \
-    persist.vendor.dpm.loglevel=0 \
-    persist.vendor.dpm.nsrm.bkg.evt=3955
-
-# Data modules
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.df.dev_name=rmnet_usb0 \
-    persist.vendor.data.profile_update=true \
-    persist.vendor.data.mode=concurrent \
-    ro.vendor.use_data_netmgrd=true
 
 # Display density
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=560
+    ro.sf.lcd_density=480
 
 # Display post-processing
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.cabl=0 \
-    ro.vendor.display.ad=1 \
-    ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg \
-    ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg \
-    ro.vendor.display.cabl=2 \
-    ro.vendor.display.sensortype=2 \
-    vendor.display.enable_default_color_mode=1
+    ro.vendor.display.cabl=0 \
+    vendor.display.enable_default_color_mode=0
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -93,99 +62,58 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp \
 
-# GNSS
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.flp=brcm \
-    ro.hardware.gps=brcm
-
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=0 \
-    debug.sf.disable_backpressure=1 \
-    debug.sf.enable_hwc_vds=1 \
-    debug.sf.latch_unsignaled=1 \
+    debug.sf.latch_unsignaled=0 \
     debug.sf.hw=0 \
     persist.demo.hdmirotationlock=false \
-    persist.sys.sf.native_mode=0 \
-    ro.opengles.version=196610 \
-    sdm.debug.disable_inline_rotator=1 \
-    sdm.debug.disable_inline_rotator_secure=1
-
-# Listen
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.audio.soundtrigger=sva \
-    ro.audio.soundtrigger.lowpower=true \
-    ro.vendor.audio.soundtrigger=sva \
-    ro.vendor.audio.soundtrigger.lowpower=true \
-    ro.vendor.audio.soundtrigger.20.key.level=40 \
-    ro.vendor.audio.soundtrigger.20.user.level=60 \
-    ro.vendor.audio.soundtrigger.20.key.adsp.level=40 \
-    ro.vendor.audio.soundtrigger.20.user.adsp.level=40 \
-    ro.vendor.audio.soundtrigger.gmm.level=50 \
-    ro.vendor.audio.soundtrigger.gmm.user.level=10 \
-    ro.vendor.audio.soundtrigger.cnn.level=27 \
-    ro.vendor.audio.soundtrigger.vop.level=10 \
-    ro.vendor.audio.soundtrigger.gmm.adsp.level=50 \
-    ro.vendor.audio.soundtrigger.gmm.user.adsp.level=10 \
-    ro.vendor.audio.soundtrigger.cnn.adsp.level=27 \
-    ro.vendor.audio.soundtrigger.vop.adsp.level=10 \
-    ro.vendor.audio.soundtrigger.training.level=60 \
-    ro.vendor.audio.soundtrigger.hist.duration=1500
+    ro.opengles.version=196610
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.video=true \
-    media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-
-# Memory optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true
-
-# Netflix custom property
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.netflix.bsp_rev=Q845-05000-1
+    audio.offload.video=true
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.nfc_nci=nqx.default \
-    ro.se.type=HCE,UICC
+    ro.hardware.nfc_nci=nqx.default
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.qti.core_ctl_min_cpu=2 \
-    ro.vendor.qti.core_ctl_max_cpu=4 \
-    ro.vendor.qti.sys.fw.bg_apps_limit=60 \
-    vendor.iop.enable_prefetch_ofr=0 \
-    vendor.iop.enable_uxe=0
-
-# RCS and IMS
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=1 \
-    persist.rcs.supported=0 \
-    persist.vendor.ims.disableUserAgent=0
+    ro.vendor.qti.sys.fw.bg_apps_limit=38
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    DEVICE_PROVISIONED=1 \
-    persist.radio.multisim.config=dsds \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.flexmap_type=none \
-    persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.redir_party_num=1 \
-    persist.vendor.radio.report_codec=1 \
     persist.vendor.radio.sib16_support=1 \
-    ril.subscription.types=NV,RUIM \
-    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
-    ro.com.android.dataroaming=true \
-    ro.telephony.default_network=22,22 \
-    telephony.lteOnCdmaDevice=1
+    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
-# SSR
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.ssr.enable_ramdumps=0 \
-    persist.vendor.ssr.restart_level=ALL_ENABLE
+    persist.backup.ntpServer="0.pool.ntp.org" \
+    persist.backup.ntpServer=0.pool.ntp.org \
+    persist.vendor.audio.fluence.audiorec=false \
+    persist.vendor.bt.a2dp_offload_cap=sbc-aac \
+    persist.vendor.qcomsysd.enabled=1 \
+    persist.vendor.qti.games.gt.prof=1 \
+    qemu.hw.mainkeys=0 \
+    ro.build.shutdown_timeout=6 \
+    ro.com.android.dataroaming=true \
+    ro.com.google.clientidbase=android-razer \
+    ro.com.google.gmsversion=9_201907 \
+    ro.com.widevine.cachesize=16777216 \
+    ro.cp_system_other_odex=1 \
+    ro.opa.eligible_device=true \
+    ro.setupwizard.mode=OPTIONAL \
+    ro.vendor.at_library=libqti-at.so \
+    ro.vendor.bt.bdaddr_path=/sys/module/fih_mfd/parameters/bt_mac \
+    ro.vendor.razer.theme.version=1 \
+    ro.wifi.power.reduction=1 \
+    setupwizard.feature.predeferred_enabled=false \
+    vendor.display.disable_fbid_cache=1 \
+    vendor.gatekeeper.disable_spu=true
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.oem_unlock_supported=1
