@@ -1,0 +1,5 @@
+# Default Sub System Restart (SSR) Level
+#   SYSTEM: Do host reboot when ssr
+#  RELATED: No host reboot when ssr
+on boot
+  write /sys/bus/msm_subsys/devices/subsys7/restart_level RELATED

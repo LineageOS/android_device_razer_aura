@@ -27,54 +27,267 @@
 #
 #
 
-on init
-    write /sys/class/leds/ir/max_brightness 63
+on early-init
+    write /proc/sys/kernel/sched_boost 1
+    symlink /data/tombstones /tombstones
 
-on boot
-    chown gps system /sys/devices/platform/soc/890000.spi/spi_master/spi32766/spi32766.0/nstandby
-    chmod 0774 /sys/devices/platform/soc/890000.spi/spi_master/spi32766/spi32766.0/nstandby
-    chown gps system /dev/bbd_control
-    chmod 0774 /dev/bbd_control
-    chown gps system /dev/bbd_patch
-    chmod 0774 /dev/bbd_patch
-    chown gps system /dev/bbd_sensor
-    chmod 0774 /dev/bbd_sensor
+on init
+    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
+    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
+    write /dev/stune/schedtune.colocate 0
+    write /dev/stune/background/schedtune.colocate 0
+    write /dev/stune/system-background/schedtune.colocate 0
+    write /dev/stune/foreground/schedtune.colocate 0
+    write /dev/stune/top-app/schedtune.colocate 1
+    #write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+
+# Add a cpuset for the camera daemon
+# We want all cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0-7
+    write /dev/cpuset/camera-daemon/mems 0
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+    chmod 0660 /dev/cpuset/camera-daemon/tasks
+
+on fs
+    wait /dev/block/platform/soc/1d84000.ufshc
+    symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
+    mount_all /vendor/etc/fstab.qcom
+    chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    #swapon_all /vendor/etc/fstab.qcom
+    restorecon_recursive /mnt/vendor/persist
+    mkdir /mnt/vendor/persist/data 0700 system system
+
+on post-fs
+    # set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
+
+    start vendor.qseecomd
+    exec - system system -- /vendor/bin/init.qti.qseecomd.sh
+    write /dev/ipa 1
+
+service sec_nvm /vendor/bin/sec_nvm
+    class core
+    user system
+    group system
 
 on post-fs-data
-    mkdir /data/vendor/gps
-    mkdir /data/vendor/gps/log
-    mkdir /data/vendor/gps/log/gps
-    mkdir /data/vendor/gps/log/lhd
-    chown gps system /data/vendor/gps
-    chown gps system /data/vendor/gps/log
-    chown gps system /data/vendor/gps/log/gps
-    chown gps system /data/vendor/gps/log/lhd
-    chown gps system /dev/ttyBCM
-    chmod 775 /data/vendor/gps
-    chmod 775 /data/vendor/gps/log
-    chmod 770 /data/vendor/gps/log/gps
-    chmod 770 /data/vendor/gps/log/lhd
-    chmod 775 /dev/ttyBCM
+    mkdir /data/tombstones 0771 system system
+    mkdir /tombstones/modem 0771 system system
+    mkdir /tombstones/lpass 0771 system system
+    mkdir /tombstones/wcnss 0771 system system
+    mkdir /tombstones/dsps 0771 system system
+    mkdir /data/vendor/hbtp 0750 system system
+    mkdir /data/vendor/tloc 0700 system drmrpc
+    mkdir /data/vendor/nnhal 0700 system system
 
-service glgps /vendor/bin/glgps -c /vendor/etc/gpsconfig.xml
-    socket gps seqpacket 660 gps system
-    class late_start
-    user gps
-    group system inet sdcard_rw wakelock
-    ioprio rt 0
+# For cpusets initialize for Silver Only first and then Silver + Gold
+# Silver Only configuration cannot work with 0-7
+on boot
+    chown system system /sys/kernel/hbtp/display_pwr
+    start rmt_storage
+    start rfs_access
+    write /dev/cpuset/top-app/cpus 0-3
+    write /dev/cpuset/audio-app/cpus 1-2
+    write /dev/cpuset/foreground/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 0-3
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/little/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/boost/cpus 0-7
+    write /dev/cpuset/background/cpus 0-7
+    write /dev/cpuset/system-background/cpus 0-7
+    write /dev/cpuset/little/cpus 0-7
 
-service ignss_1_1 /vendor/bin/ignss_1_1
+####Regionalization config and prop files####
+    chmod 0644 /mnt/vendor/persist/speccfg/spec
+    chmod 0644 /mnt/vendor/persist/speccfg/devicetype
+    chmod 0644 /mnt/vendor/persist/speccfg/mbnversion
+    chmod 0644 /mnt/vendor/persist/speccfg/.not_triggered
+    chmod 0644 /mnt/vendor/persist/speccfg/vendor_ro.prop
+    chmod 0644 /mnt/vendor/persist/speccfg/vendor_persist.prop
+    chmod 0644 /mnt/vendor/persist/speccfg/submask
+    chmod 0644 /mnt/vendor/persist/speccfg/partition
+    chown system system /mnt/vendor/persist/speccfg/spec
+    chown system system /mnt/vendor/persist/speccfg/devicetype
+    chown system system /mnt/vendor/persist/speccfg/mbnversion
+    chown system system /mnt/vendor/persist/speccfg/.not_triggered
+    chown system system /mnt/vendor/persist/speccfg/vendor_ro.prop
+    chown system system /mnt/vendor/persist/speccfg/vendor_persist.prop
+    chown system system /mnt/vendor/persist/speccfg/submask
+    chown system system /mnt/vendor/persist/speccfg/partition
+
+#USB controller configuration
+    setprop vendor.usb.rndis.func.name "gsi"
+    setprop vendor.usb.rmnet.func.name "gsi"
+    setprop vendor.usb.rmnet.inst.name "rmnet"
+    setprop vendor.usb.dpl.inst.name "dpl"
+    setprop vendor.usb.controller a600000.dwc3
+    setprop sys.usb.configfs 1
+
+on boot && property:persist.vendor.usb.controller.default=*
+    setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
+
+on property:vendor.usb.controller=*
+    setprop sys.usb.controller ${vendor.usb.controller}
+
+#pd-mapper
+service vendor.pd_mapper /vendor/bin/pd-mapper
+    class core
+    user system
+    group system
+
+#Peripheral manager
+service vendor.per_mgr /vendor/bin/pm-service
+    class core
+    user system
+    group system
+    ioprio rt 4
+
+service vendor.per_proxy /vendor/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
+
+on property:init.svc.vendor.per_mgr=running
+    start vendor.per_proxy
+
+on property:sys.shutdown.requested=*
+    stop vendor.per_proxy
+    stop vendor.ims_rtp_daemon
+
+on charger
+    start vendor.hvdcp_opti
+    start vendor.power_off_alarm
+    setprop vendor.usb.controller a600000.dwc3
+    setprop sys.usb.configfs 1
+
+service vendor.qseecomd /vendor/bin/qseecomd
+    class core
+    user root
+    group root
+
+service spdaemon /vendor/bin/spdaemon
+    class core
+    user system
+    group system
+    writepid /dev/cpuset/system-background/tasks
+
+service hdcp_srm /vendor/bin/hdcp_srm
+    class core
+    user system
+    group system
+
+service thermal-engine /system/vendor/bin/thermal-engine
+   class main
+   user root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
+   socket thermal-send-rule stream 0660 system system
+   group root
+   writepid /dev/cpuset/system-background/tasks
+
+service adsprpcd /vendor/bin/adsprpcd
+   class main
+   user media
+   group media
+
+service cdsprpcd /vendor/bin/cdsprpcd
+   class main
+   user system
+   group system
+
+## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
+service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
+    class main
+    user system
+    socket ims_qmid stream 0660 system radio
+    group radio log diag
+    writepid /dev/cpuset/system-background/tasks
+
+# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
+service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
+    class main
+    user system
+    socket ims_datad stream 0660 system radio
+    group system wifi radio inet log diag
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.imsrcsservice /system/vendor/bin/imsrcsd
+    class main
+    user system
+    group radio diag inet log wakelock
+    writepid /dev/cpuset/system-background/tasks
+
+on property:vendor.ims.QMI_DAEMON_STATUS=1
+    start vendor.imsdatadaemon
+
+on property:vold.decrypt=trigger_restart_framework
+   start cnss_diag
+
+service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
+   class main
+   user system
+   group system wifi inet sdcard_rw media_rw diag
+   oneshot
+
+service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+   class main
+   user system
+   group radio diag inet log
+   writepid /dev/cpuset/system-background/tasks
+
+on property:vendor.ims.DATA_DAEMON_STATUS=1
+    restart vendor.ims_rtp_daemon
+
+service ppd /vendor/bin/mm-pp-dpps
     class late_start
     user system
-    group system inet sdcard_rw wakelock
+    group system graphics
+    socket pps stream 0660 system system
+    disabled
 
-service lhd /vendor/bin/lhd /vendor/etc/lhd.conf
-    class late_start
-    user gps
-    group system inet net_raw sdcard_rw wakelock
-    ioprio rt 0
+on property:init.svc.vendor.hwcomposer-2-1=stopped
+    stop ppd
 
-service remosaic_daemon /vendor/bin/remosaic_daemon
+on property:init.svc.vendor.hwcomposer-2-1=running
+    start ppd
+
+on property:init.svc.vendor.hwcomposer-2-1=restarting
+    stop ppd
+
+service hbtp /system/vendor/bin/hbtp_daemon
+     class main
+     user system
+     group system
+     capabilities SYS_NICE
+     disabled
+
+service energy-awareness /system/vendor/bin/energy-awareness
+    class main
+    user system
+    group system
+    oneshot
+
+service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
+    class main
+    user root
+    group system wakelock
+
+service smcinvoked /system/bin/smcinvoked
+    class main
+    user system
+    group system
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.tlocd /vendor/bin/tloc_daemon
     class late_start
-    user camera
-    group camera
+    user system
+    group drmrpc gps net_raw
