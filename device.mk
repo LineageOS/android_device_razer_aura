@@ -162,17 +162,38 @@ PRODUCT_PACKAGES += \
 
 # Device init scripts
 PRODUCT_PACKAGES += \
+    init.aura.led_init.sh \
+    init.class_late.sh \
+    init.class_main.sh \
+    init.crda.sh \
+    init.mdm.sh \
     init.msm.usb.configfs.rc \
+    init.qcom.class_core.sh \
+    init.qcom.coex.sh \
+    init.qcom.crashdata.sh \
     init.qcom.early_boot.sh \
+    init.qcom.efs.sync.sh \
+    init.qcom.fs.rc \
     init.qcom.post_boot.sh \
     init.qcom.rc \
-    init.qcom.power.rc \
+    init.qcom.sdio.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
+    init.qcom.target.rc \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
+    init.qti.can.sh \
+    init.qti.fm.sh \
+    init.qti.ims.sh \
     init.qti.qseecomd.sh \
+    init.razer.common.rc \
+    init.rc2.fingerprint.rc \
+    init.rc2.ramdump.rc \
+    init.rc2.sensor.rc \
+    init.rc2.target.rc \
+    init.rc2.touch.rc \
     init.recovery.qcom.rc \
+    init.sensor.e2pwrite.sh \
     init.target.rc \
     ueventd.qcom.rc
 

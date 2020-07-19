@@ -1,42 +1,43 @@
-# Copyright (c) 2009-2012, 2014-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2009-2012, 2014-2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are
-# met:
+# modification, are permitted provided that the following conditions are met:
 #     * Redistributions of source code must retain the above copyright
 #       notice, this list of conditions and the following disclaimer.
-#     * Redistributions in binary form must reproduce the above
-#       copyright notice, this list of conditions and the following
-#       disclaimer in the documentation and/or other materials provided
-#       with the distribution.
-#     * Neither the name of The Linux Foundation nor the names of its
-#       contributors may be used to endorse or promote products derived
-#       from this software without specific prior written permission.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of The Linux Foundation nor
+#       the names of its contributors may be used to endorse or promote
+#       products derived from this software without specific prior written
+#       permission.
 #
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
-# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
-# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
-# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import /vendor/etc/init/hw/init.qcom.power.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.target.rc
+
+# FIH: load fih rc {
+import /vendor/etc/init/hw/init.qcom.target.rc
+# FIH: load fih rc }
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
-    # Change ownership of hw_recovery related nodes
+  # Change ownership of hw_recovery related nodes
     chown system graphics /sys/kernel/debug/dri/0/debug/dump
     chown system graphics /sys/kernel/debug/dri/0/debug/recovery_reg
     chown system graphics /sys/kernel/debug/dri/0/debug/recovery_dbgbus
@@ -44,8 +45,6 @@ on early-init
 
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
-
-    symlink /data/tombstones /tombstones
 
 on init
     # Create cgroup mount point for memory
@@ -55,81 +54,17 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
-    # Boot time FS tune
-    write /sys/block/sda/queue/iostats 0
-    write /sys/block/sda/queue/scheduler cfq
-    write /sys/block/sda/queue/iosched/slice_idle 0
-    write /sys/block/sda/queue/read_ahead_kb 2048
-    write /sys/block/sda/queue/nr_requests 256
-    write /sys/block/sdf/queue/iostats 0
-    write /sys/block/sdf/queue/scheduler cfq
-    write /sys/block/sdf/queue/iosched/slice_idle 0
-    write /sys/block/sdf/queue/read_ahead_kb 2048
-    write /sys/block/sdf/queue/nr_requests 256
-    write /sys/block/dm-0/queue/read_ahead_kb 2048
-    write /sys/block/dm-1/queue/read_ahead_kb 2048
-    write /sys/block/dm-2/queue/read_ahead_kb 2048
-
-    chown system camera /dev/mi-camera-vendor2hal
-    chown system camera /dev/mi-camera-hal2vendor
-    chmod 0660 /dev/mi-camera-vendor2hal
-    chmod 0660 /dev/mi-camera-hal2vendor
-
-on fs
-    wait /dev/block/platform/soc/1d84000.ufshc
-    symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
-    mount_all /vendor/etc/fstab.qcom
-    mkdir /mnt/vendor/persist 0771 root system
-    chown root system /mnt/vendor/persist
-    chmod 0771 /mnt/vendor/persist
-    swapon_all /vendor/etc/fstab.qcom
-    restorecon_recursive /mnt/vendor/persist
-    mkdir /mnt/vendor/persist/audio 0755 system system
-    mkdir /mnt/vendor/persist/data 0700 system system
-    mkdir /mnt/vendor/persist/fdsd 0777 root root
-    mkdir /mnt/vendor/persist/stability 0755 system system
-    mkdir /mnt/vendor/persist/wlan_bt 0755 system system
-
-    chown system system /persist/rfs
-    chown system system /persist/rfs/msm
-    chown system system /persist/rfs/msm/adsp
-    chown system system /persist/rfs/msm/slpi
-    chown system system /persist/rfs/msm/mpss
-    chown system system /persist/rfs/msm/mpss/server_check.txt
-    chown system system /persist/rfs/shared
-    chown system system /persist/rfs/shared/server_info.txt
-
-on late-fs
-    # Boot time FS tune
-    write /sys/block/dm-3/queue/read_ahead_kb 2048
-
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
-    # set RLIMIT_MEMLOCK to 64MB
-    setrlimit 8 67108864 67108864
-
-    start vendor.qseecomd
-    exec - system system -- /vendor/bin/init.qti.qseecomd.sh
-    write /dev/ipa 1
-
 on early-boot
-    # Set RLIMIT_MEMLOCK to 64MB
+    # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
     # Allow subsystem (modem etc) debugging
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_cdsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
     exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
-
-    # For backward compatibility
-    chown system system /persist/sensors
-    chown system system /persist/sensors/registry
-    chown system system /persist/sensors/registry/registry
-    chown system system /persist/sensors/registry/registry/sensors_registry
-    chown system system /persist/sensors/sensors_settings
-    chown system system /persist/sensors/registry/config
-    chmod 0664 /persist/sensors/sensors_settings
 
     chown system system /mnt/vendor/persist/sensors
     chown system system /mnt/vendor/persist/sensors/sns.reg
@@ -142,6 +77,7 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/sns_reg_version
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -177,7 +113,7 @@ on boot
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
-    # Create QMUX deamon socket area
+    #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
     chmod 2770 /dev/socket/qmux_radio
     mkdir /dev/socket/qmux_audio 0770 media audio
@@ -187,27 +123,49 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
-    mkdir /persist/drm 0770 system system
+    mkdir /mnt/vendor/persist/drm 0770 system system
     mkdir /mnt/vendor/persist/bluetooth 0770 bluetooth bluetooth
-    mkdir /persist/misc 0770 system system
+    mkdir /mnt/vendor/persist/misc 0770 system system
     mkdir /mnt/vendor/persist/alarm 0770 system system
     mkdir /mnt/vendor/persist/time 0770 system system
     mkdir /mnt/vendor/persist/secnvm 0770 system system
 
-    # Create NETMGR daemon socket area
+    #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
 
     setprop wifi.interface wlan0
 
+#   Define TCP buffer sizes for various networks
+#   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.wifi    524288,2097152,4194304,262144,524288,1048576
+
+
     setprop ro.telephony.call_ring.multiple false
 
-    # Remove SUID bit for iproute2 ip tool
+
+    #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
+
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
-    # Assign TCP buffer thresholds to be ceiling value of technology maximums
-    # Increased technology maximums should be reflected here.
+#   Define TCP buffer sizes for various networks
+#   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.default 4096,87380,524288,4096,16384,110208
+    setprop net.tcp.buffersize.lte     2097152,4194304,8388608,262144,524288,1048576
+    setprop net.tcp.buffersize.umts    4094,87380,110208,4096,16384,110208
+    setprop net.tcp.buffersize.hspa    4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.hsupa   4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.hsdpa   4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.hspap   4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
+    setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
+    setprop net.tcp.buffersize.evdo    4094,87380,524288,4096,16384,262144
+
+    setprop net.tcp.2g_init_rwnd 10
+
+#   Assign TCP buffer thresholds to be ceiling value of technology maximums
+#   Increased technology maximums should be reflected here.
     write /proc/sys/net/core/rmem_max  16777216
     write /proc/sys/net/core/wmem_max  8388608
 
@@ -225,6 +183,9 @@ on boot
 
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
+
+    # bond0 used by FST Manager
+    chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
     # Allow access to emmc rawdump block partition and dload sysfs node
     chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
@@ -249,75 +210,20 @@ on boot
     chown system system /sys/class/sensors/apds9930-proximity/enable
     chown system system /sys/class/sensors/apds9930-proximity/poll_delay
 
-    # Create camera directory
-    mkdir /mnt/vendor/persist/camera 0755 system cameraserver
-
     # Create directory used for display
     # for backward compatibility
-    mkdir /persist/display 0770 system graphics
     mkdir /mnt/vendor/persist/display 0770 system graphics
 
     # Create vpp directory
     mkdir /mnt/vendor/persist/vpp 0770 media media
 
+
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
 
-    # Regionalization config and prop files
-    chmod 0644 /persist/speccfg/spec
-    chmod 0644 /persist/speccfg/devicetype
-    chmod 0644 /persist/speccfg/mbnversion
-    chmod 0644 /persist/speccfg/.not_triggered
-    chmod 0644 /persist/speccfg/vendor_ro.prop
-    chmod 0644 /persist/speccfg/vendor_persist.prop
-    chmod 0644 /persist/speccfg/submask
-    chmod 0644 /persist/speccfg/partition
-    chown system system /persist/speccfg/spec
-    chown system system /persist/speccfg/devicetype
-    chown system system /persist/speccfg/mbnversion
-    chown system system /persist/speccfg/.not_triggered
-    chown system system /persist/speccfg/vendor_ro.prop
-    chown system system /persist/speccfg/vendor_persist.prop
-    chown system system /persist/speccfg/submask
-    chown system system /persist/speccfg/partition
-
-    # USB controller configuration
-    setprop vendor.usb.rndis.func.name "gsi"
-    setprop vendor.usb.rmnet.func.name "gsi"
-    setprop vendor.usb.rmnet.inst.name "rmnet"
-    setprop vendor.usb.dpl.inst.name "dpl"
-    setprop vendor.usb.controller a600000.dwc3
-    setprop sys.usb.configfs 1
-
-    chown system system /sys/class/leds/white/brightness
-    chown system system /sys/class/leds/white/blink
-    chown system system /sys/class/leds/ir_torch/brightness
-    chown cameraserver system /sys/class/leds/ir/brightness
-    chmod 0664 /sys/class/leds/ir/brightness
-
-    chown system system /sys/class/drm/card0-DSI-1/disp_param
-    chmod 0700 /sys/class/drm/card0-DSI-1/disp_param
-
-    chown system system /sys/class/thermal/thermal_message/sconfig
-    chown root system /sys/bus/i2c/devices/3-0050/pressure
-
-# MSM specific files that need to be created on /data
+# msm specific files that need to be created on /data
 on post-fs-data
-    mkdir /data/tombstones 0771 system system
-    mkdir /tombstones/modem 0771 system system
-    mkdir /tombstones/lpass 0771 system system
-    mkdir /tombstones/wcnss 0771 system system
-    mkdir /tombstones/dsps 0771 system system
-
-    mkdir /data/vendor/diag 2771 root log
-    mkdir /data/vendor/mac_addr 0770 system wifi
     mkdir /data/vendor/misc 01771 system system
-    mkdir /data/vendor/misc/display 0771 system system
-    mkdir /data/vendor/misc/touch 0771 root system
-    mkdir /data/vendor/nnhal 0700 system system
-    mkdir /data/vendor/tloc 0700 system drmrpc
-    mkdir /data/vendor/thermal 0771 root system
-    mkdir /data/vendor/thermal/config 0771 root system
 
     # Create directory used for dump collection
     mkdir /data/vendor/ssrdump 0770 root system
@@ -331,7 +237,7 @@ on post-fs-data
     # Create directory used by media clients
     mkdir /data/vendor/media 0770 mediacodec media
 
-    # Create QDMA dropbox
+    # create QDMA dropbox
     mkdir /data/vendor/qdmastats 0700 system system
     mkdir /data/vendor/qdma 0770 system system
     mkdir /dev/socket/qdma 0777 system system
@@ -343,11 +249,12 @@ on post-fs-data
     # Create directory for apps access via QTEEConnector
     mkdir /data/vendor/qtee 0770 system system
 
-    # Create folder of camera
+    #Create folder of camera
     mkdir /data/vendor/camera 0770 camera camera
 
-    # Change ownership to system
-    chown system system /data/vendor/tombstones
+
+    #Create directory for tftp
+    mkdir /data/vendor/tombstones 0771 system system
 
     mkdir /data/vendor/ramdump 0771 root system
     mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
@@ -362,19 +269,19 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
-    # Create port-bridge log dir
+    #create port-bridge log dir
     mkdir /data/vendor/port_bridge 0770 radio radio
     chmod 0770 /data/vendor/port_bridge
 
-    # Create netmgr log dir
+    #create netmgr log dir
     mkdir /data/vendor/netmgr 0770 radio radio
     chmod 0770 /data/vendor/netmgr
 
-    # Create ipacm log dir
+    #create ipacm log dir
     mkdir /data/vendor/ipa 0770 radio radio
     chmod 0770 /data/vendor/ipa
 
-    # Create QTI dir for logs
+    #Create QTI dir for logs
     mkdir /data/vendor/dataqti 0770 radio radio
     chmod 0770 /data/vendor/dataqti
 
@@ -396,10 +303,10 @@ on post-fs-data
     mkdir /data/vendor/modem_config 0570 radio root
 
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
-    # We chown/chmod /persist again so because mount is run as root + defaults
-    chown root system /persist
-    chmod 0771 /persist
-    chown system system /persist/WCNSS_qcom_wlan_nv.bin
+    # We chown/chmod /mnt/vendor/persist again so because mount is run as root + defaults
+    chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    chown system system /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
@@ -411,10 +318,10 @@ on post-fs-data
     chown system system /sys/devices/platform/msm_sdcc.3/polling
     chown system system /sys/devices/platform/msm_sdcc.4/polling
 
-    # Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
+    #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
 
-    # Create directories for Location services
+    #Create directories for Location services
     mkdir /data/vendor/location 0770 gps gps
     mkdir /data/vendor/location/mq 0770 gps gps
     mkdir /data/vendor/location/xtwifi 0770 gps gps
@@ -427,23 +334,32 @@ on post-fs-data
     mkdir /dev/socket/location 0770 gps gps
     mkdir /dev/socket/location/ehub 0770 gps gps
 
+    #Create directory from IMS services
+    mkdir /data/shared 0755
+    chown system system /data/shared
+
+    #Create directory for FOTA
+    mkdir /data/fota 0771
+    chown system system /data/fota
+
     # Create /data/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
 
     setprop vold.post_fs_data_done 1
 
-    # Create FM dir for patchdownloader
+    #Create a folder for SRS to be able to create a usercfg file
+    #mkdir /data/data/media 0770 media media
+
+    #Create FM dir for patchdownloader
     mkdir /data/vendor/fm 0770 system system
     chmod 0770 /data/vendor/fm
 
-    # Create PERFD deamon related dirs
+    #Create PERFD deamon related dirs
     mkdir /data/vendor/perfd 0770 root system
     chmod 2770 /data/vendor/perfd
     rm /data/vendor/perfd/default_values
 
-    mkdir /data/vendor/secure_element 0777 system system
-
-    # Create IOP deamon related dirs
+    #Create IOP  deamon related dirs
     mkdir /data/vendor/iop 0700 root system
 
     # Mark the copy complete flag to not completed
@@ -451,7 +367,7 @@ on post-fs-data
     chown radio radio /data/vendor/radio/copy_complete
     chmod 0660 /data/vendor/radio/copy_complete
 
-    # Copy prebuilt qcril.db files always
+    # copy prebuilt qcril.db files always
     copy /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril_prebuilt.db
     chown radio radio /data/vendor/radio/qcril_prebuilt.db
     chmod 0660 /data/vendor/radio/qcril_prebuilt.db
@@ -463,11 +379,19 @@ on post-fs-data
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
 
-    # Create SWAP related dirs
+    # qti-logkit data
+    mkdir /data/vendor/qti-logkit/ 0771 system system
+    mkdir /data/vendor/qti-logkit/shared-privileged/ 2770 system system
+    mkdir /data/vendor/qti-logkit/shared-public/ 2770 system diag
+    mkdir /data/vendor/qti-logkit/socket-privileged/ 2770 system system
+    mkdir /data/vendor/qti-logkit/socket-public/ 2750 system diag
+    mkdir /data/vendor/qti-logkit/logdata/ 2750 system shell
+
+    #Create SWAP related dirs
     mkdir /data/vendor/swap 0770 root system
     chmod 2770 /data/vendor/swap
 
-    # Set aggressive read ahead for dm-0 and dm-1 during boot up
+    # set aggressive read ahead for dm-0 and dm-1 during boot up
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
     write /sys/block/dm-2/queue/read_ahead_kb 2048
@@ -475,27 +399,58 @@ on post-fs-data
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
 
-    # Create dir for TUI
+    #Create dir for TUI
     mkdir /data/vendor/tui 0700 system system
+    #+FIH@R3J168: FEATURE_FIH_C_001_MCFG_MODEL (SDM845), by Pupu
+    mkdir /data/misc/fih_mcfg 0775 system oem_2951
+    #-FIH@R3J168: FEATURE_FIH_C_001_MCFG_MODEL (SDM845), by Pupu
 
-    # Make MTU adjusting
-    write /proc/sys/net/ipv4/tcp_mtu_probing 1
+    #+FIH@R3J168: FEATURE_FIH_C_002_MCFG_ATL (SDM845), by Pupu
+    mkdir /data/misc/fih_atl 2770 system oem_2951
+    #-FIH@R3J168: FEATURE_FIH_C_002_MCFG_ATL (SDM845), by Pupu
 
-    start vendor.qcrild
-    start vendor.qcrild2
+    #Start move time data to /data/vendor once post-fs-data done
+    start vendor.move_time_data
+
+service nqnfcinfo /system/vendor/bin/nqnfcinfo
+    class late_start
+    group nfc
+    user system
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service iop /system/vendor/bin/iop
+    class main
+    user root
+    group root
+    disabled
+    socket iop seqpacket 0666 root system
+    #writepid /dev/cpuset/system-background/tasks
+
+service qcomsysd /system/vendor/bin/qcom-system-daemon
+    class main
+    user root
+    group root diag oem_2901
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+on property:persist.vendor.qcomsysd.enabled=1
+    enable qcomsysd
+
+on property:persist.vendor.qcomsysd.enabled=0
+    stop qcomsysd
 
 service vendor.ssr_setup /system/vendor/bin/ssr_setup
     oneshot
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.ss_ramdump /system/vendor/bin/subsystem_ramdump
     class main
     user system
     group system
     disabled
-
-on property:ro.boot.dp=0x0
-    write  /sys/bus/platform/devices/c440000.qcom,spmi:qcom,pm8998@0:qcom,power-on@800/pshold_reboot 7
+    writepid /dev/cpuset/system-background/tasks
 
 on property:ro.vendor.iocgrp.config=1
     mkdir /dev/blkio
@@ -534,102 +489,194 @@ on property:persist.vendor.ssr.enable_ramdumps=0
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
-
-    # Reset read ahead for dm-0 and dm-1 to 512kb
-    write /sys/block/dm-0/queue/read_ahead_kb 512
-    write /sys/block/dm-1/queue/read_ahead_kb 512
-
-    # WDSP FW boot sysfs node used by STHAL
+    # Reset read ahead for dm-0 and dm-1 to 128kb
+    # alex.naidis@paranoidandroid.co Use 128kb to prevent page thrashing
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    #WDSP FW boot sysfs node used by STHAL
     chown media audio /sys/kernel/wdsp0/boot
     chown media audio /sys/kernel/wcd_cpe0/fw_name
 
-    # Runtime FS tuning: as we have init boottime setting and kernel patch setting
-    # default readahead to 2048KB. We should adjust the setting upon boot_complete
-    # for runtime performance
-    write /sys/block/sda/queue/read_ahead_kb 128
-    write /sys/block/sda/queue/nr_requests 128
-    write /sys/block/sda/queue/iostats 1
-    write /sys/block/sdf/queue/read_ahead_kb 128
-    write /sys/block/sdf/queue/nr_requests 128
-    write /sys/block/sdf/queue/iostats 1
-    write /sys/block/dm-0/queue/read_ahead_kb 128
-    write /sys/block/dm-1/queue/read_ahead_kb 128
-    write /sys/block/dm-2/queue/read_ahead_kb 128
-    write /sys/block/dm-3/queue/read_ahead_kb 128
+on property:persist.vendor.radio.atfwd.start=false
+    stop vendor.atfwd
 
-    start qcom-post-boot
+on property:vendor.radio.atfwd.start=false
+    stop vendor.atfwd
 
 # corefile limit
 on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
     write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
 
+on property:init.svc.wpa_supplicant=stopped
+    stop dhcpcd
+
+on property:vendor.bluetooth.dun.status=running
+    start vendor.bt-dun
+
+on property:vendor.bluetooth.dun.status=stopped
+    stop vendor.bt-dun
+
+on property:vendor.bluetooth.startbtsnoop=true
+    start vendor.btsnoop
+
+on property:vendor.bluetooth.startbtsnoop=false
+    stop vendor.btsnoop
+
+on property:vendor.bluetooth.startbtlogger=true
+    start vendor.bt_logger
+
+on property:vendor.bluetooth.startbtlogger=false
+    stop vendor.bt_logger
+
+service qcom-c_core-sh  /vendor/bin/init.qcom.class_core.sh
+    class core
+    user root
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service qcom-c_main-sh /vendor/bin/init.class_main.sh
+    class main
+    user root
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service qcom-c_late-sh /vendor/bin/init.class_late.sh
+    class late_start
+    user root
+    oneshot
+
+on property:vold.decrypt=trigger_restart_framework
+    start qcom-c_main-sh
+    start wcnss-service
+    start qcom-c_late-sh
+
+on property:persist.env.fastdorm.enabled=true
+    setprop persist.radio.data_no_toggle 1
+
 service vendor.cnd /system/vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin
+    #writepid /dev/cpuset/system-background/tasks
 
 service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
     class main
     user system
     group system
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
     class core
     user vendor_qrtr
     group vendor_qrtr
     capabilities NET_BIND_SERVICE
+    #writepid /dev/cpuset/system-background/tasks
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
     oneshot
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     shutdown critical
     ioprio rt 0
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor.tftp_server /vendor/bin/tftp_server
    class core
    user root
+   #writepid /dev/cpuset/system-background/tasks
+
+service vendor.bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
+    class late_start
+    user bluetooth
+    group bluetooth net_bt_admin inet
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service vendor.btsnoop /system/bin/btsnoop
+   user bluetooth
+   group bluetooth net_bt_admin sdcard_rw sdcard_r media_rw
+   class late_start
+   disabled
+   oneshot
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.bt_logger /system/bin/bt_logger
+   user bluetooth
+   group bluetooth net_bt_admin sdcard_rw sdcard_r media_rw
+   class late_start
+   disabled
+   oneshot
+   writepid /dev/cpuset/system-background/tasks
 
 service vendor.port-bridge /system/vendor/bin/port-bridge
     class main
     user radio
     group radio system inet
+    disabled
     oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service qmiproxy /system/bin/qmiproxy
+    class main
+    user radio
+    group radio diag
+    disabled
+    #writepid /dev/cpuset/system-background/tasks
+
+# QMUX must be in multiple groups to support external process connections
+service vendor.qmuxd /system/vendor/bin/qmuxd
+    class main
+    user root
+    group radio audio bluetooth gps nfc diag
+    disabled
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor.netmgrd /system/vendor/bin/netmgrd
     class main
+    disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.ipacm /system/vendor/bin/ipacm
     class main
     user radio
     group radio inet
+    disabled
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor.dataqti /system/vendor/bin/qti
     class main
     user radio
     group radio oem_2901 diag usb net_admin
+    disabled
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor.dataadpl /system/vendor/bin/adpl
     class main
     user radio
     group radio oem_2901 diag usb net_admin
+    disabled
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor.sensors /vendor/bin/sscrpcd
     class core
     user system
     group system
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user system
     group system
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:ro.vendor.use_data_netmgrd=false
     # netmgr not supported on specific target
@@ -646,47 +693,172 @@ on property:sys.sysctl.tcp_adv_win_scale=*
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 -dd \
     -g@android:vendor_wpa_wlan0
-    #   we will start as root and wpa_supplicant will switch to user wifi
-    #   after setting up the capabilities required for WEXT
-    #   user wifi
-    #   group wifi inet keystore
+#   we will start as root and wpa_supplicant will switch to user wifi
+#   after setting up the capabilities required for WEXT
+#   user wifi
+#   group wifi inet keystore
     interface android.hardware.wifi.supplicant@1.0::ISupplicant default
     interface android.hardware.wifi.supplicant@1.1::ISupplicant default
     class main
     socket vendor_wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
-service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
+# Data Migration
+service vendor.move_wifi_data /system/bin/move_wifi_data.sh
+    class main
+    user  wifi
+    group wifi
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKLG
+    class late_start
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service dhcpcd_bond0 /system/bin/dhcpcd -ABKLG
+    class late_start
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service dhcpcd_p2p /system/bin/dhcpcd -ABKLG
+    class late_start
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+    class late_start
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service iprenew_bond0 /system/bin/dhcpcd -n
+    class late_start
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service iprenew_p2p /system/bin/dhcpcd -n
+    class late_start
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service wifi_ftmd /system/vendor/bin/wifi_ftmd
+    user system
+    group system inet net_admin
+    socket wififtmd_server dgram 0660 system system
+    disabled
+    oneshot
+    writepid /dev/cpuset/system-background/tasks
+
+on property:vendor.wifi.ftmd.load=true
+    insmod /system/lib/modules/pronto/pronto_wlan.ko con_mode=5
+
+on property:persist.vendor.data.shs_ko_load=1
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules rmnet_shs
+
+on property:persist.vendor.data.shs_ko_load=0
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -r -d /vendor/lib/modules rmnet_shs
+
+on property:persist.vendor.data.perf_ko_load=1
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules rmnet_perf
+
+on property:persist.vendor.data.perf_ko_load=0
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -r -d /vendor/lib/modules rmnet_perf
+
+service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     class late_start
     user system
     group system inet net_admin wifi
     capabilities NET_ADMIN
+    writepid /dev/cpuset/system-background/tasks
 
 on property:sys.shutdown.requested=*
-    stop vendor.cnss-daemon
+    stop cnss-daemon
+
+service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
+    class late_start
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service iprenew_bt-pan /system/bin/dhcpcd -n
+    class late_start
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service ssgqmigd /vendor/bin/ssgqmigd
+    class late_start
+    user radio
+    group radio gps system
+    socket ssgqmig seqpacket 0660 radio inet
+    #writepid /dev/cpuset/system-background/tasks
+
+service ssgtzd /vendor/bin/ssgtzd
+    class late_start
+    user system
+    group system
+    socket ssgtzd stream 0660 system inet
+    #writepid /dev/cpuset/system-background/tasks
 
 service mlid /vendor/bin/mlid
     class late_start
     user gps
     group gps
     socket mlid stream 0666 gps gps
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.qdmastatsd /system/vendor/bin/qdmastatsd
+    class late_start
+    user system
+    group readproc system net_bw_stats radio vendor_rfs_shared
+    writepid /dev/cpuset/system-background/tasks
 
 service loc_launcher /system/vendor/bin/loc_launcher
     class late_start
     user gps
     group gps
+    #writepid /dev/cpuset/system-background/tasks
+
+service drmdiag /system/vendor/bin/drmdiagapp
+    class late_start
+    user root
+    disabled
+    oneshot
+    writepid /dev/cpuset/system-background/tasks
+
+on property:drmdiag.load=1
+    start drmdiag
+
+on property:drmdiag.load=0
+    stop drmdiag
 
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     group root system radio
     oneshot
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
     class core
     user root
     oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service crashdata-sh /vendor/bin/init.qcom.crashdata.sh
+    class late_start
+    user root
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
 
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
@@ -694,20 +866,223 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     group root system wakelock graphics
     disabled
     oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service qti-testscripts /system/bin/sh /system/etc/init.qcom.testscripts.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+    seclabel u:r:qti-testscripts:s0
+    writepid /dev/cpuset/system-background/tasks
+
+service wifi-sdio-on /vendor/bin/init.qcom.sdio.sh
+    class late_start
+    group wifi inet
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+service wifi-crda /vendor/bin/init.crda.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+    writepid /dev/cpuset/system-background/tasks
+
+on property:sys.boot_completed=1
+    start qcom-post-boot
+    start qti-testscripts
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
 
-service mmbn-daemon /vendor/bin/mmbn-daemon
+service qvop-daemon /vendor/bin/qvop-daemon
+    class late_start
+    user system
+    group system drmrpc
+    #writepid /dev/cpuset/system-background/tasks
+
+service vendor.atfwd /vendor/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/global
+    interface android.hardware.wifi.hostapd@1.0::IHostapd default
     class main
+    capabilities NET_ADMIN NET_RAW
+    user wifi
+    group wifi
     disabled
     oneshot
+    writepid /dev/cpuset/system-background/tasks
+
+service ims_regmanager /system/vendor/bin/exe-ims-regmanagerprocessnative
+    class late_start
+    group net_bt_admin inet radio wifi
+    disabled
+    #writepid /dev/cpuset/system-background/tasks
+
+on property:persist.ims.regmanager.mode=1
+    start ims_regmanager
+
+on property:ro.data.large_tcp_window_size=true
+    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
+    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
+
+service battery_monitor /system/bin/battery_monitor
+    user system
+    group system
+    disabled
+    #writepid /dev/cpuset/system-background/tasks
+
+service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
+    class main
+    user radio
+    disabled
+    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+    #writepid /dev/cpuset/system-background/tasks
+
+service vendor.ril-daemon3 /vendor/bin/hw/rild -c 3
+    class main
+    user radio
+    disabled
+    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+    #writepid /dev/cpuset/system-background/tasks
+
+service profiler_daemon /system/bin/profiler_daemon
+    class late_start
+    user root
+    group root
+    disabled
+    #writepid /dev/cpuset/system-background/tasks
+
+service can /vendor/bin/init.qti.can.sh
+   class late_start
+   user root
+   disabled
+   oneshot
+
+service charger /charger
+    class charger
+    group system graphics
+    seclabel u:r:healthd:s0
+    #writepid /dev/cpuset/system-background/tasks
+
+service hvdcp /system/bin/hvdcp
+    class core
+    user root
+    disabled
+    #writepid /dev/cpuset/system-background/tasks
+
+on property:persist.usb.hvdcp.detect=true
+    start hvdcp
+
+on property:persist.usb.hvdcp.detect=false
+    stop hvdcp
+
+service charger_monitor /system/bin/charger_monitor
+    user root
+    group root
+    disabled
+
+service qbcharger /charger -m 1
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
+
+on property:sys.qbcharger.enable=true
+    start qbcharger
+
+on property:sys.qbcharger.enable=false
+    stop qbcharger
+
+service qlogd /system/xbin/qlogd
+    socket qlogd stream 0662 system system
+    class main
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+on property:persist.sys.qlogd=1
+    start qlogd
+on property:persist.sys.qlogd=0
+    stop qlogd
+
+service vm_bms /vendor/bin/vm_bms
+    user root
+    group root
+    disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
     user root
     group root
     disabled
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.msm_irqbal_lb /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance_little_big.conf
+    class core
+    user root
+    group root
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.msm_irqbl_sdm630 /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance_sdm630.conf
+    class core
+    user root
+    group root
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+# service for USERDEBUG
+service vendor.LKCore-dbg /vendor/bin/LKCore
+    class late_start
+    oneshot
+    disabled
+    user root
+    group root system log diag net_raw
+    writepid /dev/cpuset/system-background/tasks
+
+# service for USER
+service vendor.LKCore-rel /vendor/bin/LKCore
+    class late_start
+    oneshot
+    disabled
+    user system
+    group system log diag
+    writepid /dev/cpuset/system-background/tasks
+
+service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
+    class late_start
+    user system
+    group system
+    writepid /dev/cpuset/system-background/tasks
+
+service esepmdaemon /system/vendor/bin/esepmdaemon
+    class core
+    user system
+    group nfc
+    #writepid /dev/cpuset/system-background/tasks
+
+on charger
+    setprop persist.sys.usb.config mass_storage
+    load_system_props
+    start qcom-post-boot
+
+#add poweroffhandler
+service poweroffhandler /system/vendor/bin/poweroffhandler
+    class core
+    user media
+    group graphics audio
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
 
 on property:vendor.display.lcd_density=*
     setprop ro.sf.lcd_density ${vendor.display.lcd_density}
@@ -716,11 +1091,13 @@ service time_daemon /system/vendor/bin/time_daemon
     class main
     user root
     group root
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor.vppservice /vendor/bin/vppservice
     class main
     user media
     group camera
+    #writepid /dev/cpuset/system-background/tasks
 
 # Set vendor-ril lib path based on Meta version
 on property:vendor.rild.libpath=*
@@ -733,157 +1110,50 @@ service seemp_healthd /vendor/bin/seemp_healthd
     class late_start
     user system
     group system
+    #writepid /dev/cpuset/system-background/tasks
 
-service chre /vendor/bin/chre
-    class late_start
-    user system
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
+    class core
     group system
-    socket chre seqpacket 0660 root system
-    shutdown critical
+    disabled
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
 
-# Set GPU OpenGL ES version
+service vendor.hbtp /vendor/bin/hbtp_daemon
+     class main
+     user system
+     group system
+     capabilities SYS_NICE
+     disabled
+     #writepid /dev/cpuset/system-background/tasks
+
+#Set GPU Opengles version
 on property:vendor.opengles.version=*
     setprop ro.opengles.version ${vendor.opengles.version}
 
-# Set gpu available frequencies property
+#Set gpu available frequencies property
 on property:vendor.gpu.available_frequencies=*
     setprop ro.vendor.gpu.available_frequencies ${vendor.gpu.available_frequencies}
+
+service vendor.wifilearner /system/vendor/bin/wifilearner
+    class main
+    user wifi
+    group wifi
+    oneshot
+    #writepid /dev/cpuset/system-background/tasks
 
 service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     override
     class hal
     user audioserver
     # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
-    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock system
+    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock
     capabilities BLOCK_SUSPEND
     ioprio rt 4
     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
     # audioflinger restarts itself when it loses connection with the hal
     # and its .rc file has an "onrestart restart audio-hal" rule, thus
     # an additional auto-restart from the init process isn't needed.
-    socket audio_hw_socket seqpacket 0666 system system
     oneshot
     interface android.hardware.audio@4.0::IDevicesFactory default
     interface android.hardware.audio@2.0::IDevicesFactory default
-
-on property:vold.decrypt=trigger_restart_framework
-    restart vendor.audio-hal-2-0
-
-on boot && property:persist.vendor.usb.controller.default=*
-    setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
-
-on property:vendor.usb.controller=*
-    setprop sys.usb.controller ${vendor.usb.controller}
-
-service vendor.pd_mapper /vendor/bin/pd-mapper
-    class core
-    user system
-    group system
-
-service vendor.per_mgr /vendor/bin/pm-service
-    class core
-    user system
-    group system
-    ioprio rt 4
-
-service vendor.per_proxy /vendor/bin/pm-proxy
-    class core
-    user system
-    group system
-    disabled
-
-on property:init.svc.vendor.per_mgr=running
-    start vendor.per_proxy
-
-on property:sys.shutdown.requested=*
-    stop vendor.per_proxy
-    stop vendor.ims_rtp_daemon
-
-service vendor.qseecomd /vendor/bin/qseecomd
-    class core
-    user root
-    group root
-
-service spdaemon /vendor/bin/spdaemon
-    class core
-    user system
-    group system
-
-service thermal-engine /system/vendor/bin/thermal-engine
-    class main
-    user root
-    socket thermal-send-client stream 0666 system system
-    socket thermal-recv-client stream 0660 system system
-    socket thermal-recv-passive-client stream 0666 system system
-    socket thermal-send-rule stream 0660 system system
-    group system root
-
-service adsprpcd /vendor/bin/adsprpcd
-    class main
-    user media
-    group media
-
-service cdsprpcd /vendor/bin/cdsprpcd
-    class main
-    user system
-    group system
-
-# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
-    class main
-    user system
-    socket ims_qmid stream 0660 system radio
-    group radio log diag
-
-# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
-    class main
-    user system
-    socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag
-    disabled
-
-service vendor.imsrcsservice /system/vendor/bin/imsrcsd
-    class main
-    user system
-    group radio diag inet log wakelock
-
-on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start vendor.imsdatadaemon
-
-service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
-    class main
-    user system
-    group radio diag inet log
-
-on property:vendor.ims.DATA_DAEMON_STATUS=1
-    restart vendor.ims_rtp_daemon
-
-service ppd /vendor/bin/mm-pp-dpps
-    class late_start
-    user system
-    group system graphics
-    socket pps stream 0660 system system
-    disabled
-
-on property:init.svc.zygote=stopped
-    stop ppd
-
-on property:init.svc.zygote=running
-    start ppd
-
-on property:init.svc.zygote=restarting
-    stop ppd
-
-on property:init.svc.vendor.hwcomposer-2-1=stopped
-    stop ppd
-
-on property:init.svc.vendor.hwcomposer-2-1=running
-    start ppd
-
-on property:init.svc.vendor.hwcomposer-2-1=restarting
-    stop ppd
-
-on property:vold.decrypt=trigger_restart_framework && property:ro.crypto.type=block && property:persist.ppd.fde.config=0
-    setprop persist.ppd.fde.config 1
-    start ppd
