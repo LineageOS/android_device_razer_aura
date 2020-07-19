@@ -137,7 +137,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/sec_nvm_*            0660   system     system
 /dev/cryptoapp            0660   system     system
 /dev/spdaemon_ssr         0660   system     system
-/dev/cam-hyp-intf*        0660   system     camera
 /dev/gemini0              0660   system     camera
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
@@ -147,19 +146,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/adsprpc-smd-secure   0644   system     system
 /dev/system_health_monitor 0644  radio      system
 /dev/mdss_rotator         0664   system     system
-/dev/cpu_dma_latency      0660   root       system
-
-#permissions for 3DSL
-/dev/cam-sl-eeprom        0660   system     system
-/dev/flood                0660   system     system
-/dev/rtmv20               0660   system     system
-
-#permissions for Elliptics
-/dev/elliptic0            0644   root       root
-/dev/elliptic1            0644   root       root
-
-#permissions for TAS
-/dev/tiload_node          0660   system     system
 
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
