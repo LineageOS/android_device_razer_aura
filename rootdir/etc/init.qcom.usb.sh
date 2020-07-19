@@ -29,22 +29,17 @@
 #
 #
 
-#
-# Check ESOC for external modem
-#
-# Note: currently only a single MDM/SDX is supported
-#
-esoc_name=`cat /sys/bus/esoc/devices/esoc0/esoc_name 2> /dev/null`
-
 if [ -f /sys/class/android_usb/f_mass_storage/lun/nofua ]; then
     echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
 fi
 
-# Clear vendor USB config because it is only needed for debugging
-setprop persist.vendor.usb.config ""
-
 # Check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
+    product_model=`getprop ro.product.model`
+    product_manufacturer=`getprop ro.product.manufacturer`
+    product_string="$product_manufacturer $product_model"
+    echo "$product_string" > /config/usb_gadget/g1/strings/0x409/product
+
     # ADB requires valid iSerialNumber; if ro.serialno is missing, use dummy
     serialnumber=`cat /config/usb_gadget/g1/strings/0x409/serialnumber` 2> /dev/null
     if [ "$serialnumber" == "" ]; then

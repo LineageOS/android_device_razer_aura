@@ -1,5 +1,4 @@
-#! /vendor/bin/sh
-
+#!/vendor/bin/sh
 # Copyright (c) 2015,2018 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -32,13 +31,13 @@
 #
 start_sensors()
 {
-
-    chmod -h 664 /persist/sensors/sensors_settings
-    chown -h -R system.system /persist/sensors
+    sscrpcd_status=`getprop init.svc.vendor.sensors`
+    chmod -h 664 /mnt/vendor/persist/sensors/sensors_settings
+    chown -h -R system.system /mnt/vendor/persist/sensors
     start vendor.sensors.qti
 
     # Only for SLPI
-    if [ -c /dev/msm_dsps -o -c /dev/sensors ] ; then
+    if [ -c /dev/msm_dsps -o -c /dev/sensors ] && [ -z "$sscrpcd_status" ]; then
         start vendor.sensors
     fi
 }
