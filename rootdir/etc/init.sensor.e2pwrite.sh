@@ -1,5 +1,6 @@
-#!/vendor/bin/sh
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+#! /vendor/bin/sh
+
+# Copyright (c) 2014, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -28,8 +29,51 @@
 #
 #
 
-while [ "$registered" != "true" ]
-do
-    sleep 0.1
-    registered="`getprop vendor.sys.listeners.registered`"
-done
+E2P_ALS_PARTITION="/proc/sensordata/ALS"
+ALS_REGISTRY_PATH="/mnt/vendor/persist/sensors/registry/registry"
+
+if [ -e ${E2P_ALS_PARTITION} ]; then
+
+  # Read raw E2P
+  RAW_E2P=$(cat ${E2P_ALS_PARTITION})
+
+  # Check E2P content
+  if [ ${RAW_E2P} == "" ]; then
+    echo "E2P content is null"
+    exit
+  fi
+  OWNER=`echo ${RAW_E2P} | cut -d'"' -f4`
+  if [ ${OWNER} != "owner" ] ; then
+    echo "E2P content is invalid"
+    exit
+  fi
+
+  # Get file path from E2P content
+  FILE=`echo ${RAW_E2P} | cut -d'"' -f2`
+  ALS_REGISTRY_FILE=${ALS_REGISTRY_PATH}/${FILE}
+  echo "Registry file path=${ALS_REGISTRY_FILE}"
+
+  # We wait for 10 seconds
+  # Only copy file when ${ALS_REGISTRY_FILE} is exist
+  i=0
+  while [ "${i}" != "10" ]
+  do
+    echo "Loop ${i}"
+    if [ -e "${ALS_REGISTRY_FILE}" ]; then
+      RAW_PERSIST=$(cat ${ALS_REGISTRY_FILE})
+      if [ "${RAW_E2P}" == "${RAW_PERSIST}" ]; then
+        echo "Content matched"
+        exit
+      else
+        echo "Copy E2P to ${ALS_REGISTRY_FILE}"
+        echo ${RAW_E2P} > ${ALS_REGISTRY_FILE}
+      fi
+    fi
+    sleep 1
+    i=$(($i+1))
+  done
+
+  # If time out, we just copy the file
+  echo "Time's out, copy E2P to ${ALS_REGISTRY_FILE}"
+  echo ${RAW_E2P} > ${ALS_REGISTRY_FILE}
+fi
