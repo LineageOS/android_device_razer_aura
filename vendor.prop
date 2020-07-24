@@ -122,7 +122,6 @@ persist.dbg.wfc_avail_ovr=1
 
 # Media
 audio.offload.video=true
-debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 
 # Netflix BSP
