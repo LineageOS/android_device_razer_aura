@@ -16,8 +16,11 @@
 ** limitations under the License.
 */
 -->
-
 <resources>
-    <!-- Doze: does this device support STATE_DOZE?  -->
-    <bool name="doze_display_state_supported">true</bool>
+    <!-- Do not translate. Defines the slots is Two Digit Number for dialing normally not USSD -->
+    <string-array name="config_twoDigitNumberPattern" translatable="false">
+        <item>0</item>
+        <item>00</item>
+        <item>*2</item>
+    </string-array>
 </resources>

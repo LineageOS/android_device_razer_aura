@@ -16,8 +16,7 @@
 ** limitations under the License.
 */
 -->
-
-<resources>
-    <!-- Doze: does this device support STATE_DOZE?  -->
-    <bool name="doze_display_state_supported">true</bool>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- MMS user agent string -->
+    <string name="config_mms_user_agent">Razer-0259UA20-Mms/2.0</string>
 </resources>
