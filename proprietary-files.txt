@@ -916,8 +916,8 @@ vendor/lib/libqmi_cci.so|90e0f50ddb2a800118e0216271465bbb721198cd
 vendor/lib64/libqmi_cci.so|1df3024dd206ad2685e42573945a5965378258f3
 
 # QMI
-etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
-etc/permissions/qti_permissions.xml
+etc/permissions/qti_libpermissions.xml:product/etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+etc/permissions/qti_permissions.xml:product/etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/etc/sec_config
 vendor/lib64/libdiag.so
@@ -958,9 +958,9 @@ product/framework/qti-telephony-common.jar|91fe0ce296fc29bece6df81070b9b3b4ee41a
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|0c720bd2c3670347f4cf40eadc03701f0d7f65d1
 
 # RIL
--app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/telephonyservice.xml
-framework/QtiTelephonyServicelibrary.jar
+-app/QtiTelephonyService/QtiTelephonyService.apk:product/app/QtiTelephonyService/QtiTelephonyService.apk
+etc/permissions/telephonyservice.xml:product/etc/permissions/telephonyservice.xml
+framework/QtiTelephonyServicelibrary.jar:product/framework/QtiTelephonyServicelibrary.jar
 vendor/bin/hw/qcrild
 vendor/bin/adpl
 vendor/bin/ATFWD-daemon
