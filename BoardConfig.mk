@@ -56,9 +56,6 @@ endif
 TARGET_BOARD_PLATFORM := sdm845
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno630
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := aura
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
