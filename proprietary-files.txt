@@ -268,11 +268,7 @@ vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service|cf3acfde26c9
 vendor/etc/configstore/vpp.configstore.xml|d5095f33c326017a21fff186d19a2ce146b85d94
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc|4ede0250585a44b01d351bbc301d7a13cc3d783d
 vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|1e990a2e8a67aa8a1223ea8879cb049e5819868d
-vendor/lib/vendor.qti.hardware.capabilityconfigstore@1.0.so|8c2a75375ae4f896fc1dae2b1f7276cdf4c0d868
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|c9459c96581b4da688cfd53dfefa702b984a425f
-vendor/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so|f3f3754fc57d6412f547e1e7f3f646e3b36d01d2
--vendor/lib/libplatformconfig.so|f46533ca08bbfa17b323aa364a96e4653324d7e4
--vendor/lib64/libplatformconfig.so|fcffe058ecd578396b4a406c3a00dfe6cc6b7d95
 
 # Display (HDR) - from polaris V11.0.5.0.QDGMIXM
 vendor/lib/libhdr_tm.so|eab66540cffc6b81449cfe620e715de7318e17a3
