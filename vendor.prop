@@ -117,3 +117,6 @@ vendor.usb.use_ffs_mtp=0
 
 # Wi-Fi
 ro.boot.wificountrycode=00
+
+# Zygote
+zygote.critical_window.minute=10
