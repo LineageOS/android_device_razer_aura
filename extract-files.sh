@@ -72,7 +72,7 @@ function blob_fixup() {
             sed -i 's|/system/framework/|/system_ext/framework/|g' "${2}"
             ;;
         system_ext/lib64/lib-imsvideocodec.so)
-            patchelf --add-needed "libui_shim.so" "${2}"
+            "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             ;;
         system_ext/lib64/libdpmframework.so)
             sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
@@ -81,10 +81,10 @@ function blob_fixup() {
             sed -i 's| /vendor/securefs/data/| /mnt/vendor/securefs/data/|g' "${2}"
             ;;
         vendor/lib/libgps.utils.so)
-            patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+            "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             ;;
         vendor/lib64/libgps.utils.so)
-            patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+            "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             ;;
     esac
 }
