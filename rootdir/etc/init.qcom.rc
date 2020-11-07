@@ -164,9 +164,7 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
-    mkdir /mnt/vendor/persist/drm 0770 system system
     mkdir /mnt/vendor/persist/bluetooth 0770 bluetooth bluetooth
-    mkdir /mnt/vendor/persist/misc 0770 system system
     mkdir /mnt/vendor/persist/alarm 0770 system system
     mkdir /mnt/vendor/persist/time 0770 system system
     mkdir /mnt/vendor/persist/secnvm 0770 system system
@@ -320,11 +318,6 @@ on post-fs-data
     # Create directory for modem_config
     mkdir /data/vendor/modem_config 0570 radio root
 
-    # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
-    # We chown/chmod /mnt/vendor/persist again so because mount is run as root + defaults
-    chown root system /mnt/vendor/persist
-    chmod 0771 /mnt/vendor/persist
-    chown system system /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
