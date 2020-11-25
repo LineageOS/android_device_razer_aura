@@ -67,10 +67,10 @@ vendor/lib64/libbtnv.so|395aad107d06bbff6dd2277c627a961a58ea728e
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|1b8ea7096ded35acef0bbc1a25840c0b1c12be04
 
 # ANT+
-system/lib/com.qualcomm.qti.ant@1.0.so
--system/lib/libantradio.so
-system/lib64/com.qualcomm.qti.ant@1.0.so
--system/lib64/libantradio.so
+system/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.so
+-system/lib/libantradio.so:system_ext/lib/libantradio.so
+system/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so
+-system/lib64/libantradio.so:system_ext/lib64/libantradio.so
 vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
