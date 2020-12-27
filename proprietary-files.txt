@@ -248,7 +248,6 @@ vendor/lib64/vendor.qti.latency@2.0.so|2f519fc5779fd8a5c6dbb0817547a0382644cc0c
 
 # Configstore - from polaris V11.0.5.0.QDGMIXM
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service|cf3acfde26c991b4c301d7bab375deec2952cad5
-vendor/etc/configstore/vpp.configstore.xml|d5095f33c326017a21fff186d19a2ce146b85d94
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc|4ede0250585a44b01d351bbc301d7a13cc3d783d
 vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|1e990a2e8a67aa8a1223ea8879cb049e5819868d
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|c9459c96581b4da688cfd53dfefa702b984a425f
@@ -678,65 +677,6 @@ vendor/lib/liblistenjni.so
 vendor/lib/liblistensoundmodel2.so
 vendor/lib/libmulawdec.so
 
-# Media - from polaris V11.0.5.0.QDGMIXM
-vendor/bin/vppservice|925b17a535efd5ae6be9891b298d8ed57bc9e3f2
-vendor/etc/init/vppservice.rc|9b7facad700305cc87a6afba598f582a4b2da5bd
-vendor/lib/libOmxDsdDec.so|5a6d6fe60ea070b975fe1c28d58ca82d1cd71f7d
-vendor/lib/libOmxVideoDSMode.so|b9a3aab32379e0efece146e5992f8a295a33dc62
-vendor/lib/libOmxVpp.so|434e4c633f8e9fc3fabc23c29cc505b3197020e0
-vendor/lib/libdsd2pcm.so|012ce863a937a00d4fba1b57ff49c0a37afdb8b9
-vendor/lib/libswvdec.so|8af2bad910164802e3fd0a5881dc5df25db7ad87
-vendor/lib/libvppclient.so|50a6d0c4bf90efa2170031e7f7e40b981d9d774e
-vendor/lib/libvpphcp.so|1f4d8b4fa06d4dee4af7d576bc1f59da10837f17
-vendor/lib/libvpphvx.so|17f274c2abbdf3bf7929aedd1d0451935779cce1
-vendor/lib/libvpplibrary.so|9cf3a02125e86bd560a418251cd02f5c0232f93c
-vendor/lib/vendor.qti.hardware.vpp@1.1.so|f4af1cf42d71a49fffcb7b787fd07bf0d6998f9f
-vendor/lib/vendor.qti.hardware.vpp@1.2.so|e5b76ac1eaf9a32ff8de1a12ca01896f0a7f615f
-vendor/lib64/libOmxVpp.so|74df12f06aa02937e2759334439608a7752a97a2
-vendor/lib64/libswvdec.so|16aa7eb2e43780aeaee934b40de30b73669eb1fe
-vendor/lib64/libvppclient.so|b04cfa085dfb0f6322d7b9f81af3249251258f4c
-vendor/lib64/libvpphcp.so|860a4c6c8d25bcc07d31b94b35d7caf63d5fcd81
-vendor/lib64/libvpphvx.so|9ae5376d9951823a95f95d11debfd89fff4970c8
-vendor/lib64/libvpplibrary.so|c53a8423abe062797cf7df08b2192fce9a20938b
-vendor/lib64/vendor.qti.hardware.vpp@1.1.so|c387b980e5c524b4d78c725ed043e6c1333ef2c0
-vendor/lib64/vendor.qti.hardware.vpp@1.2.so|171b951d8b110fc2649306741db28434b4549a1c
-
-# Media codecs - from polaris V11.0.5.0.QDGMIXM
-vendor/lib/libAlacSwDec.so|0f24e0bf1dabb8b6ec15833ea9dbce7516ddfb62
-vendor/lib/libApeSwDec.so|51bc6c9b41039735c8fd212759cac4f97b42925e
-vendor/lib/libFlacSwDec.so|10cf675ad7f5c13d52c87099f54e027bab430efb
-vendor/lib/libMpeg4SwEncoder.so|652b7fafc55f0900612a64425c6ddc33a0e53617
-vendor/lib/libOmxAacDec.so|c4a4b3e95a8ee0c60c67fceb4e3d80519f736d36
-vendor/lib/libOmxAlacDec.so|219e539d826e1574420a4c615842df3894e8a767
-vendor/lib/libOmxAlacDecSw.so|124f57f374cccb2ba8c0392d8689356c7b34d0d8
-vendor/lib/libOmxAmrDec.so|a349bb020a38c22c6ea42b8fb0fe8ab6dc03d712
-vendor/lib/libOmxAmrwbplusDec.so|acc0583d3f3507f5b251a342bf89d1818a8ea3d2
-vendor/lib/libOmxApeDec.so|ab5915181b4938d1a5c135a6d708208dc2a278e7
-vendor/lib/libOmxApeDecSw.so|c208ed8051ed0512dcd4326d530a432b487e00ba
-vendor/lib/libOmxEvrcDec.so|6e13530c84fcd2e0551946171a0ffe610fc1ac45
-vendor/lib/libOmxG711Dec.so|060ab186617f4032176599dc64c10767dbe4abdd
-vendor/lib/libOmxQcelp13Dec.so|efc5246d31b1c27b0f4e88a9380f90bb4b46f16b
-vendor/lib/libOmxSwVdec.so|84af20eaa31ce1d26f604bf55ddbf9e9a3556829
-vendor/lib/libOmxSwVencMpeg4.so|57d46fabfb7ccd98123fa00c50a4fed502f5b027
-vendor/lib/libOmxWmaDec.so|e2a515dec57a52fd9488cd9ed4c9614067912811
-vendor/lib64/libAlacSwDec.so|75f64f40c611ed5c90ddb3546be06c8297b64556
-vendor/lib64/libApeSwDec.so|0fc21a02eb69f00404e04b1374b8a459b16000ae
-vendor/lib64/libFlacSwDec.so|4c6921ca8b103723415c97f52023ce1df71f57fb
-vendor/lib64/libMpeg4SwEncoder.so|c8e416d4acc1d7a9d6f180cb14404d9c7028738f
-vendor/lib64/libOmxAacDec.so|e39aaa8dd0ae72f834e94bd374f4ef9dec614f28
-vendor/lib64/libOmxAlacDec.so|2020c6a53b612cf97e4519de8dfa686840bd2e96
-vendor/lib64/libOmxAlacDecSw.so|f5103874cb9502643a547523a2bab2440d1e78af
-vendor/lib64/libOmxAmrDec.so|eb2d85801d0615f3f0545ee6ddbaca8179007dfb
-vendor/lib64/libOmxAmrwbplusDec.so|bf531e7265f6f535f4da50d13c4a26e7257e2487
-vendor/lib64/libOmxApeDec.so|1e6bd126b42e865a06762eae1dca8c55b8ad12cf
-vendor/lib64/libOmxApeDecSw.so|d6a1cee473ba844e3c4ca7818f978d805dcfddbf
-vendor/lib64/libOmxEvrcDec.so|cc00ca9cec8de68a85ced47b64698c2f6d2579eb
-vendor/lib64/libOmxG711Dec.so|5e2450a088b8f857f8eb6b819916a0bbdee5e54b
-vendor/lib64/libOmxQcelp13Dec.so|8c44fe0e9d4e10223099ac55d7eb66d8c2157bd9
-vendor/lib64/libOmxSwVdec.so|5523553103f9e30eee0e16f003e0b7d1e793a133
-vendor/lib64/libOmxSwVencMpeg4.so|09c045037a72fecbf7c30baf70bebce8731ad381
-vendor/lib64/libOmxWmaDec.so|05c8b864d04a9e7db3a62daef1ddb2e052c800da
-
 # Neural networks
 vendor/etc/init/android.hardware.neuralnetworks@1.1-service-qti.rc
 vendor/bin/hw/android.hardware.neuralnetworks@1.1-service-qti
@@ -745,6 +685,49 @@ vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
 
 # NFC
 vendor/lib/libpn553_fw.so
+
+# OMX - from PNX - RKQ1.200906.002
+vendor/lib/libAlacSwDec.so|e49062c9fd9377e8264bf8f7901394653b9f02dc
+vendor/lib/libApeSwDec.so|f14f08a55b32cc252417e3970b1d2cb296d48fa0
+vendor/lib/libFlacSwDec.so|bba6d4155029b2fd1a3d2dfe9f75f422f0d8a35e
+vendor/lib/libMpeg4SwEncoder.so|631e5c91aa89a1f0d60755f3dcea7d74e57af262
+vendor/lib/libOmxAacDec.so|3d90cded7de2423503025d115e2788e0eff7390f
+vendor/lib/libOmxAlacDec.so|0f0e8be4b1558fb7ab87c3b8dfa7f7a2cf33fe75
+vendor/lib/libOmxAlacDecSw.so|a8491930e40b32ae4f2f195b93847ad20e5a6275
+vendor/lib/libOmxAmrDec.so|942bb36c76ff125849b947acd1dbb8edcfee8b16
+vendor/lib/libOmxAmrwbplusDec.so|6869d09e4499824a476d3b036e025b5d70a83c70
+vendor/lib/libOmxApeDec.so|8de514dddfbd5a09f740cecbaf73bfb8c290ca9a
+vendor/lib/libOmxApeDecSw.so|cc1bec67919a9bfe899dd5c2b52f8a3ca6186262
+vendor/lib/libOmxDsdDec.so|5a58c8b54578c6c7520666df4040a422fea67df9
+vendor/lib/libOmxEvrcDec.so|58d55a09798ae13c90829c7ced2e7fee1c61d8b1
+vendor/lib/libOmxG711Dec.so|254245293c12e4d32217b0704bff5f676f4bb5de
+vendor/lib/libOmxQcelp13Dec.so|6c55114663ba69f2c2a7e6c69989fc79d67977b3
+vendor/lib/libOmxSwVdec.so|326fcf4174103efbd926fb046d12ba7d9121a312
+vendor/lib/libOmxSwVencMpeg4.so|cc082e75a01390e392e962a87b4a0dccf228585a
+vendor/lib/libOmxVideoDSMode.so|5862b9d707ca00cd87b70a7f581df49fa3304d2c
+vendor/lib/libOmxVpp.so|7a9a96445b55f28013ea8f4ed767c7e245420c4f
+vendor/lib/libOmxWmaDec.so|eab25fd58910bbeb57812c75fd3c5511c60fa592
+vendor/lib/libdsd2pcm.so|427be2997fcd72e94c33d08b2cf1fde5bf969fd4
+vendor/lib/libswvdec.so|0ebbd44d40c83333e99e47d64509a970a4052859
+vendor/lib64/libAlacSwDec.so|bfd2eb75d733c99d7c0b46f3016834f6f3ebcbdc
+vendor/lib64/libApeSwDec.so|96b957bd6d993737483d9d8705229b406d616ec7
+vendor/lib64/libFlacSwDec.so|720f8497fcbc3d98aa8ff333ed55ca575eb08815
+vendor/lib64/libMpeg4SwEncoder.so|1fc7361424c655ed94c1ac9280c4fe33903a65f6
+vendor/lib64/libOmxAacDec.so|98b894101c87beb61f0f1e5a9e3c6ea430441bdd
+vendor/lib64/libOmxAlacDec.so|3298ac6565f5362e7ed5c4196cfacc1c8811fa72
+vendor/lib64/libOmxAlacDecSw.so|934b495a864087b82b17a493ac498924701aa9e5
+vendor/lib64/libOmxAmrDec.so|f5302be684af636aa4b3101f268856fc7706a2a0
+vendor/lib64/libOmxAmrwbplusDec.so|a98845715e128e6c2649289988e4ff4de1ef9f8b
+vendor/lib64/libOmxApeDec.so|61416c5ed237a741e524b36c2b5c58a067896e9b
+vendor/lib64/libOmxApeDecSw.so|0c597c5ceb031322f2b6d8472c1c946ec4aabdea
+vendor/lib64/libOmxEvrcDec.so|e4d98d61ad8588956b7f4f937dd720164d584f7e
+vendor/lib64/libOmxG711Dec.so|53675a26d5386c868127304c6dfe9dd130f106f8
+vendor/lib64/libOmxQcelp13Dec.so|65952f3680f9865ea601de764037637d6ee8c990
+vendor/lib64/libOmxSwVdec.so|f891c5cb584e317ad0cb855c266100658406f556
+vendor/lib64/libOmxSwVencMpeg4.so|91f7a60674477b067d36493ddb44ea6c044b16ac
+vendor/lib64/libOmxVpp.so|a87440c7838b6f03726d97a4a52b695bb4c6e8f8
+vendor/lib64/libOmxWmaDec.so|7b2a714a74fea03a403a7d0edef61db2f70d7d4e
+vendor/lib64/libswvdec.so|ae1f55c7094e2a006e28dcfb0f2b9c32634fb849
 
 # Peripheral manager
 vendor/bin/pm-proxy
@@ -1121,6 +1104,21 @@ vendor/firmware/widevine.mdt
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 vendor/lib/mediadrm/libwvdrmengine.so
+
+# VPP - from PNX - RKQ1.200906.002
+vendor/bin/vppservice|555301b19a86374900159423c88efd7bd9cea2f9
+vendor/etc/configstore/vpp.configstore.xml|d5095f33c326017a21fff186d19a2ce146b85d94
+vendor/etc/init/vppservice.rc|9daea1a00124d65ecb6978936785273edb74a8ed
+vendor/lib/libvppclient.so|3ec875c9813494878d3bbea32d65070fa68af0f1
+vendor/lib/libvpphvx.so|a3869a611414316250b71be42b69638c31e9a8f9
+vendor/lib/libvpplibrary.so|c7c2e2a64ef4a1d4d4103130835da94f58eb2f4b
+vendor/lib/vendor.qti.hardware.vpp@1.1.so|8df356bc93951b2072590ff17c5d7af08b4e8299
+vendor/lib/vendor.qti.hardware.vpp@1.2.so|edd5e3b33c51c31c8e9e54912269e893c4e3c730
+vendor/lib64/libvppclient.so|3cf0dc7ce3fa3adf9d05e674e3359fadd02a730c
+vendor/lib64/libvpphvx.so|e1cfc643118f32a73d45c78929edc9815705229d
+vendor/lib64/libvpplibrary.so|3cdb980f51d0c0eecdb878eb869102c038b2f803
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so|f7769685d9c0c74f8c8419db028a5d5c3f65a9da
+vendor/lib64/vendor.qti.hardware.vpp@1.2.so|ca1906012d0ab6dc9048aa49703833512308e6cf
 
 # WiFi
 vendor/bin/cnss-daemon
