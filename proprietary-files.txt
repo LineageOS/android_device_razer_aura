@@ -253,49 +253,49 @@ vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc|4ede025
 vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|1e990a2e8a67aa8a1223ea8879cb049e5819868d
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|c9459c96581b4da688cfd53dfefa702b984a425f
 
-# Display (HDR) - from polaris V11.0.5.0.QDGMIXM
-vendor/lib/libhdr_tm.so|eab66540cffc6b81449cfe620e715de7318e17a3
-vendor/lib64/libhdr_tm.so|5e3fe8e2310dfed221da6694723daef715658e98
+# Display (HDR) - from PNX - RKQ1.200906.002
+vendor/lib/libhdr_tm.so|1e8a647523db0a09c9587a77f1f7b132a03c2354
+vendor/lib64/libhdr_tm.so|7ac38563480eab0583cb440e667a44cfa596167a
 
-# Display (SDM) - from polaris V11.0.5.0.QDGMIXM
-vendor/lib/libqseed3.so|2aec751ff023c1c3a0150dc0ae952ca79d8689e1
-vendor/lib/libsdedrm.so|ac6a187f05bf8d78ae38cf5e337c7f0959ebc09c
-vendor/lib/libsdm-color.so|9bd0551211b2be2cdb1df0c8bf23e126933aa2c8
-vendor/lib/libsdm-diag.so|eac1b321d43c1b3c569cef589bf2cc38b51ff6b4
-vendor/lib/libsdm-disp-vndapis.so|33511878184e3786f99e81eca10ef89732c055a1
-vendor/lib/libsdmextension.so|d50c4720587f513287700f41209a8e35735c5207
-vendor/lib/libtinyxml2_1.so|c79f7ef09a7fc93152fdf5252199891fc31f346c
-vendor/lib64/libqseed3.so|e465ec47468012202edab549619ae3b33f29dfa4
-vendor/lib64/libsdedrm.so|36eddd34e776fbf7512dbd0afc764fcffc745a39
-vendor/lib64/libsdm-color.so|7f46bd9fc0177212036cd6ca6400f1dc8dff5d52
-vendor/lib64/libsdm-diag.so|9dcada14f81cc46eb11f2f222591237194d9a6b7
-vendor/lib64/libsdm-disp-vndapis.so|ced43c72112f9b3c8066785ebe771839e7c6a20f
-vendor/lib64/libsdmextension.so|8e5aed95720054b24e113681444e25ec2431b5dd
-vendor/lib64/libtinyxml2_1.so|d87dfed7c044e24c90fe4ae9fcd9b3812f432ff4
+# Display (SDM) - from PNX - RKQ1.200906.002
+vendor/lib/libdisplayqos.so|7b83c36716bae758c71d34b85401d7d77afa2c23
+vendor/lib/libqseed3.so|ea8d3775ab13c9ebfcdc2a02e60f56cc49a9d695
+vendor/lib/libsdedrm.so|b11f16f16cdeaecb492b7ff2274cc02bd604bf0f
+vendor/lib/libsdm-color.so|a18425c4e29bf76f25145d8f839108886283a45f
+vendor/lib/libsdm-diag.so|52c1b843b733165284445b00cb8525063994f502
+vendor/lib/libsdm-disp-vndapis.so|8f433d5996f90c584530ed5a6eba504c3b4cc2b1
+vendor/lib/libsdmextension.so|872876273741968fda9006853979d9da1accc4fb
+vendor/lib/libtinyxml2_1.so|f00b8f6218271d57fd1fb67b192db956e42e66fb
+vendor/lib64/libdisplayqos.so|c3d45315871e402053dd1f353e9bde5cbf757277
+vendor/lib64/libqseed3.so|f5990f19a99ec5f33b5a262493c4e642a1429f69
+vendor/lib64/libsdedrm.so|5113b02d32b886281a790c8c323498195ec780f8
+vendor/lib64/libsdm-color.so|a2b413dea186f9049cb596a6414efc2739694059
+vendor/lib64/libsdm-diag.so|f484f554a015327acf7b5d1f8dbcdddf083c2f45
+vendor/lib64/libsdm-disp-vndapis.so|4c6916fed1e304effa4c06c7207fb0e1b604f3ae
+vendor/lib64/libsdmextension.so|70c18b044897825bc1f15f2b6f73b64b639b6d40
+vendor/lib64/libtinyxml2_1.so|92101861d95cbdf9625d192d0b2295baa5960b68
 
-# Display postprocessing - from polaris V11.0.5.0.QDGMIXM
-vendor/bin/hw/vendor.display.color@1.0-service|ae804149eab8e9933ef04c5bad07abd99af60379
-vendor/bin/mm-pp-dpps|7854460007cbea87832cee6d2af48b3c0ed769a2
-vendor/bin/ppd|a61d3d8847f743e061f25d1b623e5311cddbab8c
+# Display postprocessing - from PNX - RKQ1.200906.002
+vendor/bin/hw/vendor.display.color@1.0-service|a9d360976833d863f74df381298de696daea8acb
+vendor/bin/mm-pp-dpps|e825298dc12603df29c35aa6ad86fd0d0a7646a2
+vendor/bin/ppd|8b60669c32f091dd5832579892c91dc3eb0e8130
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
-vendor/lib/libdisp-aba.so|3d6aff1f90a6ed16b97014b261b8f3eb18e25fdb
-vendor/lib/libdisplayqos.so|4489934c5c4ded1098bbaf43bc50e3bbb1e4b2d3
-vendor/lib/vendor.display.color@1.0.so|bd9454aa8ad3839b6e269345f9b8bc6ffb02072a
-vendor/lib/vendor.display.color@1.1.so|29c267207f98174ee4d88ec2216acbcb48deb188
-vendor/lib/vendor.display.color@1.2.so|a7c653ecea0456167c658ad55f7b2a5a817db5f3
-vendor/lib/vendor.display.postproc@1.0.so|8b54d80061413abed087df88f84ddaa6e3defbc3
-vendor/lib64/libdisp-aba.so|2c9be5015ceeda186a323cb904593be9950cf5f9
-vendor/lib64/libdisplayqos.so|1507382b7007c5519c0f446f3fb51638049c8cd5
-vendor/lib64/vendor.display.color@1.0.so|09c0db4755ec4d85ab163de908c55104f7d4771d
-vendor/lib64/vendor.display.color@1.1.so|66531520f99cc4b113c8b1fad55dcd9284bf9124
-vendor/lib64/vendor.display.color@1.2.so|b65aea5c3b642db0446f579e6226f7f16c158471
-vendor/lib64/vendor.display.postproc@1.0.so|94a066d92a21a16cf6aa701e0e1528de94a1a161
-
-# Display utils - from polaris V11.0.5.0.QDGMIXM
-vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|c504834326ca83fe18fc35619a0b23b4ec123ca7
-vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc|69d9cbc54f8ac0a0fb010f92bfa7de5981d643cf
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|a729a0bf0f9157e49fe0f2cf759c89f0126d4964
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|0f47d6cf21bea16c61587f706f3c9d774064b79a
+vendor/lib/libdisp-aba.so|9271ecfa4d389d99bc592ab2a460eacef7515836
+vendor/lib/vendor.display.color@1.0.so|640ab2b9c2f0077634ed74263c5558076d431203
+vendor/lib/vendor.display.color@1.1.so|732531bbea59f5c1a90f409350d290607189c47f
+vendor/lib/vendor.display.color@1.2.so|f1ea074c629f1fc27000efb44617f7e8386b12d4
+vendor/lib/vendor.display.color@1.3.so|1467fbb9cbbb331da846fd2bcc3e644b55723bd5
+vendor/lib/vendor.display.color@1.4.so|3b7f6a489f66b2cc8b3e5a467b9fe3f95a59c775
+vendor/lib/vendor.display.color@1.5.so|e97e31b9567f9a6f9031063d2356e7391ba719e3
+vendor/lib/vendor.display.postproc@1.0.so|251c33b11743f5e24ca220b220da367996f3077b
+vendor/lib64/libdisp-aba.so|e76d6756cbb0532bc83ff98a06c4ca02fecdd8fe
+vendor/lib64/vendor.display.color@1.0.so|253cd210899ea79133c7b7b9d31429e4a8d43c32
+vendor/lib64/vendor.display.color@1.1.so|fe9b373785571bb890db27523b804dc7d4411bca
+vendor/lib64/vendor.display.color@1.2.so|f40eb8c9d39776c43448431d7c7f7ecc3e4506c3
+vendor/lib64/vendor.display.color@1.3.so|3fbe0a8a317789608848f35b39ed9bfb734f9ecc
+vendor/lib64/vendor.display.color@1.4.so|1396673668977af0a8afeaa64f891c3b356f958d
+vendor/lib64/vendor.display.color@1.5.so|f1c12eb133698917385d48913358eaffd9a10879
+vendor/lib64/vendor.display.postproc@1.0.so|e56b66d744dd77bd87afbb30cab558acf15709fb
 
 # DPM - from polaris V11.0.5.0.QDGMIXM
 product/bin/dpmd:system_ext/bin/dpmd|7503d40ddb06e41333aafe4613d0dba6aed9b896
