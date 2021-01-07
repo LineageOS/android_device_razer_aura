@@ -109,8 +109,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.sf.native_mode=3 \
     ro.opengles.version=196610 \
     ro.qualcomm.cabl=0 \
-    vendor.display.disable_fbid_cache=1 \
-    vendor.display.res_switch_en=1
+    vendor.display.disable_fbid_cache=1
 
 # HWUI
 PRODUCT_PROPERTY_OVERRIDES += \
