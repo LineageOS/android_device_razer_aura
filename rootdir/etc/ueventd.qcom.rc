@@ -149,18 +149,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/mdss_rotator         0664   system     system
 /dev/cpu_dma_latency      0660   root       system
 
-#permissions for 3DSL
-/dev/cam-sl-eeprom        0660   system     system
-/dev/flood                0660   system     system
-/dev/rtmv20               0660   system     system
-
-#permissions for Elliptics
-/dev/elliptic0            0644   root       root
-/dev/elliptic1            0644   root       root
-
-#permissions for TAS
-/dev/tiload_node          0660   system     system
-
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
 /dev/mhi_qdss             0660   system    oem_2902

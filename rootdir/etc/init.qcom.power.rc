@@ -100,9 +100,6 @@ on property:init.svc.vendor.charger=running
 
     start vendor.hvdcp_opti
     start vendor.power_off_alarm
-    start vendor.poweroffm64
-    mount tmpfs tmpfs /data
-    start vendor.thermal-engine
     setprop vendor.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
 
@@ -141,10 +138,6 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl 1
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800"
     write /sys/module/cpu_boost/parameters/input_boost_ms 120
-
-    # Set up powerkey boost freq
-    write /sys/module/cpu_boost/parameters/powerkey_input_boost_freq "0:0 1:0 2:0 3:0 4:2323200 5:0 6:0 7:0"
-    write /sys/module/cpu_boost/parameters/powerkey_input_boost_ms 400
 
     # Limit the min frequency to 825MHz
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 825000
@@ -206,11 +199,8 @@ on enable-low-power
     write /sys/class/devfreq/soc:qcom,mincpubw/polling_interval 10
 
     # Set cpuset parameters
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-2
-    write /dev/cpuset/foreground/boost/cpus 4-7
-    write /dev/cpuset/foreground/cpus 0-2,4-7
-    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
 
     # Turn off scheduler boost at the end
     write /proc/sys/kernel/sched_boost 0
@@ -237,9 +227,6 @@ on enable-low-power
     write /proc/sys/vm/swappiness 100
     write /proc/sys/vm/watermark_scale_factor 120
 
-    # Set LMK minfree
-    write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,27648,32256,85296,120640"
-
     # Post-setup services
     setprop vendor.post_boot.parsed 1
 
@@ -264,8 +251,3 @@ service vendor.power_off_alarm /vendor/bin/power_off_alarm
     group system
     disabled
     oneshot
-
-service vendor.poweroffm64 /vendor/bin/poweroffm64
-    class late_start
-    oneshot
-    seclabel u:r:poweroffm64:s0
