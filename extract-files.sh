@@ -72,7 +72,9 @@ function blob_fixup() {
             sed -i 's|/system/framework/|/system_ext/framework/|g' "${2}"
             ;;
         system_ext/lib64/lib-imsvideocodec.so)
-            "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+            for LIBUI_SHIM in $(grep -L "libui_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libui_shim.so" "$LIBUI_SHIM"
+            done
             ;;
         system_ext/lib64/libdpmframework.so)
             sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
