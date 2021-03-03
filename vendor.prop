@@ -55,6 +55,10 @@ camera.disable_zsl_mode=1
 vendor.camera.aux.packagelist=com.android.camera,org.lineageos.snap,com.razer.camera,com.razerzone.camera
 vendor.camera.dual_camera=true
 
+# Chipset
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=SDM845
+
 # CNE
 persist.vendor.cne.feature=1
 
