@@ -2,4 +2,6 @@ type proc_wifi_mac, proc_type, fs_type;
 
 type securefs_block_device, dev_type;
 
+type sysfs_fingerprint, sysfs_type, fs_type;
+
 type sysfs_wireless_supply, sysfs_type, fs_type;
