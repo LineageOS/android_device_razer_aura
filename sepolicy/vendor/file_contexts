@@ -1,3 +1,6 @@
+# Block devices
+/dev/block/platform/soc/1d84000\.ufshc/by-name/securefs                                                 u:object_r:securefs_block_device:s0
+
 # HALs
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.aura                            u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.aura                                              u:object_r:hal_light_default_exec:s0
@@ -5,3 +8,6 @@
 
 # Health
 /sys/devices/platform/soc/89c000.i2c/i2c-5/5-0061/power_supply/wireless(/.*)?                           u:object_r:sysfs_wireless_supply:s0
+
+# Partitions
+/mnt/vendor/securefs/data(/.*)?                                                                         u:object_r:persist_drm_file:s0

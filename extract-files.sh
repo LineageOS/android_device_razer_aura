@@ -28,6 +28,9 @@ function blob_fixup() {
     product/etc/permissions/telephonyservice.xml)
         sed -i 's|/system/framework/QtiTelephonyServicelibrary.jar|/product/framework/QtiTelephonyServicelibrary.jar|g' "${2}"
         ;;
+    vendor/etc/gpfspath_oem_config.xml)
+        sed -i 's|/vendor/securefs/data/|/mnt/vendor/securefs/data/|g' "${2}"
+        ;;
     vendor/lib/hw/audio.primary.sdm845.so)
         patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
         ;;
