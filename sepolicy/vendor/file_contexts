@@ -11,3 +11,6 @@
 
 # Partitions
 /mnt/vendor/securefs/data(/.*)?                                                                         u:object_r:persist_drm_file:s0
+
+# Services
+/vendor/bin/wireless_init                                                                               u:object_r:wireless_init_exec:s0
