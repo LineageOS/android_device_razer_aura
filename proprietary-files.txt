@@ -841,7 +841,6 @@ vendor/lib64/libhexagon_nn_stub.so
 vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
 
 # NFC
-vendor/bin/nqnfcinfo
 vendor/lib/libpn553_fw.so
 
 # Peripheral manager

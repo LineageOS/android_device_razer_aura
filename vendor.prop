@@ -164,10 +164,6 @@ ro.vendor.qti.sys.fw.bservice_enable=true
 # Netflix BSP
 ro.netflix.bsp_rev=Q845-05000-1
 
-# NFC
-ro.hardware.nfc_nci=nqx.default
-ro.nfc.port=I2C
-
 # Perf
 persist.vendor.data.iwlan.enable=true
 persist.vendor.qcomsysd.enabled=1
