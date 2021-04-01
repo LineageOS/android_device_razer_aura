@@ -18,3 +18,4 @@
 
 # Services
 /vendor/bin/wireless_init                                                                               u:object_r:wireless_init_exec:s0
+/vendor/bin/init\.sensor\.e2pwrite\.sh                                                                  u:object_r:sensors_e2p_exec:s0

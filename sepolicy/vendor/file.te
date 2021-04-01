@@ -1,5 +1,7 @@
 type data_rfs_shared_hlos_file, file_type, core_data_file_type, data_file_type;
 
+type proc_sensordata, proc_type, fs_type;
+
 type proc_wifi_mac, proc_type, fs_type;
 
 type securefs_block_device, dev_type;
