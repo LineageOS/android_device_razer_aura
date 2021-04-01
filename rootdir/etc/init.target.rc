@@ -59,7 +59,8 @@ on property:ro.vendor.ril.fih_mcfg_lock=1
 
 service e2p-sh /vendor/bin/init.sensor.e2pwrite.sh
     class late_start
-    user root
+    user system
+    group system
     oneshot
 
 service led-init /vendor/bin/sh /vendor/bin/init.aura.led_init.sh
