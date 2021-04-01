@@ -7,4 +7,7 @@ type_transition qti_init_shell system_data_file:dir data_rfs_shared_hlos_file "f
 allow qti_init_shell data_rfs_shared_hlos_file:dir create_dir_perms;
 allow qti_init_shell data_rfs_shared_hlos_file:file create_file_perms;
 
+allow qti_init_shell configfs:dir rw_dir_perms;
+allow qti_init_shell configfs:file create_file_perms;
+
 allow qti_init_shell sensors_persist_file:fifo_file { getattr setattr };
