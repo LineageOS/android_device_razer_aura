@@ -16,10 +16,10 @@ PRODUCT_BRAND := razer
 PRODUCT_MODEL := Phone 2
 PRODUCT_MANUFACTURER := Razer
 
-BUILD_FINGERPRINT := "razer/cheryl2/aura:9/P-SMR3-RC002-RZR-200226/3141:user/release-keys"
+BUILD_FINGERPRINT := "razer/cheryl2/aura:9/P-SMR6-RC001-RZR-201022/3201:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="aura-user 9 P-SMR3-RC002-RZR-200226 3141 release-keys" \
+    PRIVATE_BUILD_DESC="aura-user 9 P-SMR6-RC001-RZR-201022 3201 release-keys" \
     PRODUCT_NAME="cheryl2"
 
 PRODUCT_GMS_CLIENTID_BASE := android-razer
