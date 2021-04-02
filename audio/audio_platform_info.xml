@@ -31,6 +31,7 @@
         <device name="SND_DEVICE_OUT_SPEAKER_REVERSE" acdb_id="15"/>
         <device name="SND_DEVICE_OUT_SPEAKER_PROTECTED" acdb_id="124"/>
         <device name="SND_DEVICE_OUT_VOICE_HANDSET" acdb_id="7"/>
+        <device name="SND_DEVICE_OUT_VOICE_HANDSET_TMUS" acdb_id="7"/>
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER" acdb_id="14"/>
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER_2_PROTECTED" acdb_id="150"/>
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER_2_PROTECTED_VBAT" acdb_id="150"/>
@@ -185,6 +186,7 @@
         <device name="SND_DEVICE_OUT_HANDSET" backend="handset" interface="QUAT_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_HANDSET" backend="handset" interface="QUAT_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_HANDSET_HAC" backend="handset" interface="QUAT_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_HANDSET_TMUS" backend="voice-handset-tmus" interface="QUAT_MI2S_RX" />
         <device name="SND_DEVICE_OUT_HANDSET_HAC" backend="handset" interface="QUAT_MI2S_RX"/>
     </backend_names>
     <!-- below values are for ref purpose to OEM, doesn't contain actual hardware info on MTP -->
