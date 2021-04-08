@@ -31,12 +31,6 @@ function blob_fixup() {
     vendor/etc/gpfspath_oem_config.xml)
         sed -i 's|/vendor/securefs/data/|/mnt/vendor/securefs/data/|g' "${2}"
         ;;
-    vendor/lib/hw/audio.primary.sdm845.so)
-        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
-        ;;
-    vendor/lib64/hw/audio.primary.sdm845.so)
-        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
-        ;;
     vendor/lib/libgps.utils.so)
         patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
         ;;
