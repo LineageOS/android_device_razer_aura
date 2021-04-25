@@ -7,6 +7,9 @@ persist.vendor.bt.a2dp.aac_whitelist=false
 ro.bluetooth.a2dp_offload.supported=true
 ro.bluetooth.library_name=libbluetooth_qti.so
 
+# Charger
+ro.charger.enable_suspend=true
+
 # Graphics
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_HDR_display=true
@@ -22,6 +25,9 @@ ro.oem_unlock_supported=1
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
+
+# Voice assistant
+ro.opa.eligible_device=true
 
 # Zygote
 persist.device_config.runtime_native.usap_pool_enabled=true
