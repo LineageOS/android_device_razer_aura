@@ -582,10 +582,6 @@ service vendor.vppservice /vendor/bin/vppservice
 on property:ro.vendor.radio.noril=*
     setprop ro.radio.noril ${ro.vendor.radio.noril}
 
-# Set GPU OpenGL ES version
-on property:vendor.opengles.version=*
-    setprop ro.opengles.version ${vendor.opengles.version}
-
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
     class hal
