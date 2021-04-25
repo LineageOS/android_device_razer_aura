@@ -214,7 +214,6 @@ vendor.mm.enable.qcom_parser=13631487
 
 # System
 config.disable_rtt=true
-persist.debug.coresight.config=stm-events
 ro.build.shutdown_timeout=6
 
 # Time
