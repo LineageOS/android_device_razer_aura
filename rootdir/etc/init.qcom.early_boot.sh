@@ -68,47 +68,6 @@ else
     log -t DRM_BOOT -p w "file: '$vbfile' or perms doesn't exist"
 fi
 
-function set_density_by_fb() {
-    #put default density based on width
-    if [ -z $fb_width ]; then
-        setprop vendor.display.lcd_density 320
-    else
-        if [ $fb_width -ge 1600 ]; then
-           setprop vendor.display.lcd_density 640
-        elif [ $fb_width -ge 1440 ]; then
-           setprop vendor.display.lcd_density 560
-        elif [ $fb_width -ge 1080 ]; then
-           setprop vendor.display.lcd_density 480
-        elif [ $fb_width -ge 720 ]; then
-           setprop vendor.display.lcd_density 320 #for 720X1280 resolution
-        elif [ $fb_width -ge 480 ]; then
-            setprop vendor.display.lcd_density 240 #for 480X854 QRD resolution
-        else
-            setprop vendor.display.lcd_density 160
-        fi
-    fi
-}
-
-target=`getprop ro.board.platform`
-case "$target" in
-    "sdm845")
-        case "$soc_hwplatform" in
-            *)
-                if [ $fb_width -le 1600 ]; then
-                    setprop vendor.display.lcd_density 560
-                else
-                    setprop vendor.display.lcd_density 640
-                fi
-                ;;
-        esac
-        ;;
-esac
-
-# Set default LCD density
-# Since LCD density has read only property, it will not overwrite previous set
-# property if any target is setting forcefully.
-set_density_by_fb
-
 # Setup display nodes & permissions
 # HDMI can be fb1 or fb2
 # Loop through the sysfs nodes and determine
