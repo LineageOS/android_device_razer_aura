@@ -1,2 +1,5 @@
 # Fingerprint
 fpc_kpi                                                                              u:object_r:vendor_fp_prop:s0
+
+# Thermal
+sys.vendor.thermal.                                                                  u:object_r:thermal_engine_prop:s0
