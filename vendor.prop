@@ -84,13 +84,10 @@ vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 
 # Bluetooth
-bt.max.hfpclient.connections=1
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aac
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
-ro.bluetooth.emb_wp_mode=true
-ro.bluetooth.wipower=true
 ro.vendor.bt.bdaddr_path=/sys/module/fih_mfd/parameters/bt_mac
 vendor.qcom.bluetooth.soc=cherokee
 
