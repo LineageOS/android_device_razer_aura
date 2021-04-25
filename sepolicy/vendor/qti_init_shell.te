@@ -11,3 +11,7 @@ allow qti_init_shell configfs:dir rw_dir_perms;
 allow qti_init_shell configfs:file create_file_perms;
 
 allow qti_init_shell sensors_persist_file:fifo_file { getattr setattr };
+
+allow qti_init_shell sysfs_leds:dir setattr;
+allow qti_init_shell sysfs_leds:file setattr;
+dontaudit qti_init_shell sysfs:dir setattr;
