@@ -155,7 +155,6 @@ vendor/lib/camera/com.qti.sensor.s5k2x5sp.so
 vendor/lib/camera/com.qti.sensor.s5k3h7.so
 vendor/lib/camera/com.qti.tuned.chicony_s5k3h7.bin
 vendor/lib/camera/com.qti.tuned.liteon_imx351.bin
-vendor/lib/camera/com.qti.tuned.liteon_imx363.bin
 vendor/lib/camera/fdconfigpreview.bin
 vendor/lib/camera/fdconfigpreviewlite.bin
 vendor/lib/camera/fdconfigvideo.bin
@@ -177,6 +176,9 @@ vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmpbase.so
 vendor/lib/libsnsapi.so
 vendor/lib/libswregistrationalgo.so
+
+# Camera - from aura-o-global-2009.zip
+vendor/lib/camera/com.qti.tuned.liteon_imx363.bin|f88d078849a01d82dd59585413c48738bd3c7fcb
 
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
