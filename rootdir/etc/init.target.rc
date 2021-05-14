@@ -28,8 +28,9 @@
 #
 
 on boot
-    chown system system /proc/AllHWList/tp_double_tap
-    chmod 664 /proc/AllHWList/tp_double_tap
+    # Touchscreen
+    chown system system /sys/devices/platform/soc/a98000.i2c/i2c-7/7-0020/input/input1/wake_gesture
+    chmod 0660 /sys/devices/platform/soc/a98000.i2c/i2c-7/7-0020/input/input1/wake_gesture
 
 on post-fs-data
     # Mounting of securefs is moved to 'on emmc-fs' and 'on fs' sections
