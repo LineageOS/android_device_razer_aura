@@ -594,8 +594,6 @@ vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so|bd92484fdb962d9d85ff731beff11a
 vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so|3823e3f668753621d8b63fc8e6d19f36ce2b0346
 vendor/lib64/vendor.qti.hardware.radio.ims@1.3.so|5f02948bdd75fd2aef0a16fac8759c34b291a64e
 vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so|069c4b5d298e65aedfc7d0362c8e9ceabc7f9afd
-vendor/lib64/vendor.qti.hardware.radio.ims@1.5.so|dee9b9e4bf6699a430d22de79e0c29f08bac5336
-vendor/lib64/vendor.qti.hardware.radio.ims@1.6.so|6a93ecffb64d014e675a0e57772f1bb66c22db2c
 vendor/lib64/vendor.qti.ims.callinfo@1.0.so|75f3b86bcfbb976c2887d983d4c226e9445fa91f
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|7fa18794f234accb354e0e2976b8bec7c9095cb9
 vendor/lib64/vendor.qti.imsrtpservice@2.0.so|99c2ea6fa6e08e9a1232a8f6b7dca17013adadf9
