@@ -2611,10 +2611,6 @@
         <ctl name="QUAT_MI2S_RX Channels" value="One" />
     </path>
 
-    <path name="handset-hac">
-       <path name="handset" />
-    </path>
-
     <path name="handset-qrd">
         <!--
         <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
@@ -2775,7 +2771,7 @@
         <path name="handset-qrd" />
     </path>
 
-    <path name="voice-handset-hac">
+    <path name="voice-hac-handset">
        <path name="voice-handset" />
     </path>
 
