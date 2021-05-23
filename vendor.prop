@@ -16,6 +16,7 @@ ro.config.vc_call_vol_steps=8
 ro.vendor.audio.sdk.fluencetype=fluencepro
 ro.vendor.audio.sdk.ssr=false
 vendor.audio.adm.buffering.ms=2
+vendor.audio.default_speaker_rotation=270
 vendor.audio.dolby.ds2.enabled=false
 vendor.audio.dolby.ds2.hardbypass=false
 vendor.audio.enable.dp.for.voice=false
