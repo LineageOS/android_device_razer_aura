@@ -21,4 +21,7 @@
          * 2: show the clock in the left position (LTR)
     -->
     <integer name="def_clock_position">2</integer>
+
+    <!-- Default for LineageSettings.Secure.VOLUME_PANEL_ON_LEFT -->
+    <bool name="def_volume_panel_on_left">true</bool>
 </resources>
