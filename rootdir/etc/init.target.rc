@@ -33,12 +33,6 @@ on boot
     chmod 0660 /sys/devices/platform/soc/a98000.i2c/i2c-7/7-0020/input/input1/wake_gesture
 
 on post-fs-data
-    # Mounting of securefs is moved to 'on emmc-fs' and 'on fs' sections
-    # We chown/chmod /mnt/vendor/securefs again so because mount is run as root + defaults
-    chown system system /mnt/vendor/securefs
-    chmod 0771 /mnt/vendor/securefs
-    restorecon_recursive /mnt/vendor/securefs
-
     mkdir /data/misc/fih_atl 2770 radio root
     mkdir /data/misc/fih_mcfg 0775 radio root
 

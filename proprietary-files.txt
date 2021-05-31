@@ -304,25 +304,11 @@ vendor/lib64/libdpmqmihal.so|2a920f1c0d21b9e114b44b3de88d23da8a94fb5c
 
 # DRM
 vendor/bin/qseecomd
-vendor/etc/gpfspath_oem_config.xml
-vendor/firmware/cppf.b00
-vendor/firmware/cppf.b01
-vendor/firmware/cppf.b02
-vendor/firmware/cppf.b03
-vendor/firmware/cppf.b04
-vendor/firmware/cppf.b05
-vendor/firmware/cppf.b06
-vendor/firmware/cppf.b07
-vendor/firmware/cppf.mbn
-vendor/firmware/cppf.mdt
 vendor/lib64/libcpion.so
-vendor/lib64/libcppf.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libhdcpsrm.so
-vendor/lib64/liboemcrypto.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
@@ -334,13 +320,10 @@ vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
 vendor/lib/libcpion.so
-vendor/lib/libcppf.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libGPreqcancel.so
 vendor/lib/libGPreqcancel_svc.so
-vendor/lib/libhdcpsrm.so
-vendor/lib/liboemcrypto.so
 vendor/lib/libqisl.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
