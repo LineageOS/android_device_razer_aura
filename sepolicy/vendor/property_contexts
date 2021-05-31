@@ -1,3 +1,6 @@
+# Bluetooth
+persist.vendor.bt.a2dp_offload_cap                                                   u:object_r:vendor_bluetooth_prop:s0
+
 # Camera
 persist.camera.pdaf_dump                                                             u:object_r:camera_prop:s0
 ro.camera.req.fmq.size                                                               u:object_r:vendor_ro_camera_prop:s0

@@ -79,6 +79,10 @@ function blob_fixup() {
         system_ext/lib64/libdpmframework.so)
             sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
             ;;
+        vendor/lib/hw/audio.primary.sdm845.so)
+            "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+            "${PATCHELF}" --replace-needed "libtinycompress_vendor.so" "libtinycompress.so" "${2}"
+            ;;
         vendor/lib/libgps.utils.so)
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             ;;

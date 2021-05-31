@@ -8,6 +8,8 @@ BOARD_VENDOR := razer
 
 DEVICE_PATH := device/razer/aura
 
+BUILD_BROKEN_DUP_RULES := true
+
 # A/B
 AB_OTA_UPDATER := true
 
