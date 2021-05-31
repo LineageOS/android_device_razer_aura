@@ -41,6 +41,7 @@ vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 
 # Bluetooth
+persist.bluetooth.a2dp_offload.cap=sbc-aac-ldac
 persist.vendor.bt.a2dp_offload_cap=sbc-aac-ldac
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aac
