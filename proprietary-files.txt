@@ -42,8 +42,6 @@ vendor/lib/libqtigef.so
 vendor/firmware/tfa98xx.cnt
 
 # Audio FX modules
-system/etc/permissions/audiosphere.xml
-system/framework/audiosphere.jar
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libshoebox.so
 
