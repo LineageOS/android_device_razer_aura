@@ -1,4 +1,5 @@
 # Block devices
+/dev/block/platform/soc/1d84000\.ufshc/sdf                                                              u:object_r:gpt_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/nvdef_[ab]                                               u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/securefs                                                 u:object_r:securefs_block_device:s0
 
