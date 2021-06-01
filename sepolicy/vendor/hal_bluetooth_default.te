@@ -1,0 +1,2 @@
+# ro.product.locale
+dontaudit hal_bluetooth_qti default_prop:file read;
