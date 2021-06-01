@@ -83,8 +83,14 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             "${PATCHELF}" --replace-needed "libtinycompress_vendor.so" "libtinycompress.so" "${2}"
             ;;
+        vendor/lib/libbthost_if.so)
+            "${PATCHELF}" --set-soname "libbthost_if.so" "${2}"
+            ;;
         vendor/lib/libgps.utils.so)
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+            ;;
+        vendor/lib64/libbthost_if.so)
+            "${PATCHELF}" --set-soname "libbthost_if.so" "${2}"
             ;;
         vendor/lib64/libgps.utils.so)
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
