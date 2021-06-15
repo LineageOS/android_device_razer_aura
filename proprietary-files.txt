@@ -1,4 +1,4 @@
-# Proprietary files - from aura-p-release-3201-user-full.zip, unless pinned
+# Proprietary files - from aura-user-9-P-SMR7-RC003-RZR-210107-3225-release-keys, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/RC2/Bluetooth_cal.acdb
