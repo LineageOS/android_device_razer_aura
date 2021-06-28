@@ -1,0 +1,1 @@
+allow update_engine mdtp_device:blk_file rw_file_perms;
