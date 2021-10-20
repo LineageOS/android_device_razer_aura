@@ -72,6 +72,11 @@ function blob_fixup() {
             sed -i 's|/system/framework/|/system_ext/framework/|g' "${2}"
             ;;
         system_ext/lib64/lib-imsvideocodec.so)
+            for LIBGUI_SHIM in $(grep -L "libgui_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libgui_shim.so" "${LIBGUI_SHIM}"
+            done
+            ;;
+        system_ext/lib64/lib-imsvideocodec.so)
             for LIBUI_SHIM in $(grep -L "libui_shim.so" "${2}"); do
                 "${PATCHELF}" --add-needed "libui_shim.so" "$LIBUI_SHIM"
             done
