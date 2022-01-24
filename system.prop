@@ -1,9 +1,6 @@
 # Audio
 media.stagefright.audio.deep=true
 
-# BPF
-ro.kernel.ebpf.supported=true
-
 # Bluetooth
 persist.bluetooth.a2dp_offload.disabled=false
 ro.bluetooth.a2dp_offload.supported=true
