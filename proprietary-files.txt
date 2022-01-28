@@ -465,45 +465,45 @@ vendor/lib/vendor.qti.gnss@1.2.so
 vendor/lib/vendor.qti.gnss@2.0.so
 vendor/lib/vendor.qti.gnss@2.1.so
 
-# Graphics (Adreno) - from polaris V11.0.5.0.QDGMIXM
-vendor/lib/egl/eglSubDriverAndroid.so|84b73e5fc2d6b58f766480af7134744a4d3329f4
-vendor/lib/egl/libEGL_adreno.so|330ab7ae2727fea0cd84407896896d29477f0d61
-vendor/lib/egl/libGLESv1_CM_adreno.so|3cb0773b5d02fcea3e48206515d4cfe1c2ed1a76
-vendor/lib/egl/libGLESv2_adreno.so|729305bc11ee661cddcbbcf418a517ae1865721a
-vendor/lib/egl/libQTapGLES.so|565a834bc03adae9527a5f4553e38d42e9153e60
-vendor/lib/egl/libq3dtools_adreno.so|95a0f05537f0762e3b8e89d120dfe33661975d12
-vendor/lib/egl/libq3dtools_esx.so|a218f91f364de66954723b0be350c27940f6589a
-vendor/lib/libC2D2.so|77a2de847d67d61ab6ae8c31349659a8054dccd1
-vendor/lib/libCB.so|0fe6f633f64828a19bb034c885d1757cee4ccc39
-vendor/lib/libOpenCL.so|33f4e543e9308b9f031c63ca0e22faea5bd89ecd
-vendor/lib/libRSDriver_adreno.so|b830885d8f5c50e0ad9022fad56289b8cee2c849
-vendor/lib/libadreno_utils.so|ef07dc746ef694dda01344b1decef4f5efc53300
-vendor/lib/libbccQTI.so|967e0756ce0a3a6f1249ceca5ba88bb54cd0e380
-vendor/lib/libc2d30_bltlib.so|48df7dce187f57a00bdd4c9f3a7cb0f3aa69afcc
-vendor/lib/libgsl.so|aed6ec16496fcc7f371767600f8bfaf85eba9040
-vendor/lib/libllvm-glnext.so|68cd7b017c7c93715d087a953639f0b98e35b93c
-vendor/lib/libllvm-qcom.so|c78ac7f2e827076b6150af8b153f82a10e70f456
-vendor/lib/librs_adreno.so|c3f303f361ee9e1055ba3a4514e9c1e4e00a1445
-vendor/lib/librs_adreno_sha1.so|735856d2ea173a4c8b5e2e7f5dcf01269e282693
-vendor/lib64/egl/eglSubDriverAndroid.so|ca30ccf7aea7fcc032b5ec6e8ab92ba4cfb5af76
-vendor/lib64/egl/libEGL_adreno.so|f6421b5c8cfbd496d51feee321d93cfcaa395298
-vendor/lib64/egl/libGLESv1_CM_adreno.so|d8de942d91e7e1a87ee3388911c2e8eaf13c76ef
-vendor/lib64/egl/libGLESv2_adreno.so|07f5b52076cc3cc4d48f43a305f26f4703bcfa4a
-vendor/lib64/egl/libQTapGLES.so|e060cdc619053569470859626aa2a41b61da9227
-vendor/lib64/egl/libq3dtools_adreno.so|1d02e38fa7ca54d41b35b9f65b7b823ccc749336
-vendor/lib64/egl/libq3dtools_esx.so|e77ffc3f035e9f91890acd222dc96754a771afd0
-vendor/lib64/libC2D2.so|63b0a96005bb60bc273fb6d1cdd99bf60dfe1af4
-vendor/lib64/libCB.so|19d238a44f15f183b757193a495ae84612733c7a
-vendor/lib64/libOpenCL.so|b7fc263c86db38668e54570616fcadcfacbbd33d
-vendor/lib64/libRSDriver_adreno.so|0b06bc637acd5c046ca5ea864316b282dde5a169
-vendor/lib64/libadreno_utils.so|a06c33ca9f010e3ca3b2af08fc3a854f6402ea89
-vendor/lib64/libbccQTI.so|2105f35a46f936940e124ddba3d4bcf3c7162404
-vendor/lib64/libc2d30_bltlib.so|257612866c2c6fa45847dac0252f2d50c1a74f3b
-vendor/lib64/libgsl.so|4ec508ca6eaf0220b5c1edf554890f6f9412a167
-vendor/lib64/libllvm-glnext.so|318e21cc1c2a3e3ba61b865fb0dd3e143b95b830
-vendor/lib64/libllvm-qcom.so|d0c2ed707020a8ed993dd9db2c61ccb069ceb1eb
-vendor/lib64/librs_adreno.so|9341b9138bfa9b363221da1dadd8ab99beea51e0
-vendor/lib64/librs_adreno_sha1.so|04e639d5e909935c5e91b37d157fca07f8dcbff8
+# Graphics (Adreno)
+vendor/lib/egl/eglSubDriverAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libQTapGLES.so
+vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/egl/libq3dtools_esx.so
+vendor/lib/libC2D2.so
+vendor/lib/libCB.so
+vendor/lib/libOpenCL.so
+vendor/lib/libRSDriver_adreno.so
+vendor/lib/libadreno_utils.so
+vendor/lib/libbccQTI.so
+vendor/lib/libc2d30_bltlib.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-glnext.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/librs_adreno.so
+vendor/lib/librs_adreno_sha1.so
+vendor/lib64/egl/eglSubDriverAndroid.so
+vendor/lib64/egl/libEGL_adreno.so
+vendor/lib64/egl/libGLESv1_CM_adreno.so
+vendor/lib64/egl/libGLESv2_adreno.so
+vendor/lib64/egl/libQTapGLES.so
+vendor/lib64/egl/libq3dtools_adreno.so
+vendor/lib64/egl/libq3dtools_esx.so
+vendor/lib64/libC2D2.so
+vendor/lib64/libCB.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libRSDriver_adreno.so
+vendor/lib64/libadreno_utils.so
+vendor/lib64/libbccQTI.so
+vendor/lib64/libc2d30_bltlib.so
+vendor/lib64/libgsl.so
+vendor/lib64/libllvm-glnext.so
+vendor/lib64/libllvm-qcom.so
+vendor/lib64/librs_adreno.so
+vendor/lib64/librs_adreno_sha1.so
 
 # Graphics (Adreno firmware)
 vendor/firmware/a630_gmu.bin
@@ -514,9 +514,9 @@ vendor/firmware/a630_zap.b02
 vendor/firmware/a630_zap.elf
 vendor/firmware/a630_zap.mdt
 
-# Graphics (Vulkan) - from polaris V11.0.5.0.QDGMIXM
-vendor/lib/hw/vulkan.sdm845.so|51ca71fa33d2b97862aa59fd1eec4ba9d93383be
-vendor/lib64/hw/vulkan.sdm845.so|cc3b53ac1dcff2fa3133ec4ea7a27e19b1452cb4
+# Graphics (Vulkan)
+vendor/lib/hw/vulkan.sdm845.so
+vendor/lib64/hw/vulkan.sdm845.so
 
 # IMS - from polaris V11.0.5.0.QDGMIXM
 product/lib64/libimscamera_jni.so:system_ext/lib64/libimscamera_jni.so|6dbbae3b91430da01169c73fd3da3197ff3b8357
