@@ -596,10 +596,12 @@ vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
+vendor/lib64/libspcom.so
 vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib/libkeymasterdeviceutils.so
 vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterutils.so
+vendor/lib/libspcom.so
 
 # Listen
 vendor/lib64/hw/sound_trigger.primary.sdm845.so
@@ -677,13 +679,11 @@ vendor/lib64/libOmxVpp.so|a87440c7838b6f03726d97a4a52b695bb4c6e8f8
 vendor/lib64/libOmxWmaDec.so|7b2a714a74fea03a403a7d0edef61db2f70d7d4e
 vendor/lib64/libswvdec.so|ae1f55c7094e2a006e28dcfb0f2b9c32634fb849
 
-# Peripheral manager
-vendor/bin/pm-proxy
-vendor/bin/pm-service
-vendor/lib64/libperipheral_client.so
-vendor/lib64/libspcom.so
-vendor/lib/libperipheral_client.so
-vendor/lib/libspcom.so
+# Peripheral Manager - from polaris V12.0.3.0.QDGMIXM
+vendor/bin/pm-proxy|ee93ea32e23879e1bf213fb62253738d7559bb97
+vendor/bin/pm-service|5ce89fb681068616d4c797a25736706971ce4e59
+vendor/lib64/libperipheral_client.so|9475db86b218e2fd3b788993ff42cb79b7197c21
+vendor/lib/libperipheral_client.so|7886baa3fb0f5d1bd7971d806a34118eae37af03
 
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
