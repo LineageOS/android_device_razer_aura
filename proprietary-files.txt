@@ -680,10 +680,12 @@ vendor/lib64/libswvdec.so|ae1f55c7094e2a006e28dcfb0f2b9c32634fb849
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
-vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
-vendor/lib/libperipheral_client.so
 vendor/lib/libspcom.so
+
+# Peripheral Manager - from polaris V12.0.3.0.QDGMIXM
+vendor/lib64/libperipheral_client.so|9475db86b218e2fd3b788993ff42cb79b7197c21
+vendor/lib/libperipheral_client.so|7886baa3fb0f5d1bd7971d806a34118eae37af03
 
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
