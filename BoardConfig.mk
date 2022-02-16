@@ -49,6 +49,7 @@ TARGET_SCREEN_DENSITY := 560
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := \
+    androidboot.boot_devices=soc/1d84000.ufshc \
     androidboot.configfs=true \
     androidboot.console=ttyMSM0 \
     androidboot.hardware=qcom \
