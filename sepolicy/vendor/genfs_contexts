@@ -17,3 +17,5 @@ genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys6/restart_level u
 genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys1/restart_level  u:object_r:sysfs_ssr_toggle:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys2/restart_level    u:object_r:sysfs_ssr_toggle:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys3/restart_level   u:object_r:sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/a600000.ssusb/usb_data_enabled            u:object_r:sysfs_usb_data_enabled:s0
