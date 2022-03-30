@@ -18,9 +18,9 @@
 -->
 
 <device name="Android">
-    <item name="ambient.on">88</item>
-    <item name="screen.on">95</item>
-    <item name="screen.full">450</item>
+    <item name="ambient.on.display0">88</item>
+    <item name="screen.on.display0">95</item>
+    <item name="screen.full.display0">450</item>
     <item name="bluetooth.active">36</item>
     <item name="bluetooth.on">2</item>
     <item name="wifi.on">8</item>
