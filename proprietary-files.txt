@@ -183,7 +183,7 @@ vendor/lib/libsysmon_cdsp_skel.so
 vendor/bin/hvdcp_opti
 
 # CNE - from polaris V11.0.5.0.QDGMIXM
--vendor/app/CneApp/CneApp.apk|8fa8c67fea9096435ed9ce57711585bb8c475e56
+vendor/app/CneApp/CneApp.apk|8fa8c67fea9096435ed9ce57711585bb8c475e56
 vendor/bin/cnd|f63436723c423a09474a01454d00e3018c384873
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml|578f3f8f56059bfdbef926bcc68d01c15e06951f
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml|1fb42c672a12b6660bdce3ea94e0c43719dd9de8
@@ -295,7 +295,7 @@ product/lib64/libdpmctmgr.so:system_ext/lib64/libdpmctmgr.so|e3f0167f796dfd6622e
 product/lib64/libdpmfdmgr.so:system_ext/lib64/libdpmfdmgr.so|281657725b7a51115788b4947d6c90695f63f700
 product/lib64/libdpmframework.so:system_ext/lib64/libdpmframework.so|6560c843c638c901a0ac586806959b8336d87591
 product/lib64/libdpmtcm.so:system_ext/lib64/libdpmtcm.so|44e741bd25a74cbc8c5873f5351cdbb06651af5b
--product/priv-app/dpmserviceapp/dpmserviceapp.apk:system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk|9fd873c5330c03c62dfdeb6540b5984588295319
+product/priv-app/dpmserviceapp/dpmserviceapp.apk:system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk|9fd873c5330c03c62dfdeb6540b5984588295319
 vendor/bin/dpmQmiMgr|8ab0bc21fb426513e67e36d0bfa59c05067dda5e
 vendor/etc/init/dpmQmiMgr.rc|67569302d3a8828a9118c835e5b69c51b0c8ac68
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|8b4f2f7912d6d583800ae6fb65169077447588b9
@@ -521,10 +521,10 @@ vendor/lib64/hw/vulkan.sdm845.so
 # IMS - from polaris V11.0.5.0.QDGMIXM
 product/lib64/libimscamera_jni.so:system_ext/lib64/libimscamera_jni.so|6dbbae3b91430da01169c73fd3da3197ff3b8357
 product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|cc467b9499ab4c6548b0eb82c83049a8cd160feb
--product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|ade6bebb51a4affa00a8f2a877bed13dac522d13
+product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|ade6bebb51a4affa00a8f2a877bed13dac522d13
 
 # IMS
--app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
+app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
 lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so
 lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so
 lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so
@@ -759,10 +759,10 @@ vendor/lib/libqmiservices.so
 product/etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml|ceb890ab3c1645aa0d0044abab1ba58c4097a991
 product/framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar|fba9db045c8c167a78f2bcce0c00a3f83b1a792e
 product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-common.jar|91fe0ce296fc29bece6df81070b9b3b4ee41a1b4
--product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|0c720bd2c3670347f4cf40eadc03701f0d7f65d1
+product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|0c720bd2c3670347f4cf40eadc03701f0d7f65d1
 
 # RIL
--system/app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system/app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system/etc/permissions/telephonyservice.xml:system_ext/etc/permissions/telephonyservice.xml
 system/framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephonyServicelibrary.jar
 vendor/bin/hw/qcrild
@@ -963,7 +963,7 @@ vendor/lib64/libthermalclient.so
 vendor/lib/libthermalclient.so
 
 # Time services
--vendor/app/TimeService/TimeService.apk
+vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
 vendor/lib/libtime_genoff.so
@@ -972,7 +972,7 @@ vendor/lib/libtime_genoff.so
 vendor/firmware/RC2.img
 
 # Trusted Execution Environment
--vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk;PRESIGNED
+vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk;PRESIGNED
 vendor/bin/mlid
 vendor/lib64/libGPMTEEC_vendor.so
 vendor/lib64/libminkdescriptor.so
@@ -1040,7 +1040,7 @@ vendor/bin/cnss-daemon
 vendor/bin/wireless_init
 
 # Wi-Fi Display (system) - from lemonadep - SKQ1.210821.001
--system/framework/WfdCommon.jar|9f431b56d7f38c71089333008695dd5f717e5034
+system/framework/WfdCommon.jar|9f431b56d7f38c71089333008695dd5f717e5034
 system_ext/bin/wfdservice|2d9bde189325b3faf4e1571543867c6a7e00762d
 system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
 system_ext/etc/seccomp_policy/wfdservice.policy|37994de64d6bd127898bd556cd614db459fe07ec
@@ -1082,7 +1082,7 @@ system_ext/lib64/libwfduibcsink.so|ba8d0e93566359220c801166e098077db2bc7530
 system_ext/lib64/libwfduibcsinkinterface.so|5625c6182ce0d154698b726f868f299bf736ee97
 system_ext/lib64/libwfduibcsrc.so|03e2b139fb399aa5beb1caaa4df0f5c7eb675a9d
 system_ext/lib64/libwfduibcsrcinterface.so|aef1b83ef458c79cd345031654d38bc8897c94ae
--system_ext/priv-app/WfdService/WfdService.apk|381e93aaa1943526cbeb9957656b5a0622b589d6
+system_ext/priv-app/WfdService/WfdService.apk|381e93aaa1943526cbeb9957656b5a0622b589d6
 
 # Wi-Fi Display (vendor) - from PNX - RKQ1.200906.002
 -vendor/bin/wfdhdcphalservice|c7a2d70190d8a90a8ed326af0add5cf7c99d1ab6
