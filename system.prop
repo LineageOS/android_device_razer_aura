@@ -26,6 +26,3 @@ ro.vendor.qti.va_aosp.support=1
 
 # Voice assistant
 ro.opa.eligible_device=true
-
-# Zygote
-persist.device_config.runtime_native.usap_pool_enabled=true
