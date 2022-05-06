@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e9244b3_e6a5648a",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 1050,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-06T13:24:21Z",
+      "side": 0,
+      "message": "Are you sure that WFD still works after this removal?",
+      "range": {
+        "startLine": 1049,
+        "startChar": 1,
+        "endLine": 1050,
+        "endChar": 75
+      },
+      "revId": "976c93358ef7b21e201ba2cfe7d1110871ada617",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
