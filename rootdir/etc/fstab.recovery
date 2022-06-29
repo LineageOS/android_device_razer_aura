@@ -29,8 +29,8 @@
 
 #device         mount point      fstype        [device2] [length=]
 
-/dev/block/bootdevice/by-name/system       /               ext4    ro,barrier=1                                                    wait,slotselect,avb
-/dev/block/bootdevice/by-name/vendor       /vendor         ext4    ro,barrier=1                                                    wait,slotselect,avb
+/dev/block/by-name/system                  /system         ext4    ro,barrier=1,discard                                            wait,slotselect,avb,first_stage_mount
+/dev/block/by-name/vendor                  /vendor         ext4    ro,barrier=1,discard                                            wait,slotselect,avb,first_stage_mount
 /dev/block/bootdevice/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     latemount,wait,check,fileencryption=ice,quota
 /dev/block/mmcblk0p1                       /sdcard         vfat    nosuid,nodev                                                    wait
 /dev/block/bootdevice/by-name/boot         /boot           emmc    defaults                                                        defaults
