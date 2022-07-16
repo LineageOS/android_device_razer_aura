@@ -52,8 +52,7 @@ vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 camera.disable_zsl_mode=1
-vendor.camera.aux.packagelist=com.android.camera,org.lineageos.snap,com.razer.camera,com.razerzone.camera
-vendor.camera.dual_camera=true
+vendor.camera.aux.packagelist=com.razer.camera,com.razerzone.camera
 
 # Chipset
 ro.soc.manufacturer=Qualcomm
