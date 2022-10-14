@@ -60,6 +60,8 @@ on init
     write /sys/block/sdf/queue/iosched/slice_idle 0
     write /sys/block/sdf/queue/nr_requests 256
 
+    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+
 on fs
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
@@ -153,7 +155,8 @@ on boot
     chmod 2770 /dev/socket/qmux_gps
 
     mkdir /mnt/vendor/persist/bluetooth 0770 bluetooth bluetooth
-    mkdir /mnt/vendor/persist/alarm 0770 system system
+    mkdir /mnt/vendor/persist/alarm 0777 system system
+    chmod 0666 /mnt/vendor/persist/alarm/data
     mkdir /mnt/vendor/persist/time 0770 system system
     mkdir /mnt/vendor/persist/secnvm 0770 system system
 
