@@ -524,14 +524,14 @@ product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|cc467b9499a
 product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|ade6bebb51a4affa00a8f2a877bed13dac522d13
 
 # IMS
-app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
-lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so
-lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so
-lib64/lib-imsvtextutils.so:system_ext/lib64/lib-imsvtextutils.so
-lib64/lib-imsvtutils.so:system_ext/lib64/lib-imsvtutils.so
-lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so
-lib64/librcc.so:system_ext/lib64/librcc.so
-lib64/vendor.qti.imsrtpservice@1.0.so:system_ext/lib64/vendor.qti.imsrtpservice@1.0.so
+system/app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk
+system/lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so
+system/lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so
+system/lib64/lib-imsvtextutils.so:system_ext/lib64/lib-imsvtextutils.so
+system/lib64/lib-imsvtutils.so:system_ext/lib64/lib-imsvtutils.so
+system/lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so
+system/lib64/librcc.so:system_ext/lib64/librcc.so
+system/lib64/vendor.qti.imsrtpservice@1.0.so:system_ext/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
