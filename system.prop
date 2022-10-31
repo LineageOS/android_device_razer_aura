@@ -24,5 +24,8 @@ ro.oem_unlock_supported=1
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
 
+# RIL
+ro.telephony.block_binder_thread_on_incoming_calls=false
+
 # Voice assistant
 ro.opa.eligible_device=true
