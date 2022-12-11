@@ -11,12 +11,13 @@ vendor/etc/acdbdata/RC2/Headset_cal.acdb
 vendor/etc/acdbdata/RC2/Speaker_cal.acdb
 vendor/etc/acdbdata/RC2/workspaceFile.qwsp
 
-# ADSP
-vendor/bin/adsprpcd
-vendor/lib/libadsp_default_listener.so
-vendor/lib/libadsprpc.so
-vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libadsprpc.so
+# ADSP - from SHIFT6MQ.SOS.3.3.G.20210726-RELEASE
+vendor/bin/adsprpcd|7fb46c11d19f795e0af2f36764d000adccfcdf94
+vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc|5de36026ce241c83c69bb0d149bf271e19c114c9
+vendor/lib/libadsp_default_listener.so|fa20b98900255989e85f42b8187f868f55ac75a2
+vendor/lib/libadsprpc.so|a3c874f3b6a019d9989c7a738342e5ae759e82cf
+vendor/lib64/libadsp_default_listener.so|f5bad0f70a6948f915aa8daf393980881af6a4c2
+vendor/lib64/libadsprpc.so|87f3fd81dbb5dc5c2c55f2ad210380589d76730b
 
 # ADSP modules
 vendor/lib/rfsa/adsp/libVC1Dec.so
@@ -167,17 +168,17 @@ vendor/lib/camera/com.qti.tuned.liteon_imx363.bin|f88d078849a01d82dd59585413c487
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
 
-# CDSP
-vendor/bin/cdsprpcd
-vendor/lib/libcdsp_default_listener.so
-vendor/lib/libcdsprpc.so
-vendor/lib/libfastcrc.so
-vendor/lib/libsdsprpc.so
-vendor/lib/libsysmon_cdsp_skel.so
-vendor/lib64/libcdsp_default_listener.so
-vendor/lib64/libcdsprpc.so
-vendor/lib64/libsdsprpc.so
-vendor/lib64/libsysmon_cdsp_skel.so
+# CDSP - from SHIFT6MQ.SOS.3.3.G.20210726-RELEASE
+vendor/bin/cdsprpcd|bf36700de369628c04da2968929e7a8f4edafa28
+vendor/lib/libcdsp_default_listener.so|58fceb94b180477a438ba0ddee4e25dc13c70239
+vendor/lib/libcdsprpc.so|22fe0d97a91e4fc9846f72fe170a5eac1e182fd2
+vendor/lib/libfastcrc.so|cd0ad3e6b1ae18bbc925bc9efd7b9a8b9b5cc879
+vendor/lib/libsdsprpc.so|5f9b0ebfb9e6667d24579e18b0bb803b35d9ce61
+vendor/lib/libsysmon_cdsp_skel.so|9ab2fd1dc62bb0fe4d98f713a224ec54124c5dcb
+vendor/lib64/libcdsp_default_listener.so|5c2ff4822c89fc0db160515bd8593800457e7f8c
+vendor/lib64/libcdsprpc.so|8d2367670421a90ccd375624e7c16868abdd65c1
+vendor/lib64/libsdsprpc.so|5837406a179e8964aac9d3752d18e5b51ac7e0b7
+vendor/lib64/libsysmon_cdsp_skel.so|e16a11b61e4ce3802211ad1d0572df64cf2ed14b
 
 # Charger
 vendor/bin/hvdcp_opti
