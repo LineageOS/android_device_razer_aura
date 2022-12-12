@@ -34,6 +34,24 @@
       "parentUuid": "721a63c0_3c6fe4d5",
       "revId": "1c31b0df8be6b5ba82c595a65cf88f89371c776f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b92eed00_8ddd1af9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-12-12T22:13:35Z",
+      "side": 1,
+      "message": "Oh yea, I remeber now. https://github.com/LineageOS/android_kernel_xiaomi_sdm845/commit/de5e94a13853ab1ac039504f3bc5fd9e62a01226",
+      "parentUuid": "87ac7c0a_411ee584",
+      "revId": "1c31b0df8be6b5ba82c595a65cf88f89371c776f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
