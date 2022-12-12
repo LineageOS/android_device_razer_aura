@@ -16,6 +16,24 @@
       "message": "Any particular reason for doing this?",
       "revId": "1c31b0df8be6b5ba82c595a65cf88f89371c776f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87ac7c0a_411ee584",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-12-12T22:08:04Z",
+      "side": 1,
+      "message": "cdsprpcd constantly crashes after https://github.com/LineageOS/android_kernel_qcom_sdm845/commit/7c3ffbe3d5d3126d40a8e58bddda2393a89d0f39",
+      "parentUuid": "721a63c0_3c6fe4d5",
+      "revId": "1c31b0df8be6b5ba82c595a65cf88f89371c776f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
