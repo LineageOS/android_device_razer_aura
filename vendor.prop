@@ -58,7 +58,6 @@ bluetooth.profile.pan.nap.enabled?=true
 bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
-persist.bluetooth.a2dp_offload.cap=sbc-aac-ldac
 persist.vendor.bt.a2dp_offload_cap=sbc-aac-ldac
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aac-ldac
