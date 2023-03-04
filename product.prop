@@ -1,5 +1,8 @@
 # LMKD
 ro.lmk.log_stats=true
 
+# Telephony
+ro.telephony.handle_audio_direction_changes_between_call_state_changes=false
+
 # Voice assistant
 ro.opa.eligible_device=true
