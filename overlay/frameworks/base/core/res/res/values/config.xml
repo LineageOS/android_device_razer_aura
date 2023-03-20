@@ -920,4 +920,8 @@
         <item>1170</item>
         <item>115</item>
     </array>
+
+    <!-- Default value for whether a SFPS device is required to be interactive for fingerprint auth
+    to unlock the device.  -->
+    <bool name="config_requireScreenOnToAuthEnabled">true</bool>
 </resources>
