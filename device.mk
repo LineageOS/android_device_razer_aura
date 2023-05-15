@@ -232,7 +232,14 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.0.vendor
+    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.0-service-qti \
+    libgnss \
+    libgnsspps
+
+# GPS configs
+PRODUCT_PACKAGES += \
+    gps.conf
 
 # Health
 PRODUCT_PACKAGES += \
