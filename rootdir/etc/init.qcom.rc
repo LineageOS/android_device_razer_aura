@@ -235,7 +235,6 @@ on boot
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
     mkdir /data/vendor/nnhal 0700 system system
-    mkdir /data/vendor/tloc 0700 system drmrpc
 
     # Create directory used for dump collection
     mkdir /data/vendor/ssrdump 0770 root system
@@ -658,11 +657,6 @@ on property:init.svc.vendor.hwcomposer-2-3=running
 
 on property:init.svc.vendor.hwcomposer-2-3=restarting
     stop ppd
-
-service vendor.tlocd /vendor/bin/tloc_daemon
-    class late_start
-    user system
-    group drmrpc gps net_raw
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
