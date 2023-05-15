@@ -239,7 +239,9 @@ PRODUCT_PACKAGES += \
 
 # GPS configs
 PRODUCT_PACKAGES += \
-    gps.conf
+    flp.conf \
+    gps.conf \
+    izat.conf
 
 # Health
 PRODUCT_PACKAGES += \
