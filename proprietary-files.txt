@@ -603,7 +603,7 @@ vendor/lib64/libswvdec.so|ae1f55c7094e2a006e28dcfb0f2b9c32634fb849
 
 # Peripheral Manager - from polaris V12.0.3.0.QDGMIXM
 vendor/bin/pm-proxy|ee93ea32e23879e1bf213fb62253738d7559bb97
-vendor/bin/pm-service|5ce89fb681068616d4c797a25736706971ce4e59
+vendor/bin/pm-service|5ce89fb681068616d4c797a25736706971ce4e59|05a141c27d74efc6d6bbd728785af37080648acc
 vendor/lib/libperipheral_client.so|7886baa3fb0f5d1bd7971d806a34118eae37af03
 vendor/lib64/libperipheral_client.so|9475db86b218e2fd3b788993ff42cb79b7197c21
 
