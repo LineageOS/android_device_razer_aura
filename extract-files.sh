@@ -79,8 +79,14 @@ function blob_fixup() {
                 "${PATCHELF}" --add-needed "libui_shim.so" "$LIBUI_SHIM"
             done
             ;;
+        system_ext/lib*/com.qualcomm.qti.ant@1.0.so|system_ext/lib64/lib-imsvt.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+            ;;
         system_ext/lib64/libdpmframework.so)
             sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
+            ;;
+        vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|vendor/bin/ATFWD-daemon|vendor/bin/ims_rtp_daemon|vendor/bin/imsrcsd|vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service|vendor/bin/hw/vendor.qti.hardware.iop@2.0-service|vendor/bin/hw/vendor.qti.hardware.factory@1.0-service|vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|vendor/bin/hw/vendor.qti.esepowermanager@1.0-service)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/bin/pm-service)
             grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
@@ -100,6 +106,9 @@ function blob_fixup() {
             ;;
         vendor/lib64/libgps.utils.so)
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+            ;;
+        vendor/lib64/libcne.so|vendor/lib64/libril-qc-qmi-1.so|vendor/lib*/vendor.qti.hardware.iop@1.0.so|vendor/lib*/libqti-iopd.so|vendor/lib*/libqti-iopd-client.so|vendor/lib*/hw/vendor.qti.hardware.factory@1.0-impl.so|vendor/lib*/libsecureui_svcsock.so|vendor/lib*/libQTEEConnector_vendor.so|vendor/lib*/libGPQTEEC_vendor.so|vendor/lib*/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|vendor/lib*/hw/vendor.qti.esepowermanager@1.0-impl.so)
+            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
     esac
 }
