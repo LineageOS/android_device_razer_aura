@@ -50,7 +50,7 @@ vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libshoebox.so
 
 # Bluetooth - from polaris V11.0.5.0.QDGMIXM
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|74b5d2e7867e34c0e358cf8d82f3bfea58e97c28
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|74b5d2e7867e34c0e358cf8d82f3bfea58e97c28|cd3021575a4546e9b78c0968cd1ba4e0ce73ef9d
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
 vendor/lib/btaudio_offload_if.so:vendor/lib/libbthost_if.so|622fc26c4802e179e84789c83334154fe1cd247f|b149e07dfae7d840439c73cfd85c4f2a8e8aa0dd
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so|9eeea93297e772684ff04423d76cb7370ced30b0
@@ -214,7 +214,7 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml|ff91feb5060a6df07e3e4d9bc99ae58bcc
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml|f76c894f3c6d5b6ed35113a088dc3174c900501b
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml|14d136e7fcc682311757d3edc0b9d3eaeba11815
 vendor/etc/init/cnd.rc|ff205cff8e00ec6805fd1e19f3ca6ff86700cbb6
-vendor/lib64/libcne.so|7b108839ba1755d9b906e7037cccd26d5775c75d
+vendor/lib64/libcne.so|7b108839ba1755d9b906e7037cccd26d5775c75d|63227458c67661ed93773d4613739aa583545a9a
 vendor/lib64/libcneapiclient.so|78aa6459fa571594b80ede9bdb539eb9458132f0
 vendor/lib64/libcneoplookup.so|bdffd43de52fd759085f1f1b1591b41f466e367d
 vendor/lib64/libwms.so|4f832b399e2a268c04f2ecaff168a878ff72200e
