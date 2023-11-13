@@ -61,7 +61,7 @@ on boot
     write /dev/cpuset/system-background/cpus 0-7
     write /dev/cpuset/little/cpus 0-7
 
-on property:init.svc.vendor.charger=running
+on charger
     setprop persist.sys.usb.config mass_storage
 
     # Keep one LITTLE and one big
@@ -228,13 +228,6 @@ on enable-low-power
 
 on property:sys.boot_completed=1
     trigger enable-low-power
-
-service vendor.charger /system/bin/charger
-    class charger
-    user system
-    group system graphics input
-    capabilities SYS_BOOT
-    seclabel u:r:charger:s0
 
 service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
