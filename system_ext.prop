@@ -5,9 +5,6 @@ media.stagefright.audio.deep=true
 persist.bluetooth.a2dp_offload.disabled=false
 ro.bluetooth.a2dp_offload.supported=true
 
-# Charger
-ro.charger.enable_suspend=true
-
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
 
