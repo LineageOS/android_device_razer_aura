@@ -72,14 +72,41 @@ system/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.s
 -system/lib/libantradio.so:system_ext/lib/libantradio.so
 system/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 -system/lib64/libantradio.so:system_ext/lib64/libantradio.so
-vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib/com.qualcomm.qti.ant@1.0.so
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
+vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Camera
 vendor/etc/camera/arcsoft_calibration.bin
 vendor/etc/camera/camxoverridesettings.txt
+vendor/lib/camera/com.qti.eeprom.truly_cmb433.so
+vendor/lib/camera/com.qti.sensor.imx318.so
+vendor/lib/camera/com.qti.sensor.imx334.so
+vendor/lib/camera/com.qti.sensor.imx351.so
+vendor/lib/camera/com.qti.sensor.imx362.so
+vendor/lib/camera/com.qti.sensor.imx363.so
+vendor/lib/camera/com.qti.sensor.imx386.so
+vendor/lib/camera/com.qti.sensor.imx576.so
+vendor/lib/camera/com.qti.sensor.imx577.so
+vendor/lib/camera/com.qti.sensor.max7366_6dof.so
+vendor/lib/camera/com.qti.sensor.max7366_eyetrack.so
+vendor/lib/camera/com.qti.sensor.max7366_ov6211.so
+vendor/lib/camera/com.qti.sensor.max7366_ov9282.so
+vendor/lib/camera/com.qti.sensor.ov12a10.so
+vendor/lib/camera/com.qti.sensor.ov13855.so
+vendor/lib/camera/com.qti.sensor.ov13880.so
+vendor/lib/camera/com.qti.sensor.ov7251.so
+vendor/lib/camera/com.qti.sensor.ov8856.so
+vendor/lib/camera/com.qti.sensor.s5k2l7.so
+vendor/lib/camera/com.qti.sensor.s5k2x5sp.so
+vendor/lib/camera/com.qti.sensor.s5k3h7.so
+vendor/lib/camera/com.qti.sensormodule.chicony_s5k3h7.bin
+vendor/lib/camera/com.qti.sensormodule.liteon_imx351.bin
+vendor/lib/camera/com.qti.sensormodule.liteon_imx363.bin
+vendor/lib/camera/com.qti.sensormodule.liteon_ov7251.bin
+vendor/lib/camera/com.qti.tuned.chicony_s5k3h7.bin
+vendor/lib/camera/com.qti.tuned.liteon_imx351.bin
 vendor/lib/camera/components/com.arcsoft.node.capturebokeh.so
 vendor/lib/camera/components/com.arcsoft.node.realtimebokeh.so
 vendor/lib/camera/components/com.arcsoft.node.singlebokeh.so
@@ -113,33 +140,6 @@ vendor/lib/camera/components/com.qtistatic.stats.af.so
 vendor/lib/camera/components/com.qtistatic.stats.awb.so
 vendor/lib/camera/components/com.qtistatic.stats.pdlib.so
 vendor/lib/camera/components/libdepthmapwrapper.so
-vendor/lib/camera/com.qti.eeprom.truly_cmb433.so
-vendor/lib/camera/com.qti.sensor.imx318.so
-vendor/lib/camera/com.qti.sensor.imx334.so
-vendor/lib/camera/com.qti.sensor.imx351.so
-vendor/lib/camera/com.qti.sensor.imx362.so
-vendor/lib/camera/com.qti.sensor.imx363.so
-vendor/lib/camera/com.qti.sensor.imx386.so
-vendor/lib/camera/com.qti.sensor.imx576.so
-vendor/lib/camera/com.qti.sensor.imx577.so
-vendor/lib/camera/com.qti.sensor.max7366_6dof.so
-vendor/lib/camera/com.qti.sensor.max7366_eyetrack.so
-vendor/lib/camera/com.qti.sensor.max7366_ov6211.so
-vendor/lib/camera/com.qti.sensor.max7366_ov9282.so
-vendor/lib/camera/com.qti.sensor.ov12a10.so
-vendor/lib/camera/com.qti.sensor.ov13855.so
-vendor/lib/camera/com.qti.sensor.ov13880.so
-vendor/lib/camera/com.qti.sensor.ov7251.so
-vendor/lib/camera/com.qti.sensor.ov8856.so
-vendor/lib/camera/com.qti.sensor.s5k2l7.so
-vendor/lib/camera/com.qti.sensor.s5k2x5sp.so
-vendor/lib/camera/com.qti.sensor.s5k3h7.so
-vendor/lib/camera/com.qti.sensormodule.chicony_s5k3h7.bin
-vendor/lib/camera/com.qti.sensormodule.liteon_imx351.bin
-vendor/lib/camera/com.qti.sensormodule.liteon_imx363.bin
-vendor/lib/camera/com.qti.sensormodule.liteon_ov7251.bin
-vendor/lib/camera/com.qti.tuned.chicony_s5k3h7.bin
-vendor/lib/camera/com.qti.tuned.liteon_imx351.bin
 vendor/lib/camera/fdconfigpreview.bin
 vendor/lib/camera/fdconfigpreviewlite.bin
 vendor/lib/camera/fdconfigvideo.bin
@@ -695,9 +695,9 @@ product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgt
 system/app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system/etc/permissions/telephonyservice.xml:system_ext/etc/permissions/telephonyservice.xml
 system/framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephonyServicelibrary.jar
-vendor/bin/hw/qcrild
 vendor/bin/ATFWD-daemon
 vendor/bin/adpl
+vendor/bin/hw/qcrild
 vendor/bin/netmgrd
 vendor/bin/pd-mapper
 vendor/bin/port-bridge
@@ -742,11 +742,11 @@ vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+vendor/radio/qcril_database/qcril.db
 vendor/radio/qcril_database/upgrade/0_initial.sql
 vendor/radio/qcril_database/upgrade/1_version_intro.sql
 vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
-vendor/radio/qcril_database/qcril.db
 
 # Sensors
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
@@ -844,11 +844,6 @@ vendor/etc/sensors/sns_reg_config
 
 # Snapdragon Computer Vision Engine
 vendor/etc/scve/facereco/gModel.dat
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/libfastcvdsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libscveBlobDescriptor.so
@@ -864,6 +859,11 @@ vendor/lib/libscveObjectTracker_stub.so
 vendor/lib/libscvePanorama.so
 vendor/lib/libscvePanorama_lite.so
 vendor/lib/libscveScan3D.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib/vendor.qti.hardware.scve.panorama@1.0.so
 vendor/lib64/libfastcvdsp_stub.so
@@ -947,8 +947,8 @@ vendor/firmware/widevine.b07
 vendor/firmware/widevine.mbn
 vendor/firmware/widevine.mdt
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
+vendor/lib64/mediadrm/libwvdrmengine.so
 
 # VPP - from PNX - RKQ1.200906.002
 vendor/bin/vppservice|555301b19a86374900159423c88efd7bd9cea2f9
