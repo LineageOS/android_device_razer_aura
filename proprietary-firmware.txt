@@ -1,0 +1,18 @@
+# Firmware - from aura-user 9 P-SMR7-RC003-RZR-210107 3225 release-keys.
+
+ImageFv.img;AB
+abl.img;AB
+aop.img;AB
+bluetooth.img;AB
+cmnlib.img;AB
+cmnlib64.img;AB
+devcfg.img;AB
+dsp.img;AB
+hyp.img;AB
+keymaster.img;AB
+modem.img;AB
+nvdef.img;AB
+qupfw.img;AB
+tz.img;AB
+xbl.img;AB
+xbl_config.img;AB
