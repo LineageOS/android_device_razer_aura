@@ -97,7 +97,7 @@ debug.egl.hw=0
 debug.sf.enable_hwc_vds=1
 debug.sf.hw=0
 persist.sys.sf.native_mode=2
-persist.sys.sf.color_mode=7
+ro.hardware.egl=adreno
 ro.opengles.version=196610
 vendor.display.disable_fbid_cache=1
 
