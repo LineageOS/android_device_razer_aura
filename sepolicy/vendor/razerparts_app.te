@@ -1,0 +1,2 @@
+allow razerparts_app sysfs_battery_supply:file rw_file_perms;
+allow razerparts_app sysfs_battery_supply:dir search;

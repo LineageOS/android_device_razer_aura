@@ -1,0 +1,46 @@
+//
+// Copyright (C) 2023 Alcatraz323 <alcatraz32323@gmail.com>
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app {
+    name: "RazerParts",
+
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    certificate: "platform",
+    init_rc: ["razerparts.rc"],
+    platform_apis: true,
+    privileged: true,
+
+    static_libs: [
+        "org.pixelexperience.settings.resources",
+        "androidx.cardview_cardview",
+        "androidx.preference_preference",
+        "androidx.appcompat_appcompat",
+        "androidx.core_core",
+        "SettingsLib"
+    ],
+
+    required: [
+        "privapp-permissions_com.razer.parts",
+        "config-com.razer.parts",
+        "DisableChargingRippleOverlay",
+        "ChromaController"
+    ],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions_com.razer.parts",
+    sub_dir: "permissions",
+    src: "privapp-permissions_com.razer.parts.xml",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "config-com.razer.parts",
+    sub_dir: "sysconfig",
+    src: "config-com.razer.parts.xml",
+    filename_from_src: true,
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2023, Alcatraz323 <alcatraz32323@gmail.com>
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  -->
+<resources>
+    <string-array name="resolution_entries">
+        <item>1080p</item>
+        <item>1440p</item>
+    </string-array>
+    <string-array name="resolution_values">
+        <item>1080</item>
+        <item>1440</item>
+    </string-array>
+    <string-array name="refresh_rate_entries">
+        <item>30Hz</item>
+        <item>40Hz</item>
+        <item>48Hz</item>
+        <item>50Hz</item>
+        <item>60Hz</item>
+        <item>90Hz</item>
+        <item>120Hz</item>
+    </string-array>
+    <string-array name="refresh_rate_values">
+        <item>30</item>
+        <item>40</item>
+        <item>48</item>
+        <item>50</item>
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+    </string-array>
+</resources>

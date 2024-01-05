@@ -1,0 +1,11 @@
+//
+// Copyright (C) 2023 Alcatraz323 <alcatraz32323@gmail.com>
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+runtime_resource_overlay {
+    name: "DisableChargingRippleOverlay",
+    theme: "DisableChargingRippleOverlay",
+    product_specific: true
+}

@@ -1,0 +1,27 @@
+typeattribute razerparts_app coredomain;
+typeattribute razerparts_app mlstrustedsubject;
+
+app_domain(razerparts_app)
+
+allow razerparts_app activity_service:service_manager find;
+allow razerparts_app activity_task_service:service_manager find;
+allow razerparts_app audio_service:service_manager find;
+allow razerparts_app autofill_service:service_manager find;
+allow razerparts_app content_capture_service:service_manager find;
+allow razerparts_app gpu_service:service_manager find;
+allow razerparts_app hint_service:service_manager find;
+allow razerparts_app surfaceflinger_service:service_manager find;
+allow razerparts_app game_service:service_manager find;
+allow razerparts_app textservices_service:service_manager find;
+allow razerparts_app netstats_service:service_manager find;
+allow razerparts_app voiceinteraction_service:service_manager find;
+allow razerparts_app batterystats_service:service_manager find;
+allow razerparts_app batteryproperties_service:service_manager find;
+allow razerparts_app window_service:service_manager find;
+allow razerparts_app overlay_service:service_manager find;
+
+# ro.input.resampling, viewroot.profile_rendering
+dontaudit razerparts_app default_prop:file read;
+
+allow razerparts_app system_app_data_file:dir { create rw_dir_perms search open setattr };
+allow razerparts_app system_app_data_file:file { create rw_file_perms rename setattr unlink };
