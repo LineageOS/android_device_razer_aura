@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2023, Alcatraz323 <alcatraz32323@gmail.com>
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:key="cat_bms_step"
+            android:title="@string/bms_category_step_charging">
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_miscellaneous_services_24"
+            android:key="bms_step_charging_switch"
+            android:summary="@string/bms_step_charging_switch_summary"
+            android:title="@string/bms_step_charging_switch" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="cat_charge_limiter"
+            android:title="@string/bms_category_charge_limiter">
+
+        <Preference
+            android:icon="@drawable/information_outline"
+            android:key="cat_charge_limiter_notice"
+            android:selectable="false"
+            android:summary="@string/bms_charge_limiter_description"
+            android:title="@string/bms_charge_limiter_notice" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_charging_station_24"
+            android:key="bms_always_connected_mode"
+            android:summary="@string/bms_always_connected_mode_summary"
+            android:title="@string/bms_always_connected_mode" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_battery_charging_full_24"
+            android:key="bms_limit_to_eighty"
+            android:summary="@string/bms_limit_to_eighty_summary"
+            android:title="@string/bms_limit_to_eighty" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="cat_charge_limiter_helper"
+            android:title="@string/bms_category_charge_limiter_helper">
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_no_meeting_room_24"
+            android:key="bms_disable_charging_ripple_effect"
+            android:summary="@string/bms_disable_charging_ripple_effect_summary"
+            android:title="@string/bms_disable_charging_ripple_effect" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

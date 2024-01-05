@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021, Alcatraz323 <alcatraz32323@gmail.com>
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:key="chroma_control"
+            android:title="@string/chroma_category_control">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/power"
+            android:key="chroma_switch"
+            android:title="@string/chroma_switch" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_baseline_battery_charging_full_24"
+            android:key="kill_rgb_when_lock_screen"
+            android:dependency="chroma_switch"
+            android:title="@string/chroma_kill_rgb_when_screen_lock"
+            android:summary="@string/chroma_kill_rgb_when_screen_lock_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="chroma_custom"
+            android:title="@string/chroma_category_custom">
+
+        <ListPreference
+            android:icon="@drawable/book_open"
+            android:defaultValue="color"
+            android:key="chroma_mode"
+            android:entries="@array/chroma_mode_entries"
+            android:entryValues="@array/chroma_mode_values"
+            android:summary="@string/pref_summary_place_holder"
+            android:title="@string/chroma_mode" />
+
+        <EditTextPreference
+            android:defaultValue="#00FF00"
+            android:icon="@drawable/format_color_fill"
+            android:key="chroma_color"
+            android:summary="@string/pref_summary_place_holder"
+            android:title="@string/chroma_color" />
+
+        <EditTextPreference
+            android:defaultValue="200"
+            android:icon="@drawable/brightness_7"
+            android:key="chroma_brightness"
+            android:summary="@string/pref_summary_place_holder"
+            android:title="@string/chroma_brightness" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
