@@ -1,0 +1,29 @@
+typeattribute razerchromacc_app mlstrustedsubject;
+
+app_domain(razerchromacc_app)
+
+# Access sysfs_led control(Chroma)
+allow razerchromacc_app sysfs_leds:dir search;
+allow razerchromacc_app sysfs_leds:file { getattr open read write };
+
+allow razerchromacc_app activity_service:service_manager find;
+allow razerchromacc_app activity_task_service:service_manager find;
+allow razerchromacc_app audio_service:service_manager find;
+allow razerchromacc_app autofill_service:service_manager find;
+allow razerchromacc_app content_capture_service:service_manager find;
+allow razerchromacc_app gpu_service:service_manager find;
+allow razerchromacc_app hint_service:service_manager find;
+allow razerchromacc_app surfaceflinger_service:service_manager find;
+allow razerchromacc_app game_service:service_manager find;
+allow razerchromacc_app textservices_service:service_manager find;
+allow razerchromacc_app netstats_service:service_manager find;
+allow razerchromacc_app voiceinteraction_service:service_manager find;
+allow razerchromacc_app batterystats_service:service_manager find;
+allow razerchromacc_app batteryproperties_service:service_manager find;
+
+# ro.input.resampling, viewroot.profile_rendering
+dontaudit razerchromacc_app default_prop:file read;
+
+allow razerchromacc_app system_app_data_file:dir { create rw_dir_perms search open setattr };
+allow razerchromacc_app system_app_data_file:file { create rw_file_perms rename setattr unlink };
+

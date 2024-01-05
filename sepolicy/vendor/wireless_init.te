@@ -7,5 +7,5 @@ init_daemon_domain(wireless_init)
 allow wireless_init proc_wifi_mac:file r_file_perms;
 
 # Allow wireless_init to read and write to mnt_vendor_file
-allow wireless_init mnt_vendor_file:dir search;
+allow wireless_init mnt_vendor_file:dir rw_dir_perms;
 allow wireless_init mnt_vendor_file:file rw_file_perms;

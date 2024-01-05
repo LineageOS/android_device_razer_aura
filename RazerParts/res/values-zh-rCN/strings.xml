@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2023, Alcatraz323 <alcatraz32323@gmail.com>
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  -->
+<resources>
+    <string name="device_settings_title">Razer设置</string>
+    <string name="device_settings_summary">设备设置</string>
+
+    <string name="app_name">RazerParts</string>
+
+    <string name="category_display">显示</string>
+    <string name="pref_resolution">分辨率</string>
+    <string name="pref_refresh_rate">刷新率</string>
+
+    <string name="category_chroma">Chroma MCU</string>
+    <string name="pref_chroma">Chroma</string>
+    <string name="pref_chroma_summary">Led设置</string>
+    <string name="category_battery">电源</string>
+    <string name="pref_battery">电池</string>
+    <string name="pref_battery_summary">电池管理系统</string>
+    <string name="category_others">其他</string>
+    <string name="pref_dolby_atmos">[WIP] Dolby Atmos™</string>
+    <string name="pref_dolby_atmos_summary">音效设置</string>
+    <string name="pref_doze">主动显示</string>
+    <string name="pref_doze_summary">休眠设置</string>
+
+    <string name="bms_category_step_charging">阶梯充电</string>
+    <string name="bms_step_charging_switch">开启阶梯充电</string>
+    <string name="bms_step_charging_switch_summary">自动根据电池电压以及温度调整充电速度以保护电池</string>
+    <string name="bms_category_charge_limiter">充电限制器</string>
+    <string name="bms_charge_limiter_notice">注意</string>
+    <string name="bms_charge_limiter_description">如果你需要打开任何充电限制器选项，建议关闭“显示 - 连接或断开电源时唤醒”，不然你可能会在充电控制期间触发一些意外唤醒</string>
+    <string name="bms_always_connected_mode">持续充电模式</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">将电量限制在40%-60%以保护电池</string>
+    <string name="bms_limit_to_eighty" formatted="false">限制最高电量为80%左右</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">电量在80%左右时停止充电以保护电池(持续模式优先)</string>
+    <string name="bms_category_charge_limiter_helper">充电限制器 - 额外</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">关闭充电圆形动画</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">提高充电限制器体验(需要重启系统以生效)</string>
+
+    <string name="volume_panel_trigger_title">音量面板</string>
+
+    <string name="pref_version_indicator">版本</string>
+    <string name="pref_version_indicator_summary">Pixel Experience Android 13 - Razer Phone 2\n本系统为免费系统,如果您以任何付费方式获取此包证明您已上当受骗,请立即退款,举报商家</string>
+    <string name="pref_first_ref">第一次启动</string>
+    <string name="pref_first_ref_message">Pixel Experience Android 13 - Razer Phone 2\n本系统为免费系统,遵守GPL,Apache开源协议,如果您以任何付费方式获取此包证明您已上当受骗,请立即退款,举报商家\n\n点击左上角箭头退出将不再显示(箭头将锁定十秒)</string>
+    <string name="pref_first_not_yet">请认真阅读并等待十秒</string>
+</resources>

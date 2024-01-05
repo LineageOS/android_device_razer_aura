@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021, Alcatraz323 <alcatraz32323@gmail.com>
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  -->
+<resources>
+    <string name="device_settings_title">Razer Parts</string>
+    <string name="device_settings_summary">Device Extra Settings</string>
+
+    <string name="app_name">RazerParts</string>
+
+    <string name="category_display">Display</string>
+    <string name="pref_resolution">Resolution</string>
+    <string name="pref_refresh_rate">Refresh Rate</string>
+    <string name="pref_summary_place_holder"> </string>
+
+    <string name="category_chroma">Chroma MCU</string>
+    <string name="pref_chroma">Chroma</string>
+    <string name="pref_chroma_summary">Led configurator</string>
+    <string name="category_battery">Power Supply</string>
+    <string name="pref_battery">Battery</string>
+    <string name="pref_battery_summary">Battery management system</string>
+    <string name="category_others">Others</string>
+    <string name="pref_dolby_atmos">[WIP] Dolby Atmos™</string>
+    <string name="pref_dolby_atmos_summary">Audio effects</string>
+    <string name="pref_doze">Active wakeup</string>
+    <string name="pref_doze_summary">Doze settings</string>
+
+    <string name="bms_category_step_charging">Step charging</string>
+    <string name="bms_step_charging_switch">Enable step charging</string>
+    <string name="bms_step_charging_switch_summary">Automatically tune charge speed depends on battery data(voltage/temperature) to protect battery</string>
+    <string name="bms_category_charge_limiter">Charge limiter</string>
+    <string name="bms_charge_limiter_notice">Notice</string>
+    <string name="bms_charge_limiter_description">If you turn on any charge limiter option, you would better turn off the “Display - Wake on plug” or you may get some unexpected wakeups during the charge control</string>
+    <string name="bms_always_connected_mode">Always connected mode</string>
+    <string name="bms_always_connected_mode_summary" formatted="false">Limit the battery percent between 40% and 60% to protect battery</string>
+    <string name="bms_limit_to_eighty" formatted="false">Limit to around 80%</string>
+    <string name="bms_limit_to_eighty_summary" formatted="false">Suspend charging when the percent is around 80% to protect battery(Always connected mode will make this never happen)</string>
+    <string name="bms_category_charge_limiter_helper">Charge limiter helper</string>
+    <string name="bms_disable_charging_ripple_effect" formatted="false">Disable charge ripple animation</string>
+    <string name="bms_disable_charging_ripple_effect_summary" formatted="false">Helps to get a better experience for charge limiter(Requires a reboot to take effect)</string>
+
+    <string name="volume_panel_trigger_title">Volume Panel</string>
+
+    <string name="pref_version_indicator">Custom version</string>
+    <string name="pref_version_indicator_summary">Pixel Experience Android 13 - Razer Phone 2\nFree system, no paid way to get this system.\nAny re-selling is prohibited.</string>
+    <string name="pref_first_ref">First boot</string>
+    <string name="pref_first_ref_message">Pixel Experience Android 13 - Razer Phone 2\nFree system, no paid way to get this system.\nAny re-selling is prohibited.</string>
+    <string name="pref_first_not_yet">Wait for 10s</string>
+</resources>
