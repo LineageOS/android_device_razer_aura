@@ -1,0 +1,22 @@
+<!--
+  ~ Copyright (c) 2021, Alcatraz323 <alcatraz32323@gmail.com>
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  -->
+
+<permissions>
+    <privapp-permissions package="com.razer.chromacc">
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED" />
+        <permission name="android.permission.WRITE_SETTINGS" />
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.BATTERY_STATS" />
+    </privapp-permissions>
+</permissions>

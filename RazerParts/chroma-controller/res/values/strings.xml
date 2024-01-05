@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021, Alcatraz323 <alcatraz32323@gmail.com>
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  -->
+<resources>
+    <string name="app_name">Chroma</string>
+    <string name="pref_summary_place_holder"> </string>
+
+    <string name="chroma_category_control">Control</string>
+    <string name="chroma_switch">Enabled</string>
+    <string name="chroma_category_custom">Custom</string>
+    <string name="chroma_mode">Mode</string>
+    <string name="chroma_color">Color</string>
+    <string name="chroma_brightness">Brightness (5-255)</string>
+    <string name="chroma_kill_rgb_when_screen_lock">Save Battery</string>
+    <string name="chroma_kill_rgb_when_screen_lock_summary">Kill Chroma when the screen is lock</string>
+</resources>

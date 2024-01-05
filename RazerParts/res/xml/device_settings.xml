@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021, Alcatraz323 <alcatraz32323@gmail.com>
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:key="razer_parts_display"
+            android:title="@string/category_display">
+
+        <ListPreference
+            android:defaultValue="1440"
+            android:icon="@drawable/overscan"
+            android:key="screen_resolution"
+            android:entries="@array/resolution_entries"
+            android:entryValues="@array/resolution_values"
+            android:summary="@string/pref_summary_place_holder"
+            android:title="@string/pref_resolution" />
+
+        <ListPreference
+            android:defaultValue="120"
+            android:icon="@drawable/cellphone_screenshot"
+            android:key="screen_refresh_rate"
+            android:entries="@array/refresh_rate_entries"
+            android:entryValues="@array/refresh_rate_values"
+            android:summary="@string/pref_summary_place_holder"
+            android:title="@string/pref_refresh_rate" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="razer_parts_chroma"
+            android:title="@string/category_chroma">
+
+        <Preference
+            android:icon="@drawable/led_on"
+            android:key="chroma"
+            android:summary="@string/pref_chroma_summary"
+            android:title="@string/pref_chroma" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="razer_parts_others"
+        android:title="@string/category_others">
+
+        <Preference
+            android:icon="@drawable/dolby"
+            android:key="dolby_atmos"
+            android:summary="@string/pref_dolby_atmos_summary"
+            android:title="@string/pref_dolby_atmos" />
+
+        <Preference
+            android:icon="@drawable/flash"
+            android:key="active_wakeup"
+            android:summary="@string/pref_doze_summary"
+            android:title="@string/pref_doze" />
+
+        <Preference
+            android:icon="@drawable/information_outline"
+            android:key="pref_version_indicator"
+            android:selectable="false"
+            android:summary="@string/pref_version_indicator_summary"
+            android:title="@string/pref_version_indicator" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
