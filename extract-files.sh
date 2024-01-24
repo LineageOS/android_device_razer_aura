@@ -114,7 +114,7 @@ function blob_fixup() {
         vendor/lib64/libgps.utils.so)
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             ;;
-        vendor/lib64/libcne.so|vendor/lib64/libril-qc-qmi-1.so|vendor/lib*/vendor.qti.hardware.iop@1.0.so|vendor/lib*/libqti-iopd.so|vendor/lib*/libqti-iopd-client.so|vendor/lib*/hw/vendor.qti.hardware.factory@1.0-impl.so|vendor/lib*/libsecureui_svcsock.so|vendor/lib*/libQTEEConnector_vendor.so|vendor/lib*/libGPQTEEC_vendor.so|vendor/lib*/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|vendor/lib*/hw/vendor.qti.esepowermanager@1.0-impl.so)
+        vendor/lib64/libcne.so|vendor/lib64/libril-qc-qmi-1.so|vendor/lib*/vendor.qti.hardware.iop@1.0.so|vendor/lib*/libqti-iopd.so|vendor/lib*/libqti-iopd-client.so|vendor/lib*/hw/vendor.qti.hardware.factory@1.0-impl.so|vendor/lib*/libsecureui_svcsock.so|vendor/lib*/libQTEEConnector_vendor.so|vendor/lib*/libGPQTEEC_vendor.so|vendor/lib*/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|vendor/lib*/hw/vendor.qti.esepowermanager@1.0-impl.so|vendor/lib64/vendor.qti.hardware.radio.am@1.0.so|vendor/lib64/vendor.qti.hardware.radio.ims@1.*.so|vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so|vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so|vendor/lib64/vendor.qti.hardware.radio.qtiradio@*.*.so|vendor/lib64/vendor.qti.hardware.radio.uim@1.*.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_*@1.0.so)
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
     esac
