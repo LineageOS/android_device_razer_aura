@@ -17,7 +17,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="wake_on_gesture"
         android:defaultValue="false"
         android:title="@string/wake_on_gesture_title"
@@ -27,7 +27,7 @@
         android:key="pickup_sensor"
         android:title="@string/pickup_sensor_title">
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="gesture_pick_up"
             android:defaultValue="false"
             android:icon="@drawable/ic_pickup"
@@ -40,14 +40,14 @@
         android:key="proximity_sensor"
         android:title="@string/proximity_sensor_title">
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="gesture_hand_wave"
             android:defaultValue="false"
             android:icon="@drawable/ic_hand"
             android:title="@string/hand_wave_gesture_title"
             android:summary="@string/hand_wave_gesture_summary" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="gesture_pocket"
             android:defaultValue="false"
             android:icon="@drawable/ic_pocket"
