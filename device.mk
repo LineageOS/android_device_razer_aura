@@ -393,10 +393,6 @@ PRODUCT_BOOT_JARS += \
 # Treble
 PRODUCT_USE_VNDK_OVERRIDE := true
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
