@@ -680,7 +680,6 @@ vendor/lib64/libqmiservices.so
 # RIL - from polaris V11.0.5.0.QDGMIXM
 product/etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml|ceb890ab3c1645aa0d0044abab1ba58c4097a991
 product/framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar|fba9db045c8c167a78f2bcce0c00a3f83b1a792e
-product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-common.jar|91fe0ce296fc29bece6df81070b9b3b4ee41a1b4
 product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|0c720bd2c3670347f4cf40eadc03701f0d7f65d1
 
 # RIL
