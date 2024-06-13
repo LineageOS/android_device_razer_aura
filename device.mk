@@ -235,7 +235,8 @@ PRODUCT_PACKAGES += \
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
+    android.hardware.gatekeeper@1.0.vendor \
+    libion.vendor
 
 # GMS
 ifeq ($(WITH_GMS),true)
@@ -263,6 +264,7 @@ PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0.vendor \
     android.hidl.base@1.0 \
     android.hidl.memory@1.0.vendor \
+    libhidlmemory.vendor:64 \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
@@ -367,7 +369,8 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     libavservices_minijail.vendor \
     libjson \
-    librmnetctl
+    librmnetctl \
+    libsqlite.vendor
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -457,6 +460,7 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl \
+    libpng.vendor:32 \
     libwfdaac_vendor
 
 PRODUCT_BOOT_JARS += \
