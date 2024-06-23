@@ -1,3 +1,22 @@
+//
+// Copyright (C) 2018-2024 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
 soong_namespace {
     imports: ["hardware/qcom/bootctrl"],
+}
+
+install_symlink {
+    name: "rfs_msm_mpss_fih_rfs_data_misc_fih_atl_symlink",
+    vendor: true,
+    installed_location: "rfs/msm/mpss/fih_rfs/data/misc/fih_atl",
+    symlink_target: "/data/misc/fih_atl",
+}
+
+install_symlink {
+    name: "rfs_msm_mpss_fih_rfs_data_misc_fih_mcfg_symlink",
+    vendor: true,
+    installed_location: "rfs/msm/mpss/fih_rfs/data/misc/fih_mcfg",
+    symlink_target: "/data/misc/fih_mcfg",
 }

@@ -371,6 +371,11 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libsqlite.vendor
 
+# RFS MSM MPSS symlinks
+PRODUCT_PACKAGES += \
+    rfs_msm_mpss_fih_rfs_data_misc_fih_atl_symlink \
+    rfs_msm_mpss_fih_rfs_data_misc_fih_mcfg_symlink
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
