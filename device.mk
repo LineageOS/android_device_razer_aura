@@ -132,15 +132,8 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0 \
-    android.hardware.bluetooth@1.0.vendor \
-    android.hardware.bluetooth.a2dp@1.0.vendor \
     android.hardware.bluetooth.audio@2.0-impl:32 \
-    audio.bluetooth.default \
-    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    libhidlbase-v32 \
-    libhidlbase-v32.vendor
+    audio.bluetooth.default
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -157,14 +150,9 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.frameworks.cameraservice.common@2.0.vendor \
-    android.frameworks.cameraservice.device@2.0.vendor \
-    android.frameworks.cameraservice.service@2.1.vendor \
     android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
-    android.hardware.camera.provider@2.6:64 \
-    libgui_shim \
-    vendor.qti.hardware.camera.device@1.0.vendor
+    android.hardware.camera.provider@2.6:64
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -208,21 +196,12 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     gralloc.sdm845 \
     hwcomposer.sdm845 \
-    libdisplayconfig.qti \
-    libdisplayconfig.system.qti \
-    libqdMetaData \
-    libqdMetaData.system \
-    libtinyxml \
     memtrack.sdm845 \
-    vendor.display.config@1.0.vendor \
-    vendor.display.config@2.0 \
     vendor.qti.hardware.display.allocator@1.0-service
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm-service.clearkey \
-    android.hardware.drm@1.3.vendor \
-    libcrypto_shim.vendor
+    android.hardware.drm-service.clearkey
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -231,11 +210,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.aura
-
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor \
-    libion.vendor
 
 # GMS
 ifeq ($(WITH_GMS),true)
@@ -258,17 +232,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti
 
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.allocator@1.0.vendor \
-    android.hidl.base@1.0 \
-    android.hidl.memory@1.0.vendor \
-    libhidlmemory.vendor:64 \
-    libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
-
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
@@ -283,17 +246,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0.vendor
-
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media
 PRODUCT_PACKAGES += \
-    libavservices_minijail \
     libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -315,14 +273,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# Net
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor
-
-# Neural Network
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.2.vendor
-
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
@@ -335,15 +285,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2.vendor \
-    android.hardware.power-service-qti \
-    vendor.qti.hardware.perf@1.0.vendor
-
-# Protobuf
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-vendorcompat \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-vendorcompat
+    android.hardware.power-service-qti
 
 # QTI
 PRODUCT_PACKAGES += \
@@ -355,15 +297,7 @@ PRODUCT_COPY_FILES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor \
-    CarrierConfigOverlay \
-    libavservices_minijail.vendor \
-    libjson \
-    librmnetctl \
-    libsqlite.vendor
+    CarrierConfigOverlay
 
 # RFS MSM MPSS symlinks
 PRODUCT_PACKAGES += \
@@ -376,11 +310,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor \
-    android.hardware.sensors@1.0.vendor \
     android.hardware.sensors@1.0-impl:64 \
-    android.hardware.sensors@1.0-service \
-    libsensorndkbridge
+    android.hardware.sensors@1.0-service
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -425,14 +356,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
-# VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libcutils-v29.so
-
-PRODUCT_PACKAGES += \
-    libgui_vendor \
-    libutils-v33
-
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
@@ -452,11 +375,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # WiFi Display
-PRODUCT_PACKAGES += \
-    libnl \
-    libpng.vendor:32 \
-    libwfdaac_vendor
-
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
