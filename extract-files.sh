@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2023 The LineageOS Project
+# SPDX-FileCopyrightText: 2016 The CyanogenMod Project
+# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -43,7 +43,8 @@ while [ "${#}" -gt 0 ]; do
                 KANG="--kang"
                 ;;
         -s | --section )
-                SECTION="${2}"; shift
+                SECTION="${2}"
+                shift
                 CLEAN_VENDOR=false
                 ;;
         * )
@@ -60,38 +61,56 @@ fi
 function blob_fixup() {
     case "${1}" in
         system_ext/lib64/lib-imsvideocodec.so)
+            [ "$2" = "" ] && return 0
             grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
             "${PATCHELF}" --replace-needed "libqdMetaData.so" "libqdMetaData.system.so" "${2}"
             ;;
         system_ext/lib*/com.qualcomm.qti.ant@1.0.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service|vendor/bin/hw/vendor.qti.hardware.iop@2.0-service|vendor/bin/hw/vendor.qti.hardware.factory@1.0-service|vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|vendor/bin/hw/vendor.qti.esepowermanager@1.0-service)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
         vendor/bin/pm-service)
+            [ "$2" = "" ] && return 0
             grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
             ;;
         vendor/lib/hw/audio.primary.sdm845.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             "${PATCHELF}" --replace-needed "libtinycompress_vendor.so" "libtinycompress.so" "${2}"
             ;;
         vendor/lib/libbthost_if.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --set-soname "libbthost_if.so" "${2}"
             ;;
         vendor/lib/libgps.utils.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             ;;
         vendor/lib64/libbthost_if.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --set-soname "libbthost_if.so" "${2}"
             ;;
         vendor/lib64/libgps.utils.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
             ;;
         vendor/lib*/vendor.qti.hardware.iop@1.0.so|vendor/lib*/libqti-iopd.so|vendor/lib*/libqti-iopd-client.so|vendor/lib*/hw/vendor.qti.hardware.factory@1.0-impl.so|vendor/lib*/libsecureui_svcsock.so|vendor/lib*/libQTEEConnector_vendor.so|vendor/lib*/libGPQTEEC_vendor.so|vendor/lib*/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|vendor/lib*/hw/vendor.qti.esepowermanager@1.0-impl.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
+        *)
+            return 1
+            ;;
     esac
+
+    return 0
+}
+function blob_fixup_dry() {
+    blob_fixup "$1" ""
 }
 
 # Initialize the helper
