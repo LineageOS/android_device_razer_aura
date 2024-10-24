@@ -18,7 +18,6 @@ PRODUCT_MANUFACTURER := Razer
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="aura-user 9 P-SMR7-RC003-RZR-210107 3225 release-keys" \
-    BuildFingerprint=razer/cheryl2/aura:9/P-SMR7-RC003-RZR-210107/3225:user/release-keys \
-    DeviceName=cheryl2
+    BuildFingerprint=razer/cheryl2/aura:9/P-SMR7-RC003-RZR-210107/3225:user/release-keys
 
 PRODUCT_GMS_CLIENTID_BASE := android-razer
