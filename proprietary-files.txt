@@ -1,9 +1,14 @@
 # Proprietary files - from aura-user-9-P-SMR7-RC003-RZR-210107-3225-release-keys, unless pinned
 
-# libcne depends on libwpa_client, which is a gnu makefile target
-# libwqe depends on libwpa_client, which is a gnu makefile target
-# lowi-server depends on libwpa_client, which is a gnu makefile target
+# libOmxSwVdec depends on libc2dcolorconvert, which is a gnu makefile target
+# libOmxSwVencMpeg4 depends on libplatformconfig, which is a gnu makefile target
+# libOmxVpp depends on libOmxCore, which is a gnu makefile target
+# libantradio has Unresolved symbol: jniThrowException@LIBNATIVEHELPER_1
+# libcne, libwqe, lowi-server depends on libwpa_client, which is a gnu makefile target
+# libdataitems, loc_launcher depends on libgps.utils, which is a gnu makefile target
+# libloc_api_v02 depends on libloc_core, which is a gnu makefile target
 # libril-qcril-hook-oem depends on libril, which is a gnu makefile target
+# pm-service depends on libutils-v33, which is copied from the VNDK folder
 
 # ACDB
 vendor/etc/acdbdata/RC2/Bluetooth_cal.acdb
@@ -74,9 +79,9 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|1b8ea7096ded35acef0bbc1a25
 
 # ANT+
 system/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.so
-system/lib/libantradio.so:system_ext/lib/libantradio.so
+system/lib/libantradio.so:system_ext/lib/libantradio.so;DISABLE_CHECKELF
 system/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so
-system/lib64/libantradio.so:system_ext/lib64/libantradio.so
+system/lib64/libantradio.so:system_ext/lib64/libantradio.so;DISABLE_CHECKELF
 vendor/lib/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
@@ -166,6 +171,8 @@ vendor/lib/libmmcamera_faceproc2.so
 vendor/lib/libmpbase.so
 vendor/lib/libsnsapi.so
 vendor/lib/libswregistrationalgo.so
+vendor/lib64/libmmcamera_faceproc.so
+vendor/lib64/libmmcamera_faceproc2.so
 
 # Camera - from aura-o-global-2009.zip
 vendor/lib/camera/com.qti.tuned.liteon_imx363.bin|f88d078849a01d82dd59585413c48738bd3c7fcb
@@ -386,15 +393,15 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # GNSS
-vendor/bin/loc_launcher
+vendor/bin/loc_launcher;DISABLE_CHECKELF
 vendor/bin/lowi-server;DISABLE_CHECKELF
 vendor/bin/xtra-daemon
-vendor/lib64/libdataitems.so
+vendor/lib64/libdataitems.so;DISABLE_CHECKELF
 vendor/lib64/libflp.so
 vendor/lib64/libgeofence.so
 vendor/lib64/libizat_core.so
 vendor/lib64/liblbs_core.so
-vendor/lib64/libloc_api_v02.so
+vendor/lib64/libloc_api_v02.so;DISABLE_CHECKELF
 vendor/lib64/libloc_ds_api.so
 vendor/lib64/liblowi_client.so
 
@@ -538,9 +545,9 @@ vendor/lib/libOmxDsdDec.so|5a58c8b54578c6c7520666df4040a422fea67df9
 vendor/lib/libOmxEvrcDec.so|58d55a09798ae13c90829c7ced2e7fee1c61d8b1
 vendor/lib/libOmxG711Dec.so|254245293c12e4d32217b0704bff5f676f4bb5de
 vendor/lib/libOmxQcelp13Dec.so|6c55114663ba69f2c2a7e6c69989fc79d67977b3
-vendor/lib/libOmxSwVdec.so|326fcf4174103efbd926fb046d12ba7d9121a312
-vendor/lib/libOmxSwVencMpeg4.so|cc082e75a01390e392e962a87b4a0dccf228585a
-vendor/lib/libOmxVpp.so|7a9a96445b55f28013ea8f4ed767c7e245420c4f
+vendor/lib/libOmxSwVdec.so;DISABLE_CHECKELF|326fcf4174103efbd926fb046d12ba7d9121a312
+vendor/lib/libOmxSwVencMpeg4.so;DISABLE_CHECKELF|cc082e75a01390e392e962a87b4a0dccf228585a
+vendor/lib/libOmxVpp.so;DISABLE_CHECKELF|7a9a96445b55f28013ea8f4ed767c7e245420c4f
 vendor/lib/libOmxWmaDec.so|eab25fd58910bbeb57812c75fd3c5511c60fa592
 vendor/lib/libdsd2pcm.so|427be2997fcd72e94c33d08b2cf1fde5bf969fd4
 vendor/lib/libswvdec.so|0ebbd44d40c83333e99e47d64509a970a4052859
@@ -558,15 +565,15 @@ vendor/lib64/libOmxApeDecSw.so|0c597c5ceb031322f2b6d8472c1c946ec4aabdea
 vendor/lib64/libOmxEvrcDec.so|e4d98d61ad8588956b7f4f937dd720164d584f7e
 vendor/lib64/libOmxG711Dec.so|53675a26d5386c868127304c6dfe9dd130f106f8
 vendor/lib64/libOmxQcelp13Dec.so|65952f3680f9865ea601de764037637d6ee8c990
-vendor/lib64/libOmxSwVdec.so|f891c5cb584e317ad0cb855c266100658406f556
-vendor/lib64/libOmxSwVencMpeg4.so|91f7a60674477b067d36493ddb44ea6c044b16ac
-vendor/lib64/libOmxVpp.so|a87440c7838b6f03726d97a4a52b695bb4c6e8f8
+vendor/lib64/libOmxSwVdec.so;DISABLE_CHECKELF|f891c5cb584e317ad0cb855c266100658406f556
+vendor/lib64/libOmxSwVencMpeg4.so;DISABLE_CHECKELF|91f7a60674477b067d36493ddb44ea6c044b16ac
+vendor/lib64/libOmxVpp.so;DISABLE_CHECKELF|a87440c7838b6f03726d97a4a52b695bb4c6e8f8
 vendor/lib64/libOmxWmaDec.so|7b2a714a74fea03a403a7d0edef61db2f70d7d4e
 vendor/lib64/libswvdec.so|ae1f55c7094e2a006e28dcfb0f2b9c32634fb849
 
 # Peripheral Manager - from polaris V12.0.3.0.QDGMIXM
 vendor/bin/pm-proxy|ee93ea32e23879e1bf213fb62253738d7559bb97
-vendor/bin/pm-service|5ce89fb681068616d4c797a25736706971ce4e59|05a141c27d74efc6d6bbd728785af37080648acc
+vendor/bin/pm-service;DISABLE_CHECKELF|5ce89fb681068616d4c797a25736706971ce4e59|05a141c27d74efc6d6bbd728785af37080648acc
 vendor/lib/libperipheral_client.so|7886baa3fb0f5d1bd7971d806a34118eae37af03
 vendor/lib64/libperipheral_client.so|9475db86b218e2fd3b788993ff42cb79b7197c21
 
@@ -1060,7 +1067,7 @@ vendor/etc/seccomp_policy/wfdhdcphalservice.policy|a489ab323be4be2df3de9f84a6b5e
 vendor/etc/seccomp_policy/wfdvndservice.policy|b46f0c22a1f9b65c6750205e161c0a3f84ac716b
 vendor/etc/seccomp_policy/wifidisplayhalservice.policy|f113f27e0e301a18baf0ade08c23071a27c7dc52
 vendor/lib/libFileMux_proprietary.so|e59edd4604a7c73147118161cab5b7ac6bb16c82
-vendor/lib/libmmosal.so|57185feced72009af2df1b09117702c9fae7182b
+vendor/lib/libmmosal.so;MODULE_SUFFIX=_vendor|57185feced72009af2df1b09117702c9fae7182b
 vendor/lib/libmmrtpdecoder_proprietary.so|9232f505ea8f0c1e9f81a049c583fba32a450d73
 vendor/lib/libmmrtpencoder_proprietary.so|d8386b78c976d94867455c67dd10d63e8a343363
 vendor/lib/libwfdcodecv4l2_proprietary.so|70a2900804160bc53bb19c11e81278ffde0c5fee
@@ -1083,8 +1090,9 @@ vendor/lib/libwfduibcsinkinterface_proprietary.so|64b802f12ffb30418a072d0ebf3c26
 vendor/lib/libwfduibcsrc_proprietary.so|b78df6ab7acb850f2adb875ccecb1a3c3539f4d2
 vendor/lib/libwfduibcsrcinterface_proprietary.so|91837ba6b6692e1d553ece3aa4469dd64f164a04
 vendor/lib/libwfdutils_proprietary.so|cae4c266704da4ce15b59c13f57ccf8f1391b699
-vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so|fdba1b3c11ace4b0415be4e5944cdb288cd35f58
+vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor|fdba1b3c11ace4b0415be4e5944cdb288cd35f58
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|044c6cfd4bc603e4aa372ab1a3d287a8d8e5fc48
+vendor/lib64/libmmosal.so;MODULE_SUFFIX=_vendor|e9fdb48163e92b089cea0c397723a8416436c272
 vendor/lib64/libwfdhdcpcp.so|ba43f54ee4e34562b31c9595d2ad0639033e8fdc
 
 # Wi-Fi Display (vendor) - from lemonadep - TP1A.220624.003
