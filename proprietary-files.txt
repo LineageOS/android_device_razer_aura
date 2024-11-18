@@ -74,9 +74,9 @@ system/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.s
 system/lib/libantradio.so:system_ext/lib/libantradio.so
 system/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 system/lib64/libantradio.so:system_ext/lib64/libantradio.so
-vendor/lib/com.qualcomm.qti.ant@1.0.so
+vendor/lib/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
-vendor/lib64/com.qualcomm.qti.ant@1.0.so
+vendor/lib64/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Camera
