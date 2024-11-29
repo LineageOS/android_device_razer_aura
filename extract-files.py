@@ -74,7 +74,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libcutils.so', 'libprocessgroup.so'),
     ('vendor/lib64/libwvhidl.so', 'vendor/lib/mediadrm/libwvdrmengine.so', 'vendor/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
-    ('vendor/lib/vendor.qti.hardware.tui_comm@1.0.so', 'vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so'): blob_fixup()
+    ('system_ext/lib64/com.qualcomm.qti.ant@1.0.so', 'system_ext/lib/com.qualcomm.qti.ant@1.0.so', 'vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so', 'vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so', 'vendor/lib64/vendor.qti.hardware.iop@1.0.so', 'vendor/lib64/com.qualcomm.qti.ant@1.0.so', 'vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so', 'vendor/lib64/vendor.qti.hardware.factory@1.0.so', 'vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so', 'vendor/lib64/vendor.qti.hardware.iop@2.0.so', 'vendor/lib64/vendor.qti.esepowermanager@1.0.so', 'vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so', 'vendor/lib/vendor.qti.hardware.scve.objecttracker@1.0.so', 'vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so', 'vendor/lib/vendor.qti.hardware.iop@1.0.so', 'vendor/lib/com.qualcomm.qti.ant@1.0.so,' 'vendor/lib/vendor.qti.hardware.tui_comm@1.0.so', 'vendor/lib/vendor.qti.hardware.factory@1.0.so', 'vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so', 'vendor/lib/vendor.qti.hardware.iop@2.0.so', 'vendor/lib/vendor.qti.esepowermanager@1.0.so', 'vendor/lib/vendor.qti.hardware.scve.panorama@1.0.so'): blob_fixup()
         .add_needed('libhidlbase_shim.so'),
 }  # fmt: skip
 
