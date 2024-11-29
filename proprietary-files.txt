@@ -7,6 +7,7 @@
 # libloc_api_v02 depends on libloc_core, which is a gnu makefile target
 # libril-qcril-hook-oem depends on libril, which is a gnu makefile target
 # pm-service depends on libutils-v33, which is copied from the VNDK folder
+# libgsl depends on symbol __aeabi_uldivmod, which is an intrinsic, and tough to shim
 
 # ACDB
 vendor/etc/acdbdata/RC2/Bluetooth_cal.acdb
@@ -421,7 +422,7 @@ vendor/lib/libCB.so
 vendor/lib/libOpenCL.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libc2d30_bltlib.so
-vendor/lib/libgsl.so
+vendor/lib/libgsl.so;DISABLE_CHECKELF
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib64/egl/eglSubDriverAndroid.so
@@ -436,7 +437,7 @@ vendor/lib64/libCB.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libgsl.so
+vendor/lib64/libgsl.so;DISABLE_CHECKELF
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 
