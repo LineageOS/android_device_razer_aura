@@ -2,13 +2,18 @@
 
 # libOmxVpp depends on libOmxCore, which is a gnu makefile target
 # libantradio has Unresolved symbol: jniThrowException@LIBNATIVEHELPER_1
-# libcne, libwqe, lowi-server depends on libwpa_client, which is a gnu makefile target
+# libcne, libwqe, lowi-server, imsdatadaemon depends on libwpa_client, which is a gnu makefile target
 # libdataitems, loc_launcher depends on libgps.utils, which is a gnu makefile target
-# libloc_api_v02 depends on libloc_core, which is a gnu makefile target
+# libgeofence, libloc_ds_api, libloc_api_v02, libizat_core depends on libloc_core, which is a gnu makefile target
 # libril-qcril-hook-oem depends on libril, which is a gnu makefile target
 # pm-service depends on libutils-v33, which is copied from the VNDK folder
-# libgsl depends on symbol __aeabi_uldivmod, which is an intrinsic, and tough to shim
+# libq3dtools_esx, libq3dtools_adreno, libCB, libgsl depends on symbol __aeabi_uldivmod, which is an intrinsic, and tough to shim
 # libwfdmmsrc_system depends on symbol _ZN7android21SurfaceComposerClient13createDisplayERKNS_7String8Ebf, and _ZN7android21SurfaceComposerClient14destroyDisplayERKNS_2spINS_7IBinderEEE
+# libmmcamera_faceproc depends on symbol __aeabi_memcpy@LIBC_PRIVATE, __aeabi_memset@LIBC_PRIVATE, __gnu_Unwind_Find_exidx@LIBC_PRIVATE
+# libEGL_adreno depends on symbol __aeabi_ldivmod
+# libwfdnative depends on symbol _ZN7android8KeyEvent10initializeEiijiNSt3__15arrayIhLm32EEEiiiiiill
+# android.hardware.drm@1.1-service.widevine depends on symbol _ZN7android8hardware22configureRpcThreadpoolEmb
+# audio.primary.sdm845 has a variety of unresolved symbols
 
 # ACDB
 vendor/etc/acdbdata/RC2/Bluetooth_cal.acdb
@@ -41,7 +46,7 @@ vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 
 # Audio
-vendor/lib/hw/audio.primary.sdm845.so
+vendor/lib/hw/audio.primary.sdm845.so;DISABLE_CHECKELF
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -82,9 +87,9 @@ system/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.s
 system/lib/libantradio.so:system_ext/lib/libantradio.so;DISABLE_CHECKELF
 system/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 system/lib64/libantradio.so:system_ext/lib64/libantradio.so;DISABLE_CHECKELF
-vendor/lib/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
-vendor/lib64/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Camera
@@ -166,7 +171,7 @@ vendor/lib/libcamxtintlessalgo.so
 vendor/lib/libcom.qti.chinodeutils.so
 vendor/lib/libdualcam_optical_zoom.so
 vendor/lib/libdualcam_optical_zoom_control.so
-vendor/lib/libmmcamera_faceproc.so
+vendor/lib/libmmcamera_faceproc.so;DISABLE_CHECKELF
 vendor/lib/libmmcamera_faceproc2.so
 vendor/lib/libmpbase.so
 vendor/lib/libsnsapi.so
@@ -395,14 +400,14 @@ vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 # GNSS
 vendor/bin/loc_launcher;DISABLE_CHECKELF
 vendor/bin/lowi-server;DISABLE_CHECKELF
-vendor/bin/xtra-daemon
+vendor/bin/xtra-daemon;DISABLE_CHECKELF
 vendor/lib64/libdataitems.so;DISABLE_CHECKELF
-vendor/lib64/libflp.so
-vendor/lib64/libgeofence.so
-vendor/lib64/libizat_core.so
-vendor/lib64/liblbs_core.so
+vendor/lib64/libflp.so;DISABLE_CHECKELF
+vendor/lib64/libgeofence.so;DISABLE_CHECKELF
+vendor/lib64/libizat_core.so;DISABLE_CHECKELF
+vendor/lib64/liblbs_core.so;DISABLE_CHECKELF
 vendor/lib64/libloc_api_v02.so;DISABLE_CHECKELF
-vendor/lib64/libloc_ds_api.so
+vendor/lib64/libloc_ds_api.so;DISABLE_CHECKELF
 vendor/lib64/liblowi_client.so
 
 # GNSS configs
@@ -412,14 +417,14 @@ vendor/etc/xtwifi.conf
 
 # Graphics (Adreno)
 vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so;DISABLE_CHECKELF
+vendor/lib/egl/libGLESv1_CM_adreno.so;DISABLE_CHECKELF
 vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so
-vendor/lib/egl/libQTapGLES.so
-vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so
-vendor/lib/egl/libq3dtools_esx.so
+vendor/lib/egl/libQTapGLES.so;DISABLE_CHECKELF
+vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so;DISABLE_CHECKELF
+vendor/lib/egl/libq3dtools_esx.so;DISABLE_CHECKELF
 vendor/lib/libC2D2.so
-vendor/lib/libCB.so
+vendor/lib/libCB.so;DISABLE_CHECKELF
 vendor/lib/libOpenCL.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libc2d30_bltlib.so
@@ -427,12 +432,12 @@ vendor/lib/libgsl.so;DISABLE_CHECKELF
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
+vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so;DISABLE_CHECKELF
+vendor/lib64/egl/libGLESv1_CM_adreno.so;DISABLE_CHECKELF
 vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
-vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
+vendor/lib64/egl/libQTapGLES.so;DISABLE_CHECKELF
+vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so;DISABLE_CHECKELF
+vendor/lib64/egl/libq3dtools_esx.so;DISABLE_CHECKELF
 vendor/lib64/libC2D2.so
 vendor/lib64/libCB.so
 vendor/lib64/libOpenCL.so
@@ -722,7 +727,7 @@ system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/li
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so|4cf9e97f526c6278c5e2136e00d1fb800fb941aa
 system_ext/priv-app/ims/ims.apk|16b82e1e0113beb7fb3a62a9a5513b317675d96e
 vendor/bin/ims_rtp_daemon|32a3ce381b0f85f53a2e9afd7215b3585afef0d6
-vendor/bin/imsdatadaemon|3f044f84eb4049f1ce8a26af6a6026c1776d22dd
+vendor/bin/imsdatadaemon;DISABLE_CHECKELF|3f044f84eb4049f1ce8a26af6a6026c1776d22dd
 vendor/bin/imsqmidaemon|756dcc2d6c7fa26916bc28dedf0c513b1d5e5bfe
 vendor/bin/imsrcsd|bf29aac14856f29268c01599e5f6c7c6ae520685
 vendor/etc/init/ims_rtp_daemon_legacy.rc|104b2a879db4d3dd44e74a3d7f6e69f6972c9129
@@ -953,11 +958,11 @@ vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 # Trusted User Interface
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so;DISABLE_CHECKELF
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so;DISABLE_CHECKELF
 
 # Widevine DRM
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine;DISABLE_CHECKELF
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/firmware/widevine.b00
 vendor/firmware/widevine.b01
@@ -1030,7 +1035,7 @@ system_ext/lib64/libwfdconfigutils.so|6f1a3a862ddde4245ea58ad310101df620d3a00b
 system_ext/lib64/libwfddisplayconfig.so|5fd7bf7abaedfe890442f88183c49755b25c39aa
 system_ext/lib64/libwfdmminterface.so|3f16acefbe87741a5841c1c70cf74ff917299c4c
 system_ext/lib64/libwfdmmsink.so|8150b750357b606475521b491f78d566673f9888
-system_ext/lib64/libwfdnative.so|92ec61d464c07d9e9020cf413489cdc01fb19abc
+system_ext/lib64/libwfdnative.so;DISABLE_CHECKELF|92ec61d464c07d9e9020cf413489cdc01fb19abc
 system_ext/lib64/libwfdrtsp.so|8181e44d7c1f722218fabd8fe3bf788454a3f586
 system_ext/lib64/libwfdsinksm.so|c4d68ecbe0accd24296c18444e5a82b6a24be8d8
 system_ext/lib64/libwfduibcinterface.so|dca32fe063bdba7ce3b131b16cf112b793ae03ad
