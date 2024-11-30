@@ -544,7 +544,7 @@ vendor/lib64/libOmxWmaDec.so|7b2a714a74fea03a403a7d0edef61db2f70d7d4e
 
 # Peripheral Manager - from SHIFT6MQ.SOS.5.0.G.20240820-RELEASE-OTA
 vendor/bin/pm-proxy|2e430fb93a642f14780e23c490be80fc2f4b7b3d
-vendor/bin/pm-service|8dbd2d6de0d563295c385215af6e861e036bc00d|c13df2ff8c0091d9769a5db71465fcb9d0141291
+vendor/bin/pm-service|8dbd2d6de0d563295c385215af6e861e036bc00d
 vendor/lib/libperipheral_client.so|21c890003483321cfdd986f70f8fc7e5d0b2a29f
 vendor/lib64/libperipheral_client.so|1ec85a8bf2554155f1bb9eb2988e9e5832995fde
 
