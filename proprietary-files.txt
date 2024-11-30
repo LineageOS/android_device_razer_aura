@@ -173,6 +173,8 @@ vendor/lib/libmmcamera_faceproc2.so
 vendor/lib/libmpbase.so
 vendor/lib/libsnsapi.so
 vendor/lib/libswregistrationalgo.so
+vendor/lib64/libmmcamera_faceproc.so
+vendor/lib64/libmmcamera_faceproc2.so
 
 # Camera - from aura-o-global-2009.zip
 vendor/lib/camera/com.qti.tuned.liteon_imx363.bin|f88d078849a01d82dd59585413c48738bd3c7fcb
