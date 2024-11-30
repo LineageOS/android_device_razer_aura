@@ -9,6 +9,7 @@
 # libq3dtools_esx, libq3dtools_adreno, libEGL_adreno, libCB, libgsl depends on intrinsic symbols which changed namespace (__aeabi_uldivmod, __aeabi_ldivmod, etc.), which are difficult to shim (TODO)
 # libril-qcril-hook-oem depends on libril, which is a gnu makefile target
 # lowi-server depends on libwpa_client, which is a gnu makefile target
+# libwfdmmsrc_system depends on symbols _ZN7android21SurfaceComposerClient13createDisplayERKNS_7String8Ebf and _ZN7android21SurfaceComposerClient14destroyDisplayERKNS_2spINS_7IBinderEEE
 
 # ACDB
 vendor/etc/acdbdata/RC2/Bluetooth_cal.acdb
@@ -1013,7 +1014,7 @@ system_ext/lib/libwfdconfigutils.so|a52a96e2699f3a5ad79838e356cd90838e26218b
 system_ext/lib/libwfddisplayconfig.so|f46fe63fb3d58c143dc92741a962167af3d8b928
 system_ext/lib/libwfdmminterface.so|5844114d7cc823090a70fe4f44cbda0ddf585ebd
 system_ext/lib/libwfdmmsink.so|23fb5c836fc06865b229c30b46998e41c0624dac
-system_ext/lib/libwfdmmsrc_system.so|0adfc69a5560158f3a6803ba720acc795d6d05dc
+system_ext/lib/libwfdmmsrc_system.so;DISABLE_CHECKELF|0adfc69a5560158f3a6803ba720acc795d6d05dc
 system_ext/lib/libwfdrtsp.so|afd69963c2bd59bdb3ff23e01710c61ed90c5d87
 system_ext/lib/libwfdservice.so|07e6d0e00393a8c068f75b46531d2e75fdaebde2|90e41544f3797c118082d1663fd3a09465e50268
 system_ext/lib/libwfdsinksm.so|875171cc6ae534dd941eec1c87b78d5961e19c06
