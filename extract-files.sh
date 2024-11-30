@@ -90,10 +90,6 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
-        vendor/bin/pm-service)
-            [ "$2" = "" ] && return 0
-            grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
-            ;;
         vendor/lib/hw/audio.primary.sdm845.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
