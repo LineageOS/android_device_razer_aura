@@ -983,6 +983,10 @@ vendor/bin/wireless_init
 
 # Wi-Fi Display (system) - from lemonadep - oplus/ossi/ossi:14/UKQ1.230924.001/1727597651382:user/release-keys
 system/framework/WfdCommon.jar|a661c494d064b79a3f71579592411fada1ea232f
+system_ext/bin/wfdservice|400d123df78c1ed2e9643ff3ddf5ee5748f954fe
+system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
+system_ext/etc/seccomp_policy/wfdservice.policy|5b3592c965f16b2d55ac89d56d8d3c49a6b5800b
+system_ext/etc/wfdconfigsink.xml|cb78df66948314a75080a4161321fb3111a0785a
 system_ext/lib/com.qualcomm.qti.wifidisplayhal@1.0.so|cb88bc73bf9f44d7da000a41d38b309ffdf71370
 system_ext/lib/libmmosal.so|e806f8040b4e59c6e08e437734a2176090a94ae3
 system_ext/lib/libmmparser_lite.so|61bbc90e3a26a64007eb9b0871b43cce72ee6b7e
