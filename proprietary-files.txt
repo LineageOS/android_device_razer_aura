@@ -11,7 +11,7 @@ vendor/etc/acdbdata/RC2/Headset_cal.acdb
 vendor/etc/acdbdata/RC2/Speaker_cal.acdb
 vendor/etc/acdbdata/RC2/workspaceFile.qwsp
 
-# ADSP - from SHIFT6MQ.SOS.3.3.G.20210726-RELEASE
+# ADSP - from SHIFT6MQ.SOS.5.0.G.20240820-RELEASE-OTA
 vendor/bin/adsprpcd|7fb46c11d19f795e0af2f36764d000adccfcdf94
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc|5de36026ce241c83c69bb0d149bf271e19c114c9
 vendor/lib/libadsp_default_listener.so|fa20b98900255989e85f42b8187f868f55ac75a2
@@ -168,7 +168,7 @@ vendor/lib/camera/com.qti.tuned.liteon_imx363.bin|f88d078849a01d82dd59585413c487
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
 
-# CDSP - from SHIFT6MQ.SOS.3.3.G.20210726-RELEASE
+# CDSP - from SHIFT6MQ.SOS.5.0.G.20240820-RELEASE-OTA
 vendor/bin/cdsprpcd|bf36700de369628c04da2968929e7a8f4edafa28
 vendor/lib/libcdsp_default_listener.so|58fceb94b180477a438ba0ddee4e25dc13c70239
 vendor/lib/libcdsprpc.so|22fe0d97a91e4fc9846f72fe170a5eac1e182fd2
