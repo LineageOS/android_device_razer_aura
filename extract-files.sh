@@ -61,7 +61,7 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        system_ext/lib64/lib-imsvideocodec.so)
+        system_ext/lib64/lib-imscamera.so | system_ext/lib64/lib-imsvideocodec.so)
             [ "$2" = "" ] && return 0
             grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
             "${PATCHELF}" --replace-needed "libqdMetaData.so" "libqdMetaData.system.so" "${2}"
