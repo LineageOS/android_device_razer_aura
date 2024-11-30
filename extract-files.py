@@ -42,6 +42,7 @@ lib_fixups: lib_fixups_user_type = {
         'com.qualcomm.qti.dpm.api@1.0',
         'libmmosal',
         'vendor.qti.imsrtpservice@3.0',
+        'vendor.qti.hardware.wifidisplaysession@1.0',
     ): lib_fixup_vendor_suffix,
     (
     ): lib_fixup_remove,
