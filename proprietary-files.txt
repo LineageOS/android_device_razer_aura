@@ -1066,7 +1066,7 @@ vendor/lib/libwfduibcsinkinterface_proprietary.so|64b802f12ffb30418a072d0ebf3c26
 vendor/lib/libwfduibcsrc_proprietary.so|b78df6ab7acb850f2adb875ccecb1a3c3539f4d2
 vendor/lib/libwfduibcsrcinterface_proprietary.so|91837ba6b6692e1d553ece3aa4469dd64f164a04
 vendor/lib/libwfdutils_proprietary.so|cae4c266704da4ce15b59c13f57ccf8f1391b699
-vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so|fdba1b3c11ace4b0415be4e5944cdb288cd35f58
+vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor|fdba1b3c11ace4b0415be4e5944cdb288cd35f58
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|044c6cfd4bc603e4aa372ab1a3d287a8d8e5fc48
 vendor/lib64/libmmosal.so;MODULE_SUFFIX=_vendor|e9fdb48163e92b089cea0c397723a8416436c272
 vendor/lib64/libwfdhdcpcp.so|ba43f54ee4e34562b31c9595d2ad0639033e8fdc
