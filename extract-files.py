@@ -106,7 +106,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libgui_shim.so')
         .replace_needed('libqdMetaData.so', 'libqdMetaData.system.so'),
     'vendor/lib/hw/audio.primary.sdm845.so': blob_fixup()
-        .replace_needed('libcutils.so', 'libprocessgroup.so')
+        .add_needed('libprocessgroup.so')
         .replace_needed('libtinycompress_vendor.so', 'libtinycompress.so'),
     ('vendor/lib/libbthost_if.so', 'vendor/lib64/libbthost_if.so'): blob_fixup()
         .fix_soname(),
