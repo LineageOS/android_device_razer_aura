@@ -81,13 +81,13 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|d11a6abbaddbfee605c57a1a23
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|8bb6c293e00c49fc69378815b872b7ed0b67189b
 
 # ANT+
-system/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.so
+system/lib/com.qualcomm.qti.ant@1.0.so:system_ext/lib/com.qualcomm.qti.ant@1.0.so;DISABLE_CHECKELF
 system/lib/libantradio.so:system_ext/lib/libantradio.so;DISABLE_CHECKELF
-system/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so
+system/lib64/com.qualcomm.qti.ant@1.0.so:system_ext/lib64/com.qualcomm.qti.ant@1.0.so;DISABLE_CHECKELF
 system/lib64/libantradio.so:system_ext/lib64/libantradio.so;DISABLE_CHECKELF
-vendor/lib/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
-vendor/lib64/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Camera
@@ -364,17 +364,17 @@ vendor/lib64/libtzdrmgenprov.so
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
 vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
 vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
-vendor/lib/vendor.qti.esepowermanager@1.0.so
+vendor/lib/vendor.qti.esepowermanager@1.0.so;DISABLE_CHECKELF
 vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
-vendor/lib64/vendor.qti.esepowermanager@1.0.so
+vendor/lib64/vendor.qti.esepowermanager@1.0.so;DISABLE_CHECKELF
 
 # Factory
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
 vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
 vendor/lib/hw/vendor.qti.hardware.factory@1.0-impl.so
-vendor/lib/vendor.qti.hardware.factory@1.0.so
+vendor/lib/vendor.qti.hardware.factory@1.0.so;DISABLE_CHECKELF
 vendor/lib64/hw/vendor.qti.hardware.factory@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.factory@1.0.so
+vendor/lib64/vendor.qti.hardware.factory@1.0.so;DISABLE_CHECKELF
 
 # Fingerprint
 vendor/firmware/fpctzappfingerprint.b00
@@ -464,13 +464,13 @@ vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
 vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
 vendor/lib/libqti-iopd-client.so
 vendor/lib/libqti-iopd.so
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
+vendor/lib/vendor.qti.hardware.iop@1.0.so;DISABLE_CHECKELF
+vendor/lib/vendor.qti.hardware.iop@2.0.so;DISABLE_CHECKELF
 vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
 vendor/lib64/libqti-iopd-client.so
 vendor/lib64/libqti-iopd.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
+vendor/lib64/vendor.qti.hardware.iop@1.0.so;DISABLE_CHECKELF
+vendor/lib64/vendor.qti.hardware.iop@2.0.so;DISABLE_CHECKELF
 
 # IPA firmware
 vendor/firmware/ipa_fws.b00
@@ -791,7 +791,7 @@ vendor/lib/libsnsdiaglog.so
 vendor/lib/libssc.so
 vendor/lib/libssc_default_listener.so
 vendor/lib/sensors.ssc.so
-vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so;DISABLE_CHECKELF
 vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib64/libsensorcal.so
 vendor/lib64/libsensorslog.so
@@ -802,7 +802,7 @@ vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libssc.so
 vendor/lib64/libssc_default_listener.so
 vendor/lib64/sensors.ssc.so
-vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
+vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so;DISABLE_CHECKELF
 
 # Sensors configs
 vendor/etc/sensors/config/ak991x_dri_0.json
