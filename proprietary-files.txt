@@ -1,6 +1,5 @@
 # Proprietary files - from aura-user-9-P-SMR7-RC003-RZR-210107-3225-release-keys, unless pinned
 
-# android.hardware.drm@1.1-service.widevine depends on symbol _ZN7android8hardware22configureRpcThreadpoolEmb (TODO)
 # libEGL_adreno, libGLESv1_CM_adreno, libQTapGLES, libq3dtools_adreno, libq3dtools_esx, libCB, libgsl depend on intrinsic symbols which changed namespace (__aeabi_uldivmod, __aeabi_ldivmod, etc.), which are difficult to shim (TODO)
 # libOmxVideoDSMode, libOmxVpp depend on libOmxCore, which is a gnu makefile target
 # libantradio has Unresolved symbol: jniThrowException@LIBNATIVEHELPER_1
@@ -959,7 +958,7 @@ vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Widevine DRM
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine;DISABLE_CHECKELF
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/firmware/widevine.b00
 vendor/firmware/widevine.b01
