@@ -109,6 +109,9 @@ blob_fixups: blob_fixups_user_type = {
     ('system_ext/lib64/lib-imscamera.so', 'system_ext/lib64/lib-imsvideocodec.so'): blob_fixup()
         .add_needed('libgui_shim.so')
         .replace_needed('libqdMetaData.so', 'libqdMetaData.system.so'),
+    'vendor/bin/hw/android.hardware.drm@1.1-service.widevine': blob_fixup()
+        .replace_needed('libhidltransport.so', 'libhidlbase.so')
+        .remove_needed('libhwbinder.so'),
     'vendor/lib/hw/audio.primary.sdm845.so': blob_fixup()
         .add_needed('libprocessgroup.so')
         .replace_needed('libtinycompress_vendor.so', 'libtinycompress.so'),
