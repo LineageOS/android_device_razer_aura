@@ -117,6 +117,20 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinycompress_vendor.so', 'libtinycompress.so'),
     ('vendor/lib/libbthost_if.so', 'vendor/lib64/libbthost_if.so'): blob_fixup()
         .fix_soname(),
+    ('vendor/lib/egl/libEGL_adreno.so', 'vendor/lib/egl/libGLESv1_CM_adreno.so', 'vendor/lib/egl/libQTapGLES.so'): blob_fixup()
+        .replace_needed('libm.so', 'libw.so')
+        # sed -i '__aeabi_ldivmod' 's_aeabi_ldivmod'
+        .binary_regex_replace(b'\x5F\x5F\x61\x65\x61\x62\x69\x5F\x6C\x64\x69\x76\x6D\x6F\x64', b'\x73\x5F\x61\x65\x61\x62\x69\x5F\x6C\x64\x69\x76\x6D\x6F\x64'),
+    ('vendor/lib/libCB.so', 'vendor/lib/libgsl.so', 'vendor/lib/egl/libq3dtools_adreno.so'): blob_fixup()
+        .replace_needed('libm.so', 'libw.so')
+        # sed -i '__aeabi_uldivmod' 's_aeabi_uldivmod'
+        .binary_regex_replace(b'\x5F\x5F\x61\x65\x61\x62\x69\x5F\x75\x6C\x64\x69\x76\x6D\x6F\x64', b'\x73\x5F\x61\x65\x61\x62\x69\x5F\x75\x6C\x64\x69\x76\x6D\x6F\x64'),
+    'vendor/lib/egl/libq3dtools_esx.so': blob_fixup()
+        .replace_needed('libm.so', 'libw.so')
+        # sed -i '__aeabi_uldivmod' 's_aeabi_uldivmod'
+        .binary_regex_replace(b'\x5F\x5F\x61\x65\x61\x62\x69\x5F\x75\x6C\x64\x69\x76\x6D\x6F\x64', b'\x73\x5F\x61\x65\x61\x62\x69\x5F\x75\x6C\x64\x69\x76\x6D\x6F\x64')
+        # sed -i '__aeabi_ldivmod' 's_aeabi_ldivmod'
+        .binary_regex_replace(b'\x5F\x5F\x61\x65\x61\x62\x69\x5F\x6C\x64\x69\x76\x6D\x6F\x64', b'\x73\x5F\x61\x65\x61\x62\x69\x5F\x6C\x64\x69\x76\x6D\x6F\x64'),
     ('vendor/lib/libgps.utils.so', 'vendor/lib64/libgps.utils.so'): blob_fixup()
         .replace_needed('libcutils.so', 'libprocessgroup.so'),
     ('vendor/lib64/libwvhidl.so', 'vendor/lib/mediadrm/libwvdrmengine.so', 'vendor/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()

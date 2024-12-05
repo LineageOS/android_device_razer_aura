@@ -1,6 +1,5 @@
 # Proprietary files - from aura-user-9-P-SMR7-RC003-RZR-210107-3225-release-keys, unless pinned
 
-# (arm32 only) libEGL_adreno, libGLESv1_CM_adreno, libQTapGLES, libq3dtools_adreno, libq3dtools_esx, libCB, libgsl depend on intrinsic symbols which changed namespacs such as __aeabi_uldivmod, __aeabi_ldivmod, which are difficult to shim (TODO)
 # libOmxVideoDSMode, libOmxVpp depend on libOmxCore, which is a gnu makefile target
 # libantradio depends on unresolved symbol jniThrowException@LIBNATIVEHELPER_1
 # libcne, libwqe, lowi-server, imsdatadaemon depend on libwpa_client, which is a gnu makefile target
@@ -411,18 +410,18 @@ vendor/etc/xtwifi.conf
 
 # Graphics (Adreno)
 vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so;DISABLE_CHECKELF
-vendor/lib/egl/libGLESv1_CM_adreno.so;DISABLE_CHECKELF
+vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so
-vendor/lib/egl/libQTapGLES.so;DISABLE_CHECKELF
-vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so;DISABLE_CHECKELF
-vendor/lib/egl/libq3dtools_esx.so;DISABLE_CHECKELF
+vendor/lib/egl/libQTapGLES.so
+vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so
+vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/libC2D2.so
-vendor/lib/libCB.so;DISABLE_CHECKELF
+vendor/lib/libCB.so
 vendor/lib/libOpenCL.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libc2d30_bltlib.so
-vendor/lib/libgsl.so;DISABLE_CHECKELF
+vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib64/egl/eglSubDriverAndroid.so
