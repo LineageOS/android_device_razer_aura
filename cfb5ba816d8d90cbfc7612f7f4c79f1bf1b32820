@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1239fb05_93d2c41f",
+        "filename": "extract-files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-12-05T06:52:08Z",
+      "side": 1,
+      "message": "it\u0027d be nice to combine this with the above but when I did this only one of the binary regexes was applied... this lib needs both, while doing both to the other libs will break things.",
+      "revId": "cfb5ba816d8d90cbfc7612f7f4c79f1bf1b32820",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
