@@ -138,7 +138,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl:32 \
     audio.bluetooth.default \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
     libhidlbase-v32 \
     libhidlbase-v32.vendor
 
