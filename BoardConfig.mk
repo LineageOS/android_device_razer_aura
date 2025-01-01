@@ -85,11 +85,6 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 
-# Graphics
-TARGET_USES_GRALLOC1 := true
-TARGET_USES_HWC2 := true
-TARGET_USES_ION := true
-
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
@@ -100,6 +95,9 @@ DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
 # LMKD
 TARGET_LMKD_STATS_LOG := true
+
+# Media
+TARGET_USES_ION := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
