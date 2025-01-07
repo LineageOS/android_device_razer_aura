@@ -120,6 +120,10 @@ blob_fixups: blob_fixups_user_type = {
         .fix_soname(),
     ('vendor/lib/libgps.utils.so', 'vendor/lib64/libgps.utils.so'): blob_fixup()
         .replace_needed('libcutils.so', 'libprocessgroup.so'),
+    'vendor/lib/libmmcamera_faceproc.so': blob_fixup()
+        .clear_symbol_version('__aeabi_memcpy')
+        .clear_symbol_version('__aeabi_memset')
+        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
     ('vendor/lib64/libwvhidl.so', 'vendor/lib/mediadrm/libwvdrmengine.so', 'vendor/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
 }  # fmt: skip
