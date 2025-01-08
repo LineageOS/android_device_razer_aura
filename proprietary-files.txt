@@ -4,7 +4,6 @@
 # libOmxVideoDSMode, libOmxVpp depend on libOmxCore, which is a gnu makefile target
 # libantradio depends on unresolved symbol jniThrowException@LIBNATIVEHELPER_1
 # libcne, libwqe, lowi-server, imsdatadaemon depend on libwpa_client, which is a gnu makefile target
-# libril-qcril-hook-oem depends on libril, which is a gnu makefile target
 
 # ACDB
 vendor/etc/acdbdata/RC2/Bluetooth_cal.acdb
