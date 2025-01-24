@@ -51,6 +51,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    ('system/lib/libantradio.so', 'system/lib64/libantradio.so'): blob_fixup()
+        .add_needed('libnativehelper_shim.so'),
     (
         'system_ext/lib/com.qualcomm.qti.ant@1.0.so',
         'system_ext/lib64/com.qualcomm.qti.ant@1.0.so',
