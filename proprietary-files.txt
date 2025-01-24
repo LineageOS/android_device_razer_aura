@@ -2,7 +2,6 @@
 
 # (arm32 only) libEGL_adreno, libGLESv1_CM_adreno, libQTapGLES, libq3dtools_adreno, libq3dtools_esx, libCB, libgsl depend on intrinsic symbols which changed namespacs such as __aeabi_uldivmod, __aeabi_ldivmod, which are difficult to shim (TODO)
 # libOmxVideoDSMode, libOmxVpp depend on libOmxCore, which is a gnu makefile target
-# libantradio depends on unresolved symbol jniThrowException@LIBNATIVEHELPER_1
 # libcne, libwqe, lowi-server, imsdatadaemon depend on libwpa_client, which is a gnu makefile target
 
 # ACDB
@@ -34,6 +33,28 @@ vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
 vendor/lib/rfsa/adsp/libdsp_streamer_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
+<<<<<<< HEAD
+=======
+vendor/lib/rfsa/adsp/libvpp_frc.so
+vendor/lib/rfsa/adsp/libvpp_svc_skel.so
+
+# ANT+
+system/lib64/com.qualcomm.qti.ant@1.0.so
+system/lib64/libantradio.so
+vendor/lib64/com.qualcomm.qti.ant@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
+
+# Audio ACDB
+vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Codec_cal.acdb
+vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_General_cal.acdb
+vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Global_cal.acdb
+vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Handset_cal.acdb
+vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/msm8998-skuk-tavil-snd-card/QRD_SKUK_WCD9340_workspaceFile.qwsp
+>>>>>>> 53565e04 (pro1: Enable ELF checks for libantradio)
 
 # Audio
 vendor/lib/hw/audio.primary.sdm845.so
