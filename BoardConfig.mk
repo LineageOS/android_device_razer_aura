@@ -18,7 +18,7 @@ AB_OTA_PARTITIONS += \
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 
 
 # Architecture
 TARGET_ARCH := arm64
