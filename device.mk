@@ -136,16 +136,13 @@ PRODUCT_PACKAGES += \
 
 # Boot control
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl.recovery \
-    bootctrl.sdm845.recovery
-
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl:64 \
-    android.hardware.boot@1.0-service \
-    bootctrl.sdm845
+    android.hardware.boot-service.qti \
+    android.hardware.boot-service.qti.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
+
+$(call soong_config_set,QTI_GPT_UTILS,USE_BSG_FRAMEWORK,false)
 
 # Camera
 PRODUCT_PACKAGES += \
