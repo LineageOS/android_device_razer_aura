@@ -46,6 +46,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'system_ext/bin/wfdservice': blob_fixup()
+        .add_needed('libwfdservice_shim.so'),
     ('system_ext/lib/libantradio.so', 'system_ext/lib64/libantradio.so'): blob_fixup()
         .add_needed('libnativehelper_shim.so'),
     (
