@@ -1,8 +1,5 @@
 # Proprietary files - from aura-user-9-P-SMR7-RC003-RZR-210107-3225-release-keys, unless pinned
 
-# Current blobs with ELF checks disabled:
-# (arm32 only) libEGL_adreno, libGLESv1_CM_adreno, libQTapGLES, libq3dtools_adreno, libq3dtools_esx, libCB, libgsl depend on intrinsic symbols which changed namespacs such as __aeabi_uldivmod, __aeabi_ldivmod, which are difficult to shim (TODO)
-
 # ACDB
 vendor/etc/acdbdata/RC2/Bluetooth_cal.acdb
 vendor/etc/acdbdata/RC2/Codec_cal.acdb
@@ -397,37 +394,41 @@ vendor/etc/lowi.conf
 vendor/etc/sap.conf
 vendor/etc/xtwifi.conf
 
-# Graphics (Adreno)
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so;DISABLE_CHECKELF
-vendor/lib/egl/libGLESv1_CM_adreno.so;DISABLE_CHECKELF
-vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so
-vendor/lib/egl/libQTapGLES.so;DISABLE_CHECKELF
-vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so;DISABLE_CHECKELF
-vendor/lib/egl/libq3dtools_esx.so;DISABLE_CHECKELF
-vendor/lib/libC2D2.so
-vendor/lib/libCB.so;DISABLE_CHECKELF
-vendor/lib/libOpenCL.so
-vendor/lib/libadreno_utils.so
-vendor/lib/libc2d30_bltlib.so
-vendor/lib/libgsl.so;DISABLE_CHECKELF
-vendor/lib/libllvm-glnext.so
-vendor/lib/libllvm-qcom.so
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
-vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/libC2D2.so
-vendor/lib64/libCB.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libgsl.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
+# Graphics (Adreno) - OnePlus6Oxygen_22.J.62_OTA_0620_all_2111252336_14afec75dd6fa
+vendor/lib/egl/eglSubDriverAndroid.so|de8684b7f60397dde4f7b334074e64fc22bfe529
+vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so|e73369c2ec0751d6912518de205106d4ee19291c
+vendor/lib/egl/libGLESv1_CM_adreno.so|715f3463528f1e74ffa02627ee5916a09e0748f5
+vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so|7b8938799891f7157ee2766b4df64ce3ed7c51be
+vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so|9ec9c053592e58be935e8ae5e0a9d362c101773a
+vendor/lib/egl/libq3dtools_esx.so|e252bb4aadbe7b63bb23a989ba86a52120ee08df
+vendor/lib/libC2D2.so|91f015cad79024fdbb6a5603cce48693e58a4510
+vendor/lib/libCB.so|19956e96dff0bec886dddadc3bacca6af4f05de3
+vendor/lib/libOpenCL.so|6bf59a4c37d3c744448380408f238b87b481b7b5
+vendor/lib/libVkLayer_q3dtools.so|2dd75462f765721500a052df41ebde3b83daa273
+vendor/lib/libadreno_utils.so|d0814b59588c480c5f0fd6e7b6ae2643fd6cfd4b
+vendor/lib/libc2d30_bltlib.so|71703a543760e40ba26cde07c2d41416cc9331ec
+vendor/lib/libgpudataproducer.so|acff5b2159870f923d737dd079421ffcf21394cf
+vendor/lib/libgsl.so|ab3b8e1fab236d367b99e3c8501955306bb38590
+vendor/lib/libllvm-glnext.so|99387e26bf8247f31393cf08bd2f36087c56f7bf
+vendor/lib/libllvm-qcom.so|80b415741f1ac890cff1a4756b1c1fe84edc5747
+vendor/lib/libpvr.so|f04cd2c684036e1e91edc40a039010a295a1a226
+vendor/lib64/egl/eglSubDriverAndroid.so|d6dc70f08a0e68e897c2c8a956a8c2f3e036c540
+vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so|5d517d4b294073bf2773b8223a59c3b4827fd26c
+vendor/lib64/egl/libGLESv1_CM_adreno.so|0a2a648ca2dcd887ea62860bbfa2ef397f01d42d
+vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so|87220fac6b1bf29c9bf96db7c0feea12d84a5dd7
+vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so|189b9c3d400c6a98c87582b8df0910530cba6d44
+vendor/lib64/egl/libq3dtools_esx.so|a0dfa1422f15d9ce5b43640bed8a6cbfe6d5d826
+vendor/lib64/libC2D2.so|175115cc36fd471f9eb83af76be21b5f602b9460
+vendor/lib64/libCB.so|60f84362c2c448348936b8ac6841ae232d7e3897
+vendor/lib64/libOpenCL.so|ee804e05a12dffd74f98a426d00039a8cfcb5662
+vendor/lib64/libVkLayer_q3dtools.so|c033fcad480af13afe4631ed507a8159c33b74a1
+vendor/lib64/libadreno_utils.so|c2851b9968f5dfa2329560768c0fc25f5e82ce51
+vendor/lib64/libc2d30_bltlib.so|b7c7bbc41f317833927d9bf75fbf9b411dd63a96
+vendor/lib64/libgpudataproducer.so|acdc43a83726952602d18591887f704f3be1d809
+vendor/lib64/libgsl.so|79710361c9f1d7165f6a3e92afef51cc686e9fbe
+vendor/lib64/libllvm-glnext.so|8bee61f16e02a24d912c7d348a1b5ae34b76cf34
+vendor/lib64/libllvm-qcom.so|79164daddbfb3c9c7b31933d7dfe144ddf2c858d
+vendor/lib64/libpvr.so|e37f4cb177948f4b510252f44cf615fe966e1b42
 
 # Graphics (Adreno firmware)
 vendor/firmware/a630_gmu.bin
@@ -438,9 +439,9 @@ vendor/firmware/a630_zap.b02
 vendor/firmware/a630_zap.elf
 vendor/firmware/a630_zap.mdt
 
-# Graphics (Vulkan)
-vendor/lib/hw/vulkan.sdm845.so
-vendor/lib64/hw/vulkan.sdm845.so
+# Graphics (Vulkan) - OnePlus6Oxygen_22.J.62_OTA_0620_all_2111252336_14afec75dd6fa
+vendor/lib/hw/vulkan.adreno.so|efe7bb8a06ccb282b250e79aad8a4c5df1b1a611
+vendor/lib64/hw/vulkan.adreno.so|8c588478757fbc3384989303f7a95c437adf7d95
 
 # IO prefetcher
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
