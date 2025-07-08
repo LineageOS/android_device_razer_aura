@@ -123,6 +123,7 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/devices/platform/soc/a98000.i2c/i2c-7/7-0020/in
 BOARD_USES_QCOM_HARDWARE := true
 
 # Properties
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery
