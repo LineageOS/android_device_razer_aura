@@ -517,7 +517,6 @@ vendor/lib64/libhexagon_nn_stub.so
 vendor/lib/libpn553_fw.so:vendor/lib64/libpn553_fw.so
 
 # OMX - from PNX - RKQ1.200906.002
-vendor/lib/libOmxVideoDSMode.so|5862b9d707ca00cd87b70a7f581df49fa3304d2c
 vendor/lib/libOmxVpp.so|7a9a96445b55f28013ea8f4ed767c7e245420c4f
 
 # Peripheral Manager - from SHIFT6MQ.SOS.5.0.G.20240820-RELEASE-OTA
