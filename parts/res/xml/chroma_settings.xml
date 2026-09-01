@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Alcatraz323 <alcatraz32323@gmail.com>
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:key="chroma_control"
+        android:title="@string/chroma_category_control">
+
+        <SwitchPreferenceCompat
+            android:key="chroma_enabled"
+            android:icon="@drawable/ic_chroma_power"
+            android:title="@string/chroma_enabled_title"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="chroma_suspend_on_sleep"
+            android:icon="@drawable/ic_chroma_battery"
+            android:title="@string/chroma_suspend_on_sleep_title"
+            android:summary="@string/chroma_suspend_on_sleep_summary"
+            android:dependency="chroma_enabled"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="chroma_appearance"
+        android:title="@string/chroma_category_appearance">
+
+        <ListPreference
+            android:key="chroma_mode"
+            android:icon="@drawable/ic_chroma_mode"
+            android:title="@string/chroma_mode_title"
+            android:entries="@array/chroma_mode_entries"
+            android:entryValues="@array/chroma_mode_values"
+            android:defaultValue="color"
+            android:dependency="chroma_enabled" />
+
+        <org.lineageos.settings.chroma.ColorPickerPreference
+            android:key="chroma_color"
+            android:icon="@drawable/ic_chroma_color"
+            android:title="@string/chroma_color_title"
+            android:defaultValue="#00FF00"
+            android:dependency="chroma_enabled" />
+
+        <SeekBarPreference
+            android:key="chroma_brightness"
+            android:icon="@drawable/ic_chroma_brightness"
+            android:title="@string/chroma_brightness_title"
+            android:max="255"
+            android:min="5"
+            android:defaultValue="200"
+            app:showSeekBarValue="true"
+            android:dependency="chroma_enabled" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
