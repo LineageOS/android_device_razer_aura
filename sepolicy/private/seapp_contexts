@@ -1,1 +1,2 @@
 user=system seinfo=platform name=.dataservices domain=vendor_dataservice_app type=radio_data_file
+user=system seinfo=platform name=org.lineageos.settings domain=auraparts_app type=system_app_data_file
