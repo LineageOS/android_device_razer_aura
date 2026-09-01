@@ -1,0 +1,8 @@
+type auraparts_app, domain;
+typeattribute auraparts_app mlstrustedsubject;
+
+app_domain(auraparts_app)
+
+# sysfs access for LP5523 Chroma LED driver
+allow auraparts_app sysfs_leds:dir search;
+allow auraparts_app sysfs_leds:file { getattr open read write };
