@@ -55,5 +55,18 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".chroma.ChromaService"
+                 android:exported="false" />
+
+        <activity
+            android:name=".chroma.ChromaSettingsActivity"
+            android:exported="false"
+            android:label="@string/chroma_settings_title">
+            <intent-filter>
+                <action android:name="org.lineageos.settings.device.CHROMA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

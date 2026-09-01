@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Alcatraz323 <alcatraz32323@gmail.com>
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="chroma_settings_title">Chroma RGB</string>
+
+    <string name="chroma_category_control">Control</string>
+    <string name="chroma_enabled_title">Enable Chroma</string>
+    <string name="chroma_suspend_on_sleep_title">Suspend when screen is off</string>
+    <string name="chroma_suspend_on_sleep_summary">Turn off LEDs when the screen turns off to save battery</string>
+
+    <string name="chroma_category_appearance">Appearance</string>
+    <string name="chroma_mode_title">Effect</string>
+    <string name="chroma_color_title">Color (hex, e.g. #00FF00)</string>
+    <string name="chroma_brightness_title">Brightness (5–255)</string>
+</resources>
