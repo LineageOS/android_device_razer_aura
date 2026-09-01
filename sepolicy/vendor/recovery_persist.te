@@ -1,0 +1,1 @@
+allow recovery_persist kernel:system syslog_read;
