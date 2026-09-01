@@ -20,8 +20,14 @@ package org.lineageos.settings;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 
+import androidx.preference.PreferenceManager;
+
+import org.lineageos.settings.chroma.ChromaFragment;
+import org.lineageos.settings.chroma.ChromaManager;
+import org.lineageos.settings.chroma.ChromaService;
 import org.lineageos.settings.doze.DozeUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -34,6 +40,15 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DozeUtils.isDozeEnabled(context) && DozeUtils.sensorsEnabled(context)) {
             if (DEBUG) Log.d(TAG, "Starting Doze service");
             DozeUtils.startService(context);
+        }
+
+        context.startService(new Intent(context, ChromaService.class));
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        if (prefs.getBoolean(ChromaFragment.KEY_ENABLED, false)) {
+            ChromaManager manager = new ChromaManager();
+            manager.systemReady();
+            manager.applySettings(context);
         }
     }
 
