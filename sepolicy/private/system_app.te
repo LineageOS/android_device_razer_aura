@@ -1,0 +1,5 @@
+allow system_app sysfs_leds:dir search;
+r_dir_file(system_app, sysfs_lp5523_chroma)
+allow system_app sysfs_lp5523_chroma:file w_file_perms;
+
+allow system_app user_profile_data_file:dir r_dir_perms;
