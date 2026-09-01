@@ -1,0 +1,5 @@
+allow system_app sysfs_leds:dir search;
+allow system_app sysfs_lp5523_chroma:dir search;
+allow system_app sysfs_lp5523_chroma:file { getattr open read write };
+
+allow system_app user_profile_data_file:dir { getattr open read search };
