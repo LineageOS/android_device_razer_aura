@@ -1,1 +1,2 @@
+type sysfs_leds_virtual, sysfs_type, fs_type;
 type sysfs_lp5523_chroma, sysfs_type, fs_type;
