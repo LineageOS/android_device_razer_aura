@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <View
+        android:id="@+id/color_preview"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/hex_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Body1"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="R"
+            android:textColor="#EF5350"
+            android:textStyle="bold" />
+        <SeekBar
+            android:id="@+id/seekbar_r"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="255" />
+        <TextView
+            android:id="@+id/value_r"
+            android:layout_width="36dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textAppearance="@android:style/TextAppearance.Material.Small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="G"
+            android:textColor="#66BB6A"
+            android:textStyle="bold" />
+        <SeekBar
+            android:id="@+id/seekbar_g"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="255" />
+        <TextView
+            android:id="@+id/value_g"
+            android:layout_width="36dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textAppearance="@android:style/TextAppearance.Material.Small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="B"
+            android:textColor="#42A5F5"
+            android:textStyle="bold" />
+        <SeekBar
+            android:id="@+id/seekbar_b"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="255" />
+        <TextView
+            android:id="@+id/value_b"
+            android:layout_width="36dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textAppearance="@android:style/TextAppearance.Material.Small" />
+    </LinearLayout>
+
+</LinearLayout>
