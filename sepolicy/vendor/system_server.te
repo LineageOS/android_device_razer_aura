@@ -1,0 +1,2 @@
+allow system_server sysfs_extcon:file r_file_perms;
+allow system_server sysfs_leds_virtual:file r_file_perms;
