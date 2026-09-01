@@ -55,5 +55,27 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".chroma.ChromaService"
+                 android:exported="false" />
+
+        <activity
+            android:name=".chroma.ChromaSettingsActivity"
+            android:exported="true"
+            android:label="@string/chroma_settings_title">
+            <intent-filter>
+                <action android:name="org.lineageos.settings.device.CHROMA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:value="LED lighting effects and brightness" />
+        </activity>
+
     </application>
 </manifest>
