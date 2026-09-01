@@ -1,0 +1,1 @@
+allow sensors sensors_dbg_prop:file { read open getattr };
