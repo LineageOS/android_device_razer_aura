@@ -55,5 +55,36 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".chroma.ChromaService"
+                 android:exported="false" />
+
+        <activity
+            android:name=".chroma.ChromaSettingsActivity"
+            android:exported="true"
+            android:label="@string/chroma_settings_title">
+            <intent-filter>
+                <action android:name="org.lineageos.settings.device.CHROMA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.homepage" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/chroma_settings_summary" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_chroma_color" />
+            <meta-data
+                android:name="com.android.settings.icon_tintable"
+                android:value="true" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="-10" />
+        </activity>
+
     </application>
 </manifest>
