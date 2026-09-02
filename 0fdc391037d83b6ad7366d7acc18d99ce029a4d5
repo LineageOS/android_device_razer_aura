@@ -1,0 +1,175 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8a0ec2d_f0aa63b1",
+        "filename": "sepolicy/vendor/genfs_contexts",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T00:07:50Z",
+      "side": 1,
+      "message": "What is this?",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "169d8ec9_00366a04",
+        "filename": "sepolicy/vendor/genfs_contexts",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T00:07:50Z",
+      "side": 1,
+      "message": "Not device specific",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25a421c3_7e699cd9",
+        "filename": "sepolicy/vendor/hal_nfc_default.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T00:07:50Z",
+      "side": 1,
+      "message": "Not device specific and should be allowed in sepolicy-legacy-um already?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 61
+      },
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dec7275_82e9c9a6",
+        "filename": "sepolicy/vendor/nfc.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T00:07:50Z",
+      "side": 1,
+      "message": "Not device specific and should use macro for :dir",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 55
+      },
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb996eb1_f307351f",
+        "filename": "sepolicy/vendor/qti_init_shell.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T00:07:50Z",
+      "side": 1,
+      "message": "This should be in the previous commit",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55af927e_6d9ba7de",
+        "filename": "sepolicy/vendor/system_server.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T00:07:50Z",
+      "side": 1,
+      "message": "Not device specific",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5364a168_d6cda8f0",
+        "filename": "sepolicy/vendor/ueventd.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T00:07:50Z",
+      "side": 1,
+      "message": "Didn\u0027t we kill debugfs?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 40
+      },
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12e65a30_1c2b2a63",
+        "filename": "sepolicy/vendor/vendor_init.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T00:07:50Z",
+      "side": 1,
+      "message": "Not device specific",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71ed471e_96d8c276",
+        "filename": "sepolicy/vendor/vold.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T00:07:50Z",
+      "side": 1,
+      "message": "Use macro, also doesn\u0027t look device specific",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
