@@ -16,6 +16,24 @@
       "message": "I think it would be beneficial to backport qcoms panel notifier to this device and wire that up in the driver and dtsi. That way you don\u0027t need to rely on userspace to receive screen state broadcasts to turn LEDs on/off. Similarly to what we do on downstream ayn qcs8550/cq8725s.",
       "revId": "3420d7264bbab958c3650ddcaaad55ddf1c346d7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0458b24c_803b0ade",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 27
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-02T04:13:44Z",
+      "side": 1,
+      "message": "while correct, effort for that on 4.9 seems rather not worth it. I\u0027ll commit if this ressurects on 4.19 I\u0027ll look deeper but this looks like hours of work atm.",
+      "parentUuid": "39d68403_a12054f8",
+      "revId": "3420d7264bbab958c3650ddcaaad55ddf1c346d7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
