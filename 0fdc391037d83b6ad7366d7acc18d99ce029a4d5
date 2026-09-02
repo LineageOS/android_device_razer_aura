@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0d61ce3_3b1b64ba",
+        "filename": "sepolicy/vendor/genfs_contexts",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-02T03:41:22Z",
+      "side": 1,
+      "message": "aura / # ls /sys/devices/virtual/leds/\nflash0/  flash1/  switch0/ torch0/  torch1/\n\nsystem_server wants it",
+      "parentUuid": "d8a0ec2d_f0aa63b1",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "169d8ec9_00366a04",
@@ -58,6 +76,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d7f74a3_9e1f7100",
+        "filename": "sepolicy/vendor/hal_nfc_default.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-02T03:41:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25a421c3_7e699cd9",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 61
+      },
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6dec7275_82e9c9a6",
@@ -71,6 +113,30 @@
       "writtenOn": "2026-09-02T00:07:50Z",
       "side": 1,
       "message": "Not device specific and should use macro for :dir",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 55
+      },
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a3fb49b_413df50e",
+        "filename": "sepolicy/vendor/nfc.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-02T03:41:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6dec7275_82e9c9a6",
       "range": {
         "startLine": 1,
         "startChar": 0,
@@ -133,6 +199,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f05300ab_9d0b4781",
+        "filename": "sepolicy/vendor/system_server.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-02T03:41:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55af927e_6d9ba7de",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5364a168_d6cda8f0",
@@ -146,6 +230,30 @@
       "writtenOn": "2026-09-02T00:07:50Z",
       "side": 1,
       "message": "Didn\u0027t we kill debugfs?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 40
+      },
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "106e0455_22708be6",
+        "filename": "sepolicy/vendor/ueventd.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-02T03:41:22Z",
+      "side": 1,
+      "message": "we did not, axoltl did. I can look at following up to kill debugfs later.",
+      "parentUuid": "5364a168_d6cda8f0",
       "range": {
         "startLine": 1,
         "startChar": 0,
