@@ -1,5 +1,57 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69638d81_869c4df9",
+        "filename": "parts/AndroidManifest.xml",
+        "patchSetId": 30
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T20:09:10Z",
+      "side": 1,
+      "message": "This should be a string reference. chroma_settings_summary already exists",
+      "revId": "90c13cd59a7930bc9c4aeaea1c121e8dc10dd916",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83386c2d_4f4afd8e",
+        "filename": "parts/res/values/arrays.xml",
+        "patchSetId": 30
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T20:09:10Z",
+      "side": 1,
+      "message": "translatable\u003dfalse and all entries in the array should be string references.",
+      "revId": "90c13cd59a7930bc9c4aeaea1c121e8dc10dd916",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdbec929_9e84a827",
+        "filename": "parts/res/values/arrays.xml",
+        "patchSetId": 30
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-02T20:09:10Z",
+      "side": 1,
+      "message": "translatable\u003dfalse",
+      "revId": "90c13cd59a7930bc9c4aeaea1c121e8dc10dd916",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
