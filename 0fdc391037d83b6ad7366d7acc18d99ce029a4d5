@@ -332,6 +332,24 @@
       "parentUuid": "71ed471e_96d8c276",
       "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2378957f_2534150b",
+        "filename": "sepolicy/vendor/vold.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-02T03:53:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cce9fcf0_1d746b1d",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
