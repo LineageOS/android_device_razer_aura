@@ -53,6 +53,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7eefbf93_d23d7394",
+        "filename": "sepolicy/vendor/genfs_contexts",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-02T03:57:03Z",
+      "side": 1,
+      "message": "https://github.com/LineageOS/android_device_xiaomi_sdm845-common/blob/35cf356b095e033e71261b16c7fa319faac12cb3/sepolicy/vendor/genfs_contexts#L16\n\na few other devices have it. To label this in common on 22.2 isn\u0027t feasible this late.",
+      "parentUuid": "169d8ec9_00366a04",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25a421c3_7e699cd9",
