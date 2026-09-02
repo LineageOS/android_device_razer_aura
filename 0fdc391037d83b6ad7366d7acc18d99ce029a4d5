@@ -98,6 +98,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "71bec754_91daf348",
+        "filename": "sepolicy/vendor/qti_init_shell.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-02T00:14:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb996eb1_f307351f",
+      "revId": "0fdc391037d83b6ad7366d7acc18d99ce029a4d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55af927e_6d9ba7de",
