@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c0f4063_19b4baa8",
+        "filename": "parts/AndroidManifest.xml",
+        "patchSetId": 30
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-03T00:16:57Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_device_razer_aura/+/501063",
+      "parentUuid": "69638d81_869c4df9",
+      "revId": "90c13cd59a7930bc9c4aeaea1c121e8dc10dd916",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "83386c2d_4f4afd8e",
@@ -35,6 +53,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "263182c0_a8256040",
+        "filename": "parts/res/values/arrays.xml",
+        "patchSetId": 30
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-03T00:16:57Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_device_razer_aura/+/501063",
+      "parentUuid": "83386c2d_4f4afd8e",
+      "revId": "90c13cd59a7930bc9c4aeaea1c121e8dc10dd916",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fdbec929_9e84a827",
@@ -48,6 +84,24 @@
       "writtenOn": "2026-09-02T20:09:10Z",
       "side": 1,
       "message": "translatable\u003dfalse",
+      "revId": "90c13cd59a7930bc9c4aeaea1c121e8dc10dd916",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63392b0a_f9869905",
+        "filename": "parts/res/values/arrays.xml",
+        "patchSetId": 30
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-09-03T00:16:57Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_device_razer_aura/+/501063",
+      "parentUuid": "fdbec929_9e84a827",
       "revId": "90c13cd59a7930bc9c4aeaea1c121e8dc10dd916",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
