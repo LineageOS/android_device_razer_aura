@@ -74,7 +74,7 @@
                 android:value="com.android.settings.category.ia.display" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:value="LED lighting effects and brightness" />
+                android:value="@string/chroma_settings_summary" />
         </activity>
 
     </application>
