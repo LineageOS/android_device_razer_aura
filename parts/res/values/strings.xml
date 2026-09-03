@@ -15,6 +15,10 @@
 
     <string name="chroma_category_appearance">Appearance</string>
     <string name="chroma_mode_title">Effect</string>
+    <string name="chroma_mode_entry_color">Static color</string>
+    <string name="chroma_mode_entry_spectrum">Spectrum cycle</string>
+    <string name="chroma_mode_entry_wave_ltr">Wave (left to right)</string>
+    <string name="chroma_mode_entry_wave_rtl">Wave (right to left)</string>
     <string name="chroma_color_title">Color</string>
     <string name="chroma_brightness_title">Brightness</string>
 </resources>
